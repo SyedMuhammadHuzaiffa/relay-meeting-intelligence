@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Clock3, Scissors, Sparkles } from "lucide-react";
 import { RelayMark } from "@/components/app-shell";
+import { ThemeControl } from "@/components/theme-control";
 import { getClip, getMeeting } from "@/lib/server/meetings";
 import { formatDuration, formatMeetingDate } from "@/lib/formatters";
 import { getMomentById, getTranscriptClip } from "@/lib/sharing";
@@ -23,7 +24,7 @@ export default async function SharedMeetingPage({ params, searchParams }: Props)
   const lines = persistedClip?.meetingId === meetingId ? meeting.transcript.filter((line) => line.startSeconds < persistedClip.endSeconds && line.endSeconds > persistedClip.startSeconds) : [];
   const clip = clipId ? (persistedClip && lines.length ? { start: persistedClip.start, endTime: persistedClip.end, durationSeconds: persistedClip.endSeconds - persistedClip.startSeconds, lines } : undefined) : getTranscriptClip(meeting, clipStart, clipEnd);
   const selectedLine = moment ? meeting.transcript.find((line) => line.timestamp === moment.timestamp) : undefined;
-  return <main className="public-page"><header className="public-header"><Link href="/" className="relay-identity"><RelayMark /><span>relay<span className="brand-period">.</span></span></Link><span className="public-label">SHARED MEETING RECORD</span><span className="public-readonly">VIEW ONLY</span></header>
+  return <main className="public-page"><header className="public-header"><Link href="/" className="relay-identity"><RelayMark /><span>relay<span className="brand-period">.</span></span></Link><span className="public-label">SHARED MEETING RECORD</span><span className="public-readonly">VIEW ONLY</span><ThemeControl /></header>
     <article className="public-content"><div className="public-hero"><div><p className="overline">CONVERSATION / {meeting.id.toUpperCase()}</p><h1>{meeting.title}</h1><p>{formatMeetingDate(meeting.date)} · {meeting.time} <span className="dot-separator">·</span> {formatDuration(meeting.durationSeconds)} <span className="dot-separator">·</span> {meeting.participants.length} people</p></div><span className="public-stamp">RELAY / SOURCE RECORD</span></div>
       {(momentId && !moment || (clipId || clipStart || clipEnd) && !clip) && <p className="public-notice">That selected moment is unavailable. The meeting record remains below.</p>}
       {moment && <section className="public-focus"><p className="overline">✦ SHARED MOMENT / {moment.timestamp}</p><h2>{moment.title}</h2><p>{moment.note}</p>{selectedLine && <blockquote>“{selectedLine.text}”<footer>{selectedLine.speaker} · {selectedLine.timestamp}</footer></blockquote>}</section>}

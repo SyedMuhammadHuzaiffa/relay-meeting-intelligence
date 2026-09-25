@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { BarChart3, BookOpen, CalendarDays, Home, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ThemeControl } from "./theme-control";
 
 const navigation = [
   { href: "/", label: "Home", icon: Home },
@@ -32,6 +33,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           return <Link key={href} href={href} className={active ? "active" : ""} aria-label={label} title={label} aria-current={active ? "page" : undefined} onClick={() => setOpen(false)}><Icon size={16} strokeWidth={1.9} /><span>{label}</span></Link>;
         })}
       </nav>
+      <ThemeControl />
       <span className="header-live"><span /> PostgreSQL workspace</span>
     </header>
     <div className="relay-body">{children}</div>

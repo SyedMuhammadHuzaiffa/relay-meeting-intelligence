@@ -8,5 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return <html lang="en" data-scroll-behavior="smooth"><body>{children}</body></html>;
+  return <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <head><script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem('relay-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme}catch(e){}})()` }} /></head>
+    <body>{children}</body>
+  </html>;
 }
