@@ -1,32 +1,16 @@
-import type { Meeting, TranscriptLine } from "@/data/meetings";
+import type { Meeting, TranscriptLine } from "@/types/meeting";
+import { secondsToTimestamp, timestampToSeconds } from "@/lib/time";
 
 export type ShareableMoment = Meeting["highlights"][number];
 
 export type ShareableClip = {
+  id?: string;
   start: string;
   end: string;
   endTime: string;
   durationSeconds: number;
   lines: TranscriptLine[];
 };
-
-function timestampToSeconds(timestamp: string) {
-  return timestamp
-    .split(":")
-    .map(Number)
-    .reduce((total, part) => total * 60 + part, 0);
-}
-
-function secondsToTimestamp(totalSeconds: number) {
-  const rounded = Math.max(0, Math.floor(totalSeconds));
-  const hours = Math.floor(rounded / 3600);
-  const minutes = Math.floor((rounded % 3600) / 60);
-  const seconds = rounded % 60;
-
-  return hours > 0
-    ? `${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
-    : `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-}
 
 export function getMomentId(moment: ShareableMoment) {
   return `highlight-${moment.timestamp.replaceAll(":", "-")}`;

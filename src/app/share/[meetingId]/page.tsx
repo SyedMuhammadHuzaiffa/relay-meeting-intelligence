@@ -2,34 +2,44 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendarDays, Clock3, ExternalLink, Flag, Quote, Scissors, ShieldCheck, Users } from "lucide-react";
-import { meetings } from "@/data/meetings";
+import { getClip, getMeeting } from "@/lib/server/meetings";
 import { formatDuration, formatMeetingDate } from "@/lib/formatters";
 import { getMomentById, getMomentId, getTranscriptClip } from "@/lib/sharing";
 
-export function generateStaticParams() {
-  return meetings.map((meeting) => ({ meetingId: meeting.id }));
-}
+export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: PageProps<"/share/[meetingId]">): Promise<Metadata> {
+type SharePageProps = { params: Promise<{ meetingId: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
+
+export async function generateMetadata({ params }: SharePageProps): Promise<Metadata> {
   const { meetingId } = await params;
-  const meeting = meetings.find((item) => item.id === meetingId);
+  const meeting = await getMeeting(meetingId);
   return {
     title: meeting ? `${meeting.title} — Shared meeting` : "Shared meeting unavailable",
     description: meeting ? `A shared, read-only view of ${meeting.title}.` : "This shared meeting link is unavailable.",
   };
 }
 
-export default async function SharedMeetingPage({ params, searchParams }: PageProps<"/share/[meetingId]">) {
+export default async function SharedMeetingPage({ params, searchParams }: SharePageProps) {
   const [{ meetingId }, query] = await Promise.all([params, searchParams]);
-  const meeting = meetings.find((item) => item.id === meetingId);
+  const meeting = await getMeeting(meetingId);
   if (!meeting) notFound();
 
   const momentId = typeof query.moment === "string" ? query.moment : undefined;
   const clipStart = typeof query.clipStart === "string" ? query.clipStart : undefined;
   const clipEnd = typeof query.clipEnd === "string" ? query.clipEnd : undefined;
-  const clipRequested = Boolean(clipStart || clipEnd);
+  const clipId = typeof query.clip === "string" ? query.clip : undefined;
+  const persistedClip = clipId ? await getClip(clipId) : null;
+  const clipRequested = Boolean(clipId || clipStart || clipEnd);
   const sharedMoment = getMomentById(meeting, momentId);
-  const sharedClip = getTranscriptClip(meeting, clipStart, clipEnd);
+  const persistedLines = persistedClip?.meetingId === meetingId
+    ? meeting.transcript.filter((line) => line.startSeconds < persistedClip.endSeconds && line.endSeconds > persistedClip.startSeconds)
+    : [];
+  const sharedClip = clipId
+    ? persistedClip && persistedLines.length ? {
+      id: persistedClip.id, start: persistedClip.start, end: persistedLines.at(-1)!.timestamp,
+      endTime: persistedClip.end, durationSeconds: persistedClip.endSeconds - persistedClip.startSeconds, lines: persistedLines,
+    } : undefined
+    : getTranscriptClip(meeting, clipStart, clipEnd);
   const transcriptLine = sharedMoment
     ? meeting.transcript.find((line) => line.timestamp === sharedMoment.timestamp)
     : undefined;

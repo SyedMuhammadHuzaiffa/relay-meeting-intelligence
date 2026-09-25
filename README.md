@@ -1,77 +1,47 @@
-# Fathom-style Meeting Intelligence — Take-Home Assignment
+# Meeting intelligence assignment — backend foundation
 
-A focused recreation of Fathom's post-meeting experience, built within the assignment time constraint. It prioritizes the workflow that follows a meeting: finding the right call, reviewing its context, moving through the conversation, extracting decisions, and sharing the useful moment.
+This slice connects the existing meeting review interface to Supabase PostgreSQL. The visual design remains unchanged pending the separate Google Stitch design work. Recording and playback are still simulated; meetings, transcripts, summaries, actions, highlights, and clips now come from the database.
 
-## Live links
+## Supabase setup
 
-- [Live deployment](https://fathom-ai-assignment.vercel.app)
-- [Public GitHub repository](https://github.com/SyedMuhammadHuzaiffa/fathom-ai-assignment)
+1. Create a Supabase project. In its SQL Editor, run `supabase/migrations/20260925000000_meeting_foundation.sql`, then `supabase/seed.sql`. The seed is generated from the original realistic dataset and can be reproduced with `npm run seed:generate` after `npm install`.
+2. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL` to the project URL and `SUPABASE_SECRET_KEY` to the project's `sb_secret_...` server key. Both are server only. Do not use a `NEXT_PUBLIC_` prefix or commit `.env.local`.
+3. Run `npm install`, `npm run dev`, then visit `http://localhost:3000`.
+4. For Vercel, add the same two environment variables in project settings and deploy after applying the SQL. The previous live deployment is not evidence that this new backend slice is configured.
 
-## Core product experience
+The migration enables row level security on every table with no browser policies. All reads and writes run through server code. There is no user authentication in this assignment slice; the existing public meeting and share routes, and mutation APIs, should gain per-user authorization before using real private customer data.
 
-- Searchable, filterable meetings dashboard
-- Meeting detail pages with a simulated playback timeline and timestamp-synchronized transcript
-- AI-style summaries with Enhanced and Demo template switching
-- Action items, highlights, and linked timestamps
-- Share a complete meeting or a specific highlight/moment
-- Public, read-only meeting and moment share routes
-- Responsive desktop and mobile layouts
-- Seeded scenarios ranging from a short test call to a realistic 58:47 meeting with eight participants
+## Data and API
 
-## Product judgement and deliberate scope
+The seed preserves six meetings, including a 2:14 test call and a 58:47 eight-participant Q4 call. It preserves the original meeting slugs, transcript order, summaries, actions, highlights, and two existing clips. The seed inserts missing rows and does not overwrite later action completion or summary changes.
 
-This is intentionally a post-meeting product. Real meeting capture, a notetaker bot, calendar integration, Zoom/Google Meet/Microsoft Teams integration, authentication, billing, and team administration are outside the assignment scope. Recording/capture was explicitly permitted to be stubbed, so the implementation uses deterministic seeded frontend data for meetings, transcripts, summaries, actions, and highlights. The time was invested in making the review, retrieval, and sharing experience coherent and convincing.
+Server components query the same repository used by the API. The client calls API routes for writes and Ask. Routes:
 
-## Real Fathom reconnaissance
+| Route | Purpose |
+| --- | --- |
+| `GET /api/meetings` | Meeting library |
+| `GET /api/meetings/[id]` | Full meeting |
+| `GET /api/meetings/[id]/transcript` | Ordered transcript |
+| `GET /api/meetings/[id]/summary?template=enhanced` | Stored summary |
+| `GET /api/meetings/[id]/analytics` | Talk time from stored transcript intervals |
+| `PATCH /api/action-items/[id]` | Persist `{ "completed": true/false }` |
+| `POST /api/clips` | Persist `{ "meetingId", "startSeconds", "endSeconds", "title"? }` |
+| `GET /api/clips/[id]` | Load a stored clip |
+| `POST /api/meetings/[id]/ask` | Answer `{ "question" }` from stored meeting data |
+| `POST /api/meetings/[id]/summaries/regenerate` | Persist `{ "template": "enhanced"/"demo" }` |
 
-The real product was used before implementation to study its dashboard, search, meeting detail, playback/timeline, transcript, AI summary, summary customization/template switching, action-item treatment, and multi-participant meeting experience.
+Ask and regeneration use deterministic formatting for now. They load their source records from PostgreSQL. New clip share links use the persisted clip ID; existing timestamp-based links continue to resolve.
 
-Share/clip controls were not available in the tested account, so this clone models its sharing interaction intentionally. The approximately 60-minute, eight-person scenario is based on the assignment requirement; it is not presented as an observation from that Fathom account.
-
-## Tech stack
-
-- Next.js 16 with React 19 and TypeScript
-- Tailwind CSS
-- Vercel
-- Local deterministic seeded data; no application backend
-
-## Architecture
-
-The app uses the Next.js App Router. Seeded meeting records in `src/data/meetings.ts` supply the scenario data, while client-side state powers deterministic search, filters, playback simulation, summary-template switching, action completion, and sharing interactions. Dynamic meeting routes and public read-only share routes keep the experience focused without introducing an unnecessary backend.
-
-Important routes:
-
-- `/` — meetings dashboard
-- `/meetings/[id]` — meeting detail
-- `/share/[meetingId]` — public read-only meeting recap
-- `/share/[meetingId]?moment=[highlightId]` — public read-only shared moment
-
-## Run locally
+## Validation
 
 ```bash
-npm install
-npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000).
-
-Checks:
-
-```bash
+npm run seed:generate
 npm run lint
 npm run build
 ```
 
-The npm scripts use webpack for local CSS compilation reliability in restricted environments.
+Database integration needs the two environment variables and an applied migration/seed. Until then, the UI shows a load error and the API returns a 500 database error; it never falls back to an in-memory meeting store.
 
-## Seeded scenarios
+## Agent capture
 
-The seeded library includes a short recording walkthrough, several normal working meetings, and a 58:47 eight-participant Q4 planning call. Each scenario includes realistic summaries, action items, highlights, and, where applicable, shareable moments.
-
-## Agent capture compliance
-
-Automatic Codex lifecycle hooks capture prompts and final responses into [`.agent-logs/`](.agent-logs/). [`CAPTURE-TEST.md`](CAPTURE-TEST.md) documents canary verification. Logs were committed progressively alongside development; they do not expose chain-of-thought or tool-call traces.
-
-## Deployment
-
-The project is deployed at [fathom-ai-assignment.vercel.app](https://fathom-ai-assignment.vercel.app). Logged-out production access was verified.
+The existing `.codex` hooks continue to capture Codex prompts and final responses in `.agent-logs/`. Historical logs and the capture mechanism are unchanged. `CAPTURE-TEST.md` documents their original verification.

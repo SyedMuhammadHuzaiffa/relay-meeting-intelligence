@@ -26,15 +26,13 @@ import {
   Users,
   X,
 } from "lucide-react";
-import type { Meeting } from "@/data/meetings";
+import type { AskAnswer, Meeting, SummarySection } from "@/types/meeting";
+import { timestampToSeconds } from "@/lib/time";
 import { formatDuration, formatMeetingDate } from "@/lib/formatters";
 import { getTranscriptClip, type ShareableClip, type ShareableMoment } from "@/lib/sharing";
 import { ShareDialog } from "@/components/share-dialog";
 
 type SummaryTemplate = "enhanced" | "demo";
-
-type AskSource = { timestamp: string; label: string };
-type AskAnswer = { text: string; sources: AskSource[] };
 
 const suggestedQuestions = [
   "What were the main decisions?",
@@ -53,13 +51,6 @@ const summaryTemplates: Record<SummaryTemplate, { label: string; description: st
   },
 };
 
-function timestampToSeconds(timestamp: string) {
-  return timestamp
-    .split(":")
-    .map(Number)
-    .reduce((total, part) => total * 60 + part, 0);
-}
-
 function formatPlaybackTime(totalSeconds: number) {
   const rounded = Math.max(0, Math.floor(totalSeconds));
   const hours = Math.floor(rounded / 3600);
@@ -73,42 +64,6 @@ function formatPlaybackTime(totalSeconds: number) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-function buildMeetingAnswer(meeting: Meeting, question: string): AskAnswer {
-  const normalized = question.toLowerCase();
-  const sourceForTimestamp = (timestamp: string, label: string) => ({ timestamp, label });
-
-  if (/follow|action|next step|todo|to-do|owner/.test(normalized)) {
-    return {
-      text: meeting.actionItems.length
-        ? meeting.actionItems.map((action) => `${action.owner}: ${action.task}`).join(" ")
-        : "No explicit follow-up items were captured for this meeting.",
-      sources: meeting.actionItems
-        .filter((action) => action.timestamp)
-        .slice(0, 3)
-        .map((action) => sourceForTimestamp(action.timestamp!, action.owner)),
-    };
-  }
-
-  if (/risk|concern|block|depend|issue|problem/.test(normalized)) {
-    const riskSections = meeting.summary.filter((section) => /risk|depend|issue|block|quality/i.test(`${section.heading} ${section.body}`));
-    const riskLines = meeting.transcript.filter((line) => /risk|approval|security|degrad|latency|depend|regression|gap/i.test(line.text));
-    return {
-      text: riskSections.length
-        ? riskSections.map((section) => `${section.heading}: ${section.body}`).join(" ")
-        : riskLines.length
-          ? `The discussion flagged: ${riskLines.slice(0, 2).map((line) => line.text).join(" ")}`
-          : "No explicit risks were captured in the seeded notes or transcript.",
-      sources: riskLines.slice(0, 3).map((line) => sourceForTimestamp(line.timestamp, line.speaker)),
-    };
-  }
-
-  const summaryText = meeting.summary.map((section) => `${section.heading}: ${section.body}`).join(" ");
-  return {
-    text: summaryText,
-    sources: meeting.highlights.slice(0, 3).map((highlight) => sourceForTimestamp(highlight.timestamp, highlight.title)),
-  };
-}
-
 export function MeetingDetail({ meeting }: { meeting: Meeting }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -117,7 +72,10 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
   const [customizationOpen, setCustomizationOpen] = useState(false);
   const [isSwitchingTemplate, setIsSwitchingTemplate] = useState(false);
   const [isRegenerating, setIsRegenerating] = useState(false);
-  const [completedActions, setCompletedActions] = useState<Set<number>>(() => new Set());
+  const [completedActions, setCompletedActions] = useState<Set<string>>(() => new Set(meeting.actionItems.filter((action) => action.completed).map((action) => action.id)));
+  const [pendingActions, setPendingActions] = useState<Set<string>>(() => new Set());
+  const [summaryContent, setSummaryContent] = useState<Partial<Record<SummaryTemplate, SummarySection[]>>>(meeting.summaries);
+  const [apiError, setApiError] = useState<string | null>(null);
   const [focusedTimestamp, setFocusedTimestamp] = useState<string | null>(null);
   const [shareTarget, setShareTarget] = useState<ShareableMoment | null | undefined>(undefined);
   const [shareClip, setShareClip] = useState<ShareableClip | undefined>(undefined);
@@ -129,8 +87,6 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
   const currentTimeRef = useRef(0);
   const transcriptRefs = useRef(new Map<string, HTMLLIElement>());
   const templateTimerRef = useRef<number | null>(null);
-  const regenerateTimerRef = useRef<number | null>(null);
-  const askTimerRef = useRef<number | null>(null);
   const focusTimerRef = useRef<number | null>(null);
 
   const transcript = useMemo(
@@ -206,8 +162,6 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
 
   useEffect(() => () => {
     if (templateTimerRef.current) window.clearTimeout(templateTimerRef.current);
-    if (regenerateTimerRef.current) window.clearTimeout(regenerateTimerRef.current);
-    if (askTimerRef.current) window.clearTimeout(askTimerRef.current);
     if (focusTimerRef.current) window.clearTimeout(focusTimerRef.current);
   }, []);
 
@@ -248,12 +202,23 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
     templateTimerRef.current = window.setTimeout(() => setIsSwitchingTemplate(false), 220);
   };
 
-  const regenerateSummary = () => {
+  const regenerateSummary = async () => {
     setTemplateMenuOpen(false);
     setCustomizationOpen(false);
     setIsRegenerating(true);
-    if (regenerateTimerRef.current) window.clearTimeout(regenerateTimerRef.current);
-    regenerateTimerRef.current = window.setTimeout(() => setIsRegenerating(false), 900);
+    setApiError(null);
+    try {
+      const response = await fetch(`/api/meetings/${meeting.id}/summaries/regenerate`, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ template: summaryTemplate }),
+      });
+      if (!response.ok) throw new Error("Could not regenerate the summary.");
+      const result = await response.json() as { summary: { content: SummarySection[] } };
+      setSummaryContent((current) => ({ ...current, [summaryTemplate]: result.summary.content }));
+    } catch (error) {
+      setApiError(error instanceof Error ? error.message : "Could not regenerate the summary.");
+    } finally {
+      setIsRegenerating(false);
+    }
   };
 
   const startClipSelection = () => {
@@ -278,31 +243,69 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
     });
   };
 
-  const askMeeting = (question: string) => {
+  const askMeeting = async (question: string) => {
     const trimmedQuestion = question.trim();
     if (!trimmedQuestion) return;
 
     setAskQuestion(trimmedQuestion);
     setAskAnswer(null);
     setIsAnswering(true);
-    if (askTimerRef.current) window.clearTimeout(askTimerRef.current);
-    askTimerRef.current = window.setTimeout(() => {
-      setAskAnswer(buildMeetingAnswer(meeting, trimmedQuestion));
+    setApiError(null);
+    try {
+      const response = await fetch(`/api/meetings/${meeting.id}/ask`, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: trimmedQuestion }),
+      });
+      if (!response.ok) throw new Error("Could not answer this question.");
+      const result = await response.json() as { answer: AskAnswer };
+      setAskAnswer(result.answer);
+    } catch (error) {
+      setApiError(error instanceof Error ? error.message : "Could not answer this question.");
+    } finally {
       setIsAnswering(false);
-    }, 650);
+    }
   };
 
-  const toggleAction = (index: number) => {
-    setCompletedActions((current) => {
-      const next = new Set(current);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
-      return next;
-    });
+  const toggleAction = async (id: string) => {
+    if (pendingActions.has(id)) return;
+    setPendingActions((current) => new Set(current).add(id));
+    setApiError(null);
+    const completed = !completedActions.has(id);
+    try {
+      const response = await fetch(`/api/action-items/${id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ completed }),
+      });
+      if (!response.ok) throw new Error("Could not update the action item.");
+      setCompletedActions((current) => {
+        const next = new Set(current);
+        if (completed) next.add(id); else next.delete(id);
+        return next;
+      });
+    } catch (error) {
+      setApiError(error instanceof Error ? error.message : "Could not update the action item.");
+    } finally {
+      setPendingActions((current) => { const next = new Set(current); next.delete(id); return next; });
+    }
+  };
+
+  const shareSelectedClip = async () => {
+    if (!selectedClip) return;
+    setApiError(null);
+    try {
+      const response = await fetch("/api/clips", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ meetingId: meeting.id, startSeconds: timestampToSeconds(selectedClip.start), endSeconds: timestampToSeconds(selectedClip.endTime) }),
+      });
+      if (!response.ok) throw new Error("Could not create the clip.");
+      const result = await response.json() as { clip: { id: string } };
+      setShareClip({ ...selectedClip, id: result.clip.id });
+    } catch (error) {
+      setApiError(error instanceof Error ? error.message : "Could not create the clip.");
+    }
   };
 
   return (
     <main className="meeting-detail-page">
+      {apiError && <p role="alert">{apiError}</p>}
       <Link className="back-link detail-back-link" href="/">
         <ArrowLeft size={16} aria-hidden="true" />
         Back to My Calls
@@ -444,7 +447,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
                 <button
                   className="clip-share-action"
                   disabled={!selectedClip}
-                  onClick={() => selectedClip && setShareClip(selectedClip)}
+                  onClick={shareSelectedClip}
                   type="button"
                 >
                   <Share2 size={12} /> Share clip
@@ -665,7 +668,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
             <div className="summary-customization" role="dialog" aria-label="Customize summary template">
               <div>
                 <strong>Customize summary</strong>
-                <p>Choose how these seeded meeting notes are organized. Your selection stays active on this page.</p>
+                <p>Choose how these meeting notes are organized. Your selection stays active on this page.</p>
               </div>
               <button aria-label="Close summary customization" onClick={() => setCustomizationOpen(false)} type="button">
                 <X size={15} />
@@ -695,7 +698,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
             {isRegenerating ? (
               <div className="summary-regenerate-skeleton" role="status">
                 <span className="sr-only">Regenerating the {summaryTemplates[summaryTemplate].label} summary</span>
-                {Array.from({ length: summaryTemplate === "enhanced" ? meeting.summary.length : 3 }, (_, index) => (
+                {Array.from({ length: summaryTemplate === "enhanced" ? (summaryContent.enhanced?.length ?? 0) : 3 }, (_, index) => (
                   <div key={index}>
                     <i /><span /><span />
                   </div>
@@ -703,7 +706,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
               </div>
             ) : summaryTemplate === "enhanced" ? (
               <div className="enhanced-summary">
-                {meeting.summary.map((section, index) => (
+                {(summaryContent.enhanced ?? []).map((section, index) => (
                   <article className="summary-section" key={section.heading}>
                     <span>{String(index + 1).padStart(2, "0")}</span>
                     <div>
@@ -719,7 +722,9 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
                   <p>Meeting demo brief</p>
                   <h3>{meeting.title}</h3>
                 </div>
-
+                {summaryContent.demo ? summaryContent.demo.map((section) => (
+                  <article key={section.heading}><h4>{section.heading}</h4><p>{section.body}</p></article>
+                )) : <>
                 <article>
                   <h4>Overview</h4>
                   <ul>
@@ -748,6 +753,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
                     ))}
                   </ul>
                 </article>
+                </>}
               </div>
             )}
           </div>
@@ -769,9 +775,9 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
             </div>
 
             <div className="action-items-list">
-              {meeting.actionItems.map((action, index) => {
+              {meeting.actionItems.map((action) => {
                 const participant = participantsByName.get(action.owner);
-                const complete = completedActions.has(index);
+                const complete = completedActions.has(action.id);
 
                 return (
                   <div className={`action-item ${complete ? "complete" : ""}`} key={`${action.owner}-${action.task}`}>
@@ -779,7 +785,8 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
                       <input
                         aria-label={`Mark ${action.task} as ${complete ? "open" : "completed"}`}
                         checked={complete}
-                        onChange={() => toggleAction(index)}
+                        disabled={pendingActions.has(action.id)}
+                        onChange={() => toggleAction(action.id)}
                         type="checkbox"
                       />
                       <span><Check size={13} /></span>
@@ -850,7 +857,7 @@ export function MeetingDetail({ meeting }: { meeting: Meeting }) {
               </div>
               <span>{meeting.participants.length}</span>
             </div>
-            <p className="talk-time-note">Estimated from the time between seeded transcript turns.</p>
+            <p className="talk-time-note">Estimated from the time between transcript turns.</p>
             <div className="talk-time-list">
               {talkTime.map(({ participant, percentage, seconds }) => (
                 <div className="talk-time-row" key={participant.name}>

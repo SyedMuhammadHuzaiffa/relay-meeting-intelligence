@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, Copy, Link2, Share2, X } from "lucide-react";
-import type { Meeting } from "@/data/meetings";
+import type { Meeting } from "@/types/meeting";
 import { getMomentId, type ShareableClip, type ShareableMoment } from "@/lib/sharing";
 import { formatDuration } from "@/lib/formatters";
 
@@ -28,7 +28,7 @@ export function ShareDialog({
   const sharePath = useMemo(() => {
     const base = `/share/${meeting.id}`;
     if (clip) {
-      const query = new URLSearchParams({ clipStart: clip.start, clipEnd: clip.end });
+      const query = clip.id ? new URLSearchParams({ clip: clip.id }) : new URLSearchParams({ clipStart: clip.start, clipEnd: clip.end });
       return `${base}?${query.toString()}`;
     }
     return moment ? `${base}?moment=${encodeURIComponent(getMomentId(moment))}` : base;

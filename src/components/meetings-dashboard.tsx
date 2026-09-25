@@ -16,7 +16,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import type { Meeting } from "@/data/meetings";
+import type { Meeting } from "@/types/meeting";
 import { formatDuration, formatMeetingDate } from "@/lib/formatters";
 
 type Filter = "all" | "shared" | "private";
@@ -154,7 +154,7 @@ function MeetingRow({ meeting, featured }: { meeting: Meeting; featured: boolean
             <span><CalendarDays size={14} />{formatMeetingDate(meeting.date)} · {meeting.time}</span>
             <span><Clock3 size={14} />{formatDuration(meeting.durationSeconds)}</span>
           </div>
-          <p>{meeting.summary[0].body}</p>
+          <p>{meeting.summary[0]?.body ?? "No summary available yet."}</p>
         </div>
 
         <div className="participant-column">

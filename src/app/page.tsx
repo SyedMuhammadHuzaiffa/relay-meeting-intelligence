@@ -1,8 +1,11 @@
 import { AppShell } from "@/components/app-shell";
 import { MeetingsDashboard } from "@/components/meetings-dashboard";
-import { meetings } from "@/data/meetings";
+import { listMeetings } from "@/lib/server/meetings";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const meetings = await listMeetings();
   return (
     <AppShell>
       <MeetingsDashboard meetings={meetings} />
