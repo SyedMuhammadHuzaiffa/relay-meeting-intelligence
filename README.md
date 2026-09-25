@@ -8,8 +8,9 @@ The Next.js App Router frontend reads meetings through server-side repository co
 
 1. Run `npm install`.
 2. In a Supabase project, apply `supabase/migrations/20260925000000_meeting_foundation.sql` in the SQL Editor, then apply `supabase/seed.sql`. The seed inserts missing demo records and preserves later action or summary changes. `npm run seed:generate` regenerates the seed from the historical dataset if needed; do not rerun the migration or seed on a populated database without reviewing the SQL first.
-3. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` locally. The secret key stays server-side; never prefix it with `NEXT_PUBLIC_` or commit `.env.local`.
-4. Run `npm run dev` and open `http://localhost:3000`.
+3. Apply `supabase/migrations/20260925010000_import_meetings.sql` to enable atomic imports of meeting records, participants, and transcript turns.
+4. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` locally. The secret key stays server-side; never prefix it with `NEXT_PUBLIC_` or commit `.env.local`.
+5. Run `npm run dev` and open `http://localhost:3000`.
 
 The migration enables row level security without browser policies. Server routes use the configured server key. This demo has no production authentication or per-user authorization, so it must not hold private customer meetings as-is.
 
@@ -28,6 +29,7 @@ Action completion, generated summary formats, and clips are persisted in Postgre
 | Route | Purpose |
 | --- | --- |
 | `GET /api/meetings` | All hydrated meetings |
+| `POST /api/meetings` | Validate and persist a meeting, participants, and transcript atomically |
 | `GET /api/meetings/[id]` | Full meeting record |
 | `GET /api/meetings/[id]/transcript` | Ordered transcript |
 | `GET /api/meetings/[id]/summary?template=enhanced` | Stored summary |
@@ -37,6 +39,8 @@ Action completion, generated summary formats, and clips are persisted in Postgre
 | `GET /api/clips/[id]` | Load a saved clip |
 | `POST /api/meetings/[id]/ask` | Deterministic answer using meeting data |
 | `POST /api/meetings/[id]/summaries/regenerate` | Persist a structured or demo brief |
+
+Use **Import meeting** from Home or Meetings to add a transcript. Each non-empty line uses `MM:SS Speaker: words` (or `HH:MM:SS`); square-bracket timestamps and a dash before speaker names are also accepted. Date and duration can be supplied, otherwise Relay uses the current date and derives duration from the last timestamp.
 
 ## Validation
 

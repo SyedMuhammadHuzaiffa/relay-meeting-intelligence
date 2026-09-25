@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, CheckCircle2, Clock3, Search, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock3, Plus, Search, Sparkles } from "lucide-react";
 import type { Meeting } from "@/types/meeting";
 import { formatDuration, formatMeetingDate } from "@/lib/formatters";
 
@@ -29,7 +29,7 @@ export function MeetingsDashboard({ meetings, area = "home" }: { meetings: Meeti
   const clips = meetings.flatMap((meeting) => meeting.clips.map((clip) => ({ clip, meeting })));
   const highlights = meetings.flatMap((meeting) => meeting.highlights.map((highlight) => ({ highlight, meeting })));
   return <main className="relay-page">
-    <div className="page-intro"><div><p className="overline">RELAY / {area.toUpperCase()}</p><h1>{area === "home" ? "Your meetings, in focus." : area === "meetings" ? "Meetings" : area === "intelligence" ? "Intelligence" : "Library"}</h1><p>{area === "home" ? "A clear view of the conversations, decisions, and follow-through in your workspace." : area === "meetings" ? "Every conversation, with its context close at hand." : area === "intelligence" ? "Patterns and signals measured from your recorded conversations." : "Saved clips and moments from your meeting archive."}</p></div><span className="data-caption">LIVE DATA <i /> POSTGRESQL</span></div>
+    <div className="page-intro"><div><p className="overline">RELAY / {area.toUpperCase()}</p><h1>{area === "home" ? "Your meetings, in focus." : area === "meetings" ? "Meetings" : area === "intelligence" ? "Intelligence" : "Library"}</h1><p>{area === "home" ? "A clear view of the conversations, decisions, and follow-through in your workspace." : area === "meetings" ? "Every conversation, with its context close at hand." : area === "intelligence" ? "Patterns and signals measured from your recorded conversations." : "Saved clips and moments from your meeting archive."}</p></div><div className="page-intro-actions"><span className="data-caption">LIVE DATA <i /> POSTGRESQL</span>{(area === "home" || area === "meetings") && <Link className="button primary import-link" href="/meetings/new"><Plus size={16} /> Import meeting</Link>}</div></div>
     {(area === "home" || area === "intelligence") && <section className="metric-grid" aria-label="Meeting metrics">
       <Metric label="Meetings" value={String(meetings.length)} caption={`${formatDuration(totalDuration)} of recorded time`} number="01" />
       <Metric label="Open actions" value={String(openActions.length)} caption={`${meetings.reduce((sum, meeting) => sum + meeting.actionItems.length, 0)} captured in total`} number="02" />

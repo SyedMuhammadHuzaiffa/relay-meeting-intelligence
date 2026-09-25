@@ -1,6 +1,7 @@
 import "server-only";
 import { getSupabase } from "@/lib/server/supabase";
 import { secondsToTimestamp } from "@/lib/time";
+import type { ParsedTranscriptLine } from "@/lib/transcript";
 import type { AskAnswer, Clip, Meeting, MeetingAnalytics, StoredSummary, SummarySection, SummaryTemplate } from "@/types/meeting";
 
 type DbMeeting = { id: string; title: string; occurred_at: string; duration_seconds: number; description: string | null; status: "shared" | "private" };
@@ -101,6 +102,29 @@ export async function getMeeting(id: string): Promise<Meeting | null> {
   if (result.error) throw new Error(result.error.message);
   if (!result.data) return null;
   return (await hydrateMeetings([result.data as DbMeeting]))[0];
+}
+
+export async function createImportedMeeting(input: { title: string; occurredAt: string; durationSeconds: number; lines: ParsedTranscriptLine[] }): Promise<Meeting> {
+  const db = getSupabase();
+  const id = `${input.title.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48) || "meeting"}-${crypto.randomUUID().slice(0, 8)}`;
+  const palette = ["#4169a1", "#7c6548", "#56796a", "#80648f", "#9a654f", "#537b89"];
+  const speakers = [...new Map(input.lines.map((line) => [line.speaker.toLocaleLowerCase(), line.speaker])).values()];
+  const participants = speakers.map((name, index) => ({ id: crypto.randomUUID(), name, role: "Participant", color: palette[index % palette.length] }));
+  const segments = input.lines.map((line, index) => ({
+    id: crypto.randomUUID(), speaker: participants.find((person) => person.name.toLocaleLowerCase() === line.speaker.toLocaleLowerCase())!.name,
+    startSeconds: line.startSeconds,
+    endSeconds: input.lines[index + 1]?.startSeconds > line.startSeconds ? input.lines[index + 1].startSeconds : line.startSeconds + 3,
+    text: line.text,
+  }));
+  const result = await db.rpc("create_imported_meeting", {
+    p_meeting: { id, title: input.title, occurred_at: input.occurredAt, duration_seconds: input.durationSeconds },
+    p_participants: participants,
+    p_segments: segments,
+  } as never);
+  if (result.error) throw new Error(result.error.message);
+  const meeting = await getMeeting(id);
+  if (!meeting) throw new Error("Created meeting could not be loaded");
+  return meeting;
 }
 
 export function getAnalytics(meeting: Meeting): MeetingAnalytics {
