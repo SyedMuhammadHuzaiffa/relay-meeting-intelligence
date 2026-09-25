@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed":"#001356","on-primary-fixed-variant":"#0035be","outline-variant":"#c4c5d9","surface-container-low":"#f5f3f6","surface-bright":"#faf9fb","surface-container-highest":"#e3e2e4","error":"#ba1a1a","primary-fixed":"#dde1ff","on-secondary-container":"#00217a","surface-container-high":"#e9e7ea","secondary-container":"#708cfd","on-tertiary-container":"#ffe9e3","primary-container":"#2b59ff","surface-tint":"#1049f1","on-surface":"#1b1c1e","surface-variant":"#e3e2e4","primary-fixed-dim":"#b9c3ff","secondary-fixed":"#dde1ff","on-background":"#1b1c1e","primary":"#003fdd","inverse-on-surface":"#f2f0f3","tertiary":"#982e00","on-error-container":"#93000a","inverse-surface":"#303032","on-tertiary-fixed":"#390c00","error-container":"#ffdad6","inverse-primary":"#b9c3ff","outline":"#747688","on-secondary-fixed-variant":"#173bab","on-secondary":"#ffffff","tertiary-container":"#c23d00","tertiary-fixed-dim":"#ffb59d","on-secondary-fixed":"#001453","on-tertiary-fixed-variant":"#832600","surface-container-lowest":"#ffffff","on-error":"#ffffff","secondary":"#3755c3","on-primary-container":"#ecedff","tertiary-fixed":"#ffdbd0","surface-dim":"#dbd9dc","background":"#faf9fb","on-tertiary":"#ffffff","surface":"#faf9fb","secondary-fixed-dim":"#b8c4ff","on-surface-variant":"#434656","on-primary":"#ffffff","surface-container":"#efedf0"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"2rem","margin":"1rem","space-lg":"1.25rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1rem"},"fontFamily":{"label-sm":["JetBrains Mono"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"label-md":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"code-snippet":["JetBrains Mono"]},"fontSize":{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl-mobile":["1.625rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1rem",{"lineHeight":"1.375rem","letterSpacing":"-0.01em","fontWeight":"600"}],"code-snippet":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-lowest z-50 flex flex-col justify-between items-center py-3 border-r border-outline-variant/30 select-none"><div class="flex flex-col items-center gap-4 w-full"><div class="relative flex items-center justify-center p-1.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group" title="Acme Corp · Eng"><img alt="Relay Logo" class="h-8 w-8 object-contain rounded" src="https://lh3.googleusercontent.com/aida/AEtjO1UsO2G3bU9ObLneSOo4-6hU5QY7WQzQccJFXL833M5XF6x8MkREExoRaec9tA7wQD41VLY0ZAUFTgVQxBYsb9U0vmX0CannjbX1HXAw-kl_ujr5VK7gX8F3-_xoNhg7Lv-27Ohg91fqnklljN9hLgjQcOtd9I3oNHFOntZO1boJzG1jjVu7Tatrfcch9F0B_m0uPanK9V5GFAi5qo3zgDphHjcDiC_pvBGJ-q8CqcHNCr3apFxbVRQYuQ"/><span class="absolute -bottom-1 -right-1 flex h-2.5 w-2.5 items-center justify-center"><span class="material-symbols-outlined text-[10px] text-on-surface-variant">domain</span></span></div><div class="w-8 h-[1px] bg-outline-variant/30"></div><nav class="flex flex-col items-center gap-2 w-full px-2" data-active-classes="bg-primary-container text-on-primary font-semibold relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary-container after:rounded-r"><a aria-current="page" class="group flex items-center justify-center w-11 h-11 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary-container after:rounded-r" data-path="cockpit" href="#" title="Home (Operational meeting cockpit)"><span class="material-symbols-outlined text-[20px]">grid_view</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="meetings" href="#" title="Meetings (Catalog of all syncs &amp; transcripts)"><span class="material-symbols-outlined text-[20px]">chat_bubble</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="intelligence" href="#" title="Intelligence (Cross-meeting synthesis &amp; trends)"><span class="material-symbols-outlined text-[20px]">insights</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="library" href="#" title="Library (Clips, templates, shared moments)"><span class="material-symbols-outlined text-[20px]">video_library</span></a></nav></div><div class="flex flex-col items-center gap-3 w-full px-2"><button class="group relative flex items-center justify-center w-10 h-10 rounded-full bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors" title="Quick Capture / Record" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span><span class="absolute top-1 right-1 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span></span></button><button class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Command Palette (⌘K)" type="button"><span class="font-label-sm text-label-sm font-semibold tracking-tighter">⌘K</span></button><button class="relative flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="relative pt-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEiA5b7wA73EU0_420Pci9EeKNg-8iJwB0SMdRYtLBL1ywTZpMx_UilZToOy3wk0VfETBnjnrn7FrVr5yc_tbRiQc2kroSHVvMFojmdGMf0QfpuD1rPD-9V68VZT4445CC3SN0lQEn5p_puJzn0Z-dDka1FG0s8Q_CfExAAGzrX_EvQoKWNcJuhXc9FUl0UAldB6BzwnV7l4QXw7kCCaHEVyyIpD0tTW6Mgq4Sfm8Po54H42yW7wU"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-surface-container-lowest" title="Active Now"></span></div></div></aside><div class="pl-16 min-h-screen flex flex-col"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md z-40 border-b border-outline-variant/30 px-6 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant whitespace-nowrap"><span class="hover:text-on-surface cursor-pointer">Acme Core</span><span class="text-outline-variant">/</span><button class="flex items-center gap-1 font-body-sm text-body-sm font-medium text-on-surface hover:text-primary transition-colors" type="button"><span>Product Syncs</span><span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span></button></div></div><div class="flex-1 max-w-xl mx-6 hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span><input class="w-full h-8 pl-9 pr-14 bg-surface-container-low border border-outline-variant/40 rounded text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest transition-all" placeholder="Jump to meetings, decisions, speaker quotes..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-highest border border-outline-variant/50 rounded pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-3 shrink-0"><button class="hidden lg:flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface px-2 py-1 rounded text-label-md font-label-md border border-outline-variant/30 hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span><span>Connect Calendar</span></button><div class="hidden sm:flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30 text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[14px]">calendar_today</span><span>This Week</span></div><button class="flex items-center gap-1.5 h-8 px-3 rounded bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-medium shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">auto_awesome</span><span>Ask Relay</span></button></div></header><main class="relative pt-14 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header / Scrub Bar Synchronized with 22:10 -->
+<div class="bg-surface-container-lowest px-6 py-3 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          RECORDED · SYNC #1084
+        </span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Q4 Core Architecture &amp; Latency Migration</h1>
+<span class="font-label-sm text-label-sm text-outline px-1.5 py-0.5 rounded bg-surface-container-low">42:18</span>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex items-center bg-surface-container-low px-2.5 py-1 rounded gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">graphic_eq</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">22:10</span>
+<span class="font-label-sm text-label-sm text-outline">/ 42:18</span>
+</div>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-medium" type="button">
+<span class="material-symbols-outlined text-[16px]">ios_share</span>
+<span>Share</span>
+</button>
+</div>
+</div>
+<!-- Timeline scrubber with current playhead at 22:10 (~52%) and highlighted clip segment (22:10 to 23:24) -->
+<div class="relative w-full h-4 flex items-center group cursor-pointer">
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative">
+<!-- Buffered track -->
+<div class="absolute left-0 top-0 bottom-0 w-3/4 bg-outline-variant/40 rounded-full"></div>
+<!-- Progress track to 22:10 (52.5%) -->
+<div class="absolute left-0 top-0 bottom-0 w-[52.5%] bg-secondary-container rounded-l-full"></div>
+<!-- Clip selection highlight on scrubber (22:10 to 23:24 ~ 52.5% to 55.4%) -->
+<div class="absolute left-[52.5%] top-0 bottom-0 w-[3.5%] bg-primary-container"></div>
+</div>
+<!-- Playhead indicator -->
+<div class="absolute left-[52.5%] w-3 h-3 bg-primary-container rounded-full shadow-md -translate-x-1/2 flex items-center justify-center">
+<div class="w-1 h-1 bg-surface-container-lowest rounded-full"></div>
+</div>
+<!-- Clip range start marker -->
+<div class="absolute left-[52.5%] -top-1 w-0.5 h-6 bg-primary -translate-x-1/2 pointer-events-none opacity-80"></div>
+<!-- Clip range end marker -->
+<div class="absolute left-[56%] -top-1 w-0.5 h-6 bg-primary -translate-x-1/2 pointer-events-none opacity-80"></div>
+</div>
+</div>
+<!-- Three-Zone Workstation Grid -->
+<div class="flex-1 w-full grid grid-cols-1 lg:grid-cols-[220px_minmax(560px,1fr)_340px] divide-none gap-0 bg-surface">
+<!-- ZONE 1: Meeting Intelligence Navigator (220px fixed) -->
+<aside class="bg-surface-container-lowest flex flex-col p-4 gap-5 shadow-sm">
+<!-- Navigation Pills -->
+<div class="flex flex-col gap-1">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1 px-2">Workspace View</div>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">space_dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">format_align_left</span>
+<span>Transcript</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary-container/40 text-on-primary px-1.5 py-0.2 rounded">384</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">bookmarks</span>
+<span>Clips &amp; Takeaways</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded text-on-surface-variant hover:bg-surface-container-low transition-colors font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+<span>Decision Graph</span>
+</a>
+</div>
+<!-- Quick Audio Playback Scrub Engine -->
+<div class="bg-surface-container-low rounded p-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">SYNCHRONIZED AUDIO</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest" type="button">1.25x</button>
+</div>
+<!-- Mini SVG Waveform -->
+<div class="flex items-center justify-between h-7 px-1 gap-0.5 text-secondary-container">
+<svg class="w-full h-full text-secondary" fill="currentColor" preserveaspectratio="none" viewbox="0 0 100 24">
+<rect height="8" rx="1" width="2" x="0" y="8"></rect>
+<rect height="12" rx="1" width="2" x="4" y="6"></rect>
+<rect height="4" rx="1" width="2" x="8" y="10"></rect>
+<rect height="18" rx="1" width="2" x="12" y="3"></rect>
+<rect height="14" rx="1" width="2" x="16" y="5"></rect>
+<rect height="6" rx="1" width="2" x="20" y="9"></rect>
+<rect height="20" rx="1" width="2" x="24" y="2"></rect>
+<rect height="10" rx="1" width="2" x="28" y="7"></rect>
+<rect height="16" rx="1" width="2" x="32" y="4"></rect>
+<rect height="8" rx="1" width="2" x="36" y="8"></rect>
+<rect height="18" rx="1" width="2" x="40" y="3"></rect>
+<rect height="12" rx="1" width="2" x="44" y="6"></rect>
+<rect class="text-primary" height="20" rx="1" width="2" x="48" y="2"></rect>
+<rect class="text-primary-container" height="22" rx="1" width="2" x="52" y="1"></rect>
+<rect class="text-primary-container" height="18" rx="1" width="2" x="56" y="3"></rect>
+<rect height="10" rx="1" width="2" x="60" y="7"></rect>
+<rect height="4" rx="1" width="2" x="64" y="10"></rect>
+<rect height="14" rx="1" width="2" x="68" y="5"></rect>
+<rect height="8" rx="1" width="2" x="72" y="8"></rect>
+<rect height="16" rx="1" width="2" x="76" y="4"></rect>
+<rect height="6" rx="1" width="2" x="80" y="9"></rect>
+<rect height="12" rx="1" width="2" x="84" y="6"></rect>
+<rect height="2" rx="1" width="2" x="88" y="11"></rect>
+<rect height="14" rx="1" width="2" x="92" y="5"></rect>
+<rect height="8" rx="1" width="2" x="96" y="8"></rect>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<button class="hover:text-on-surface" title="Rewind 10s" type="button"><span class="material-symbols-outlined text-[18px]">replay_10</span></button>
+<button class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-on-primary-fixed-variant transition-colors" title="Pause / Play" type="button">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+</button>
+<button class="hover:text-on-surface" title="Forward 10s" type="button"><span class="material-symbols-outlined text-[18px]">forward_10</span></button>
+</div>
+</div>
+<!-- Transcript Filter / Search Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-1">Filter Utterances</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface text-body-sm font-body-sm pl-8 pr-7 py-1.5 rounded focus:bg-surface-container-lowest focus:outline-none" type="text" value="redis"/>
+<button class="material-symbols-outlined absolute right-2 text-outline hover:text-on-surface text-[14px]" type="button">close</button>
+</div>
+<div class="flex items-center justify-between bg-primary-fixed/30 text-on-secondary-container px-2 py-1 rounded">
+<span class="font-label-sm text-label-sm font-semibold">14 matches</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">3 in clip</span>
+</div>
+</div>
+<!-- Speaker Distribution Filter -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Speakers</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline" type="button">Select all</button>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container-low cursor-pointer group">
+<div class="flex items-center gap-2">
+<input checked="" class="w-3.5 h-3.5 rounded accent-primary-container cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-1.5">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Portrait photo of Huzaifa, male tech host in clean architectural studio lighting, wearing dark minimalist shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpfK5WJysvLyaG7nt6zNLXcZGkiWzknfMRRe7_5O5Lf5z7D8HrhBcyFvWn2FYzet_0SAeMPgLGXGKag0Rhj4RSOTtBpGneaT3wjoVUNbkoh78MQ0kYSpaC3gYZ_3L0oaqC0UhV0Muf6MOlGhCcN1OQ7lVerXN86WRti-lH1tjOQnixA_5PUAZVvIBL_nvikQVwdaYsR4nwyYGSEUbwf38LrmMES1JNBDwPzstDu0AP_cCzCglWbBU"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Huzaifa</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold">32%</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container-low cursor-pointer group">
+<div class="flex items-center gap-2">
+<input checked="" class="w-3.5 h-3.5 rounded accent-primary-container cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-1.5">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Close-up headshot of Sarah Lin, female staff architect with glasses, softly diffused neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHPfVEIqqjt6O0W7gf_g6f_fqJkv3ce0BN00BmykqaLnQQZDcEQiwb77qYWxImfqnakee7zryRF1wMsIn367fTWy0olN_Wmvn1YGaWmihqjDnt00dSGdytyjdTRnX_XJiTpvfGVYgqk5OL_aZadL4WH-6lGkAzS8k-V-uGNImaIaZu9rsFxjgZq-uktkl_LsQB8GSdiJyRSYt6wm8Bd6nIsGw1yUuDzPkh-ajvBFwjTt-lus6nhjs"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Sarah Lin</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold">28%</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container-low cursor-pointer group">
+<div class="flex items-center gap-2">
+<input checked="" class="w-3.5 h-3.5 rounded accent-primary-container cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-1.5">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Photo of Marcus Chen, infrastructure lead engineer in muted navy crewneck, technical workspace atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbXm5cj1gQeygVzu9Q5rh1WyGL0_IftorkgIQsxDSwIPC7OrGqllRmnSWcZRaiCyB8FZWp0AjEl7PIZA5BIn0j3sQJo_oVbcPeuNkPzUUF7lyPoZdCg5m7AuLHEp6sWfSf_uyO-vE48Gxx4orLNYkKZ5A_YXC66fctO_yOM2bpaO3DCHDYUScxV1FXtY0H2qv6kc024h5f8LxTnbptrIULKTUOdt89ccJTd1OUcEkzQ6uOlxp6ch4"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Marcus Chen</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold">24%</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container-low cursor-pointer group">
+<div class="flex items-center gap-2">
+<input checked="" class="w-3.5 h-3.5 rounded accent-primary-container cursor-pointer" type="checkbox"/>
+<div class="flex items-center gap-1.5">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Candid professional headshot of Elena Vance, female principal engineer, warm neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrfAiQIwkEQpjHzuVlcacj0QTcl814PQbiBrc1mx-odflYtGCp_GL2tNq4L-gN3456m2IMjoBPhuT8OrD4_H1ypHuvm1UYODxFODlAsfIMoKQwFVXwY8vaGovmxXGcghpmZYm__aOlLKPKLJxMq5-m5ZhWjWbQ7blG3lCJ3i2zerHInDhNW26Cp2DofINR2YK_XGVa36V5hD9LBg9xP1DrglszsB4CXZZq-ReJIVTO59VUl3KQQ4M"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Elena Vance</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold">16%</span>
+</label>
+</div>
+</div>
+<!-- Quick Shortcuts Footnote -->
+<div class="mt-auto pt-4 bg-surface-container-lowest flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Highlight range</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-code-snippet text-code-snippet">Shift + Drag</kbd>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Create clip</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-code-snippet text-code-snippet">C</kbd>
+</div>
+</div>
+</aside>
+<!-- ZONE 2: High-Precision Transcript Reader & Interactive Clip Range (Fluid flex-1) -->
+<main class="flex flex-col bg-surface-container-lowest shadow-sm overflow-hidden">
+<!-- Mode Sub-bar -->
+<div class="px-8 py-3 bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-semibold text-outline">Viewing</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Full Transcript · 384 utterances</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">search</span>
+<span>“redis” highlighted</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md shadow-xs" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">my_location</span>
+<span>Jump to 22:10</span>
+</button>
+<div class="relative group">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md shadow-xs" type="button">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+<span>Export</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Utterance Flow Stream -->
+<div class="flex-1 p-6 md:p-8 flex flex-col gap-6 overflow-y-auto">
+<!-- Turn 1: Sarah Lin [21:55] -->
+<article class="flex items-start gap-4 group rounded-lg p-2.5 hover:bg-surface-container-low transition-colors">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Staff Architect Sarah Lin portrait, sharp clean composition, natural expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4V1LOIytvOa59ROzsJHE7fz-p17_bMX2YEYSK-gZNwSWTXGYyIomrV2NlVuaY3KyDGQPTF_SlZZcQ_qq8uhIZRvRQFFba7TDA0gA8rXHKc0VaIUkp349HabS5mDT6z4naVKsEbFxs5P9MFZWklN21XKKkY0OWANictfpJ5Kyr6zG6Oren2hjytWJulX8ZfwlEb-ruOnxbULODnM9CYC5NkU4i3Rw41I7Iqwzo_bZ5tlJMUZCbzMk"/>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Sarah Lin</span>
+<span class="font-label-sm text-label-sm text-outline">Staff Architect</span>
+<button class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors font-code-snippet text-code-snippet" type="button">21:55</button>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex items-center gap-1 transition-opacity">
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Play from here" type="button"><span class="material-symbols-outlined text-[16px]">play_arrow</span></button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Copy quote" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Looking at the Grafana dashboards from yesterday's stress test, the P99 latency on session token lookup climbed from 3ms to nearly 48ms when concurrent connections crossed 120,000.
+            </p>
+</div>
+</article>
+<!-- SELECTION CONTAINER ENCLOSING TURNS 2 & 3 (ACTIVE CLIP RANGE: 22:10 - 23:24) -->
+<div class="relative bg-primary-fixed/20 rounded-xl p-4 sm:p-5 flex flex-col gap-5 shadow-sm">
+<!-- Floating Precision Pill Action Toolbar pinned over top edge -->
+<div class="absolute -top-4 left-6 right-6 flex items-center justify-between bg-inverse-surface text-inverse-on-surface px-4 py-1.5 rounded-full shadow-lg z-20">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wide text-inverse-on-surface font-semibold truncate">
+                Selected: 01:14 · Huzaifa &amp; Marcus
+              </span>
+<span class="inline-flex items-center px-2 py-0.2 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-semibold">
+                Decision
+              </span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary hover:bg-primary font-body-sm text-body-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">movie_filter</span>
+<span>Create Shareable Moment</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container-highest/20 hover:bg-surface-container-highest/40 text-inverse-on-surface font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">format_quote</span>
+<span>Copy Quote</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container-highest/20 hover:bg-surface-container-highest/40 text-inverse-on-surface font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Assign Action</span>
+</button>
+</div>
+</div>
+<!-- Range Bounds Indicator -->
+<div class="flex items-center justify-between text-primary font-label-sm text-label-sm font-semibold pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">start</span>
+<span>CLIP START: 00:22:10</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span>CLIP END: 00:23:24</span>
+<span class="material-symbols-outlined text-[15px]">keyboard_tab</span>
+</div>
+</div>
+<!-- Turn 2: Huzaifa [22:10] (Active Playhead & Selected) -->
+<article class="flex items-start gap-4">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Huzaifa host engineer speaking during architectural review" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFSlA4BwkzLidbmfS972m-p4SRBOVr2iF_MVxn7wWD0tI1vScoxLBTQ8QzTUYGPTbzfKXKxjMRIv__KRq1jVqkiE3I_CFvFjaR9ZeXuZ3ZzNRUyebDWMhMVfvgFM38bc0swydKQhCrTlzHA6S4QShqb6ia0QfiNwATcP6UlEUnyUy9XzPyInNWCnVGYAmKQsSoUu_c6kH3DEFKxnqJ9Qzx-oUqblZCOZ5T3ZagJCYs_-Gv30CD8A"/>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Huzaifa</span>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary px-1.5 py-0.2 rounded font-medium">Host</span>
+<span class="font-label-sm text-label-sm text-primary font-code-snippet text-code-snippet font-semibold">22:10</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px] animate-pulse">volume_up</span>
+<span class="font-label-sm text-label-sm">Active playback</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                That confirms it. DynamoDB isn't keeping up without provisioned DAX clusters, which triples the baseline cost. Let's make the call: we are officially moving the session cache and user graph to <mark class="bg-primary-container/20 text-on-surface px-1 rounded font-medium font-code-snippet text-code-snippet">Redis Cluster</mark> with multi-AZ replication. Marcus, do you see any blockers on the terraform side?
+              </p>
+</div>
+</article>
+<!-- Turn 3: Marcus Chen [22:45] (Included in Selected Range) -->
+<article class="flex items-start gap-4">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Marcus Chen responding during infrastructure discussion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM48B35QT8uD_bjYK8sreOrj_3rdGnRHl_91TX5j4ccF_jOHzHzWqQ-AYSqqydG71tw9vVya3nzAKsqu5mKzKKj2Cs0Fq38fPzsqpvWDB1ctoBKG-X-AY0mFcPljHzyQzNLcO_sZkQS2FZEYJ2jhr8nYU1k_CTqaJ547pnA_3gwtcnKJGU02f4LTKXD78Rq3Iq8fXwHgZZWEZsdSMta81nN4JnOq_29S_73UeUoVBVrxqGqblMul4"/>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Marcus Chen</span>
+<span class="font-label-sm text-label-sm text-outline">Infra Lead</span>
+<span class="font-label-sm text-label-sm text-primary font-code-snippet text-code-snippet font-semibold">22:45</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                No blockers. We already have the VPC peering routes established. I can have a sandbox cluster spun up by Friday morning for the performance team to benchmark.
+              </p>
+</div>
+</article>
+</div>
+<!-- END SELECTION CONTAINER -->
+<!-- Turn 4: Elena Vance [23:30] -->
+<article class="flex items-start gap-4 group rounded-lg p-2.5 hover:bg-surface-container-low transition-colors">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Elena Vance principal engineer speaking in team sync" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnN_mVkO5HgjKozpXMXchXYYRHfLuHAfct6PLwdxJn7jPkiCq-Eq1oR_ArBzXNO2MgCyEAuyNd2J9VzOFhzHm5PyXGOoKLI8iC9qR-EAjK6bBbQXddmzRL-QqPXZ2VD1K9enWJnxN1V4_CrnhZtC1mxcu6p5xPYjeTiXWXijqT1ZZ1oSJmDckpZKzcpgfLJ_4zyAigeHMcZf8D9S9qan5R6Nh_8avtKCkk6FiKramf3wZJHiHGqN8"/>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Elena Vance</span>
+<span class="font-label-sm text-label-sm text-outline">Principal Eng</span>
+<button class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors font-code-snippet text-code-snippet" type="button">23:30</button>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex items-center gap-1 transition-opacity">
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Play from here" type="button"><span class="material-symbols-outlined text-[16px]">play_arrow</span></button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Copy quote" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Just make sure we configure the eviction policy to <code class="font-code-snippet text-code-snippet bg-surface-container px-1.5 py-0.5 rounded text-on-surface">volatile-lru</code> so background batch workers don't purge active user sessions.
+            </p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">policy</span>
+<span>AI Tag: Architecture Guardrail</span>
+</span>
+</div>
+</div>
+</article>
+<!-- Turn 5: Huzaifa [24:02] -->
+<article class="flex items-start gap-4 group rounded-lg p-2.5 hover:bg-surface-container-low transition-colors">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Huzaifa reviewing action items" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEcxRpPp2pv5RHIQmeR8jLZrmWzoxbIDfEMsw3Y5aopHwrBAE5Tave3POI0IuVzytfzX9Px8T3fQgSCJbcrKYQ0i1-9X7vMt1HnGJtINkz63zCLdljCaM7eT0ze7srPIkp89SEq7W1hgcO5HV6BJv-jZWY6zef7dLHCw7Z5eGCESRMSeT2_33oEqeFDruMrAbUtEMNTvPepPynSn7DtkNxB_rBnpopb7ibblonW34lDIwsTscaZDU"/>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Huzaifa</span>
+<span class="font-label-sm text-label-sm text-outline">Host</span>
+<button class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors font-code-snippet text-code-snippet" type="button">24:02</button>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex items-center gap-1 transition-opacity">
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Play from here" type="button"><span class="material-symbols-outlined text-[16px]">play_arrow</span></button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded" title="Copy quote" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Agreed. That's a critical constraint. Let's document that in the RFC.
+            </p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-tertiary">task_alt</span>
+<span>Action created for Marcus (Linear sync pending)</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- ZONE 3: Active Selection & Clip Creator Inspector (320px fixed) -->
+<aside class="bg-surface-container-low flex flex-col p-4 sm:p-5 gap-5 shadow-sm overflow-y-auto">
+<!-- Panel Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">content_cut</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Clip &amp; Moment Inspector</h2>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+          Active Selection
+        </span>
+</div>
+<!-- Active Clip Meta Editor Card -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3.5">
+<!-- Title Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Moment Title</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm font-semibold px-2.5 py-1.5 rounded focus:bg-surface-container-lowest focus:outline-none" type="text" value="Architectural Decision: Adopting Redis Cluster"/>
+</div>
+<!-- Range Badge & Duration -->
+<div class="flex items-center justify-between bg-surface-container px-3 py-2 rounded">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">timelapse</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">00:22:10 — 00:23:24</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-1.5 py-0.5 bg-surface-container-low rounded font-medium">1m 14s</span>
+</div>
+<!-- Speakers in Clip -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Speakers in Clip</span>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Avatar Huzaifa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQALdip2b98dZ84SsTEid3iA54ZDFIFluWglutCNjSFl6jiswwNGABgY-U247w8IDzGYxM9L4836SE_0D8k4zxs2uvxZOL_uls5gZJwO6YoCGafhoNKWJh10E0mQ5dSXnXbJJgXgA2rwOwXbar_9NuyR0BrwRYTyMEZeyZQNJMMh9dgRGS9kWJISg8yT2XqG8_r8NSsMqvaet5FDJsN1ksgf5B9VFqVfeNT2EtjabqxiDnQVENeWk"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Huzaifa (Host)</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Avatar Marcus Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1Ndv8Gp3BSlVPJmSQmnKpVHjB02nq_BIOIcx6UFqZXBzKGPQbV7QHZpqqVFGUo-CdlcwdO0sf3lwGbdmNlIGrqXUyLwyN3jAlhNY1kq4dKUd4sDRrnZhaKlhfraO4zoBRmmrQQRFl5x-kX0y_8xbgvod9hrKb51um9FcYT_8QwVS09mT9rSE0Zhr-CkmMazGdhxaMz2cqC-Eb1dSrCj2q0tTYX5o3ZlChfX5IqMV3oaCkwdxtvRo"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Marcus Chen (Infra)</span>
+</div>
+</div>
+</div>
+<!-- AI Generated Takeaway -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-2.5 rounded">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>AI Automated Synthesis</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Huzaifa confirmed moving the session cache and user graph to Redis Cluster after P99 latency issues with DynamoDB. Marcus confirmed no infrastructure blockers.
+          </p>
+</div>
+<!-- Generated Action Items in this Clip -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Generated Action</span>
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded">
+<input checked="" class="w-3.5 h-3.5 mt-0.5 rounded accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+              Marcus to provision Redis sandbox cluster by Friday morning.
+            </span>
+</div>
+</div>
+<!-- Permissions & Public Share Link -->
+<div class="flex flex-col gap-2 pt-2 bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Public Executive Share Link</span>
+<!-- Toggle switch active -->
+<button class="w-8 h-4 bg-primary rounded-full relative p-0.5 flex items-center justify-end" title="Toggle active" type="button">
+<div class="w-3 h-3 bg-surface-container-lowest rounded-full shadow-xs"></div>
+</button>
+</div>
+<div class="flex items-center bg-surface-container px-2 py-1.5 rounded gap-2">
+<span class="material-symbols-outlined text-[15px] text-outline">link</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">relay.workspace/share/moment/x9k2-redis-decision</span>
+<button class="material-symbols-outlined text-[15px] text-primary hover:text-on-primary-fixed-variant shrink-0" title="Copy URL" type="button">content_copy</button>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 rounded bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors mt-1" type="button">
+<span class="material-symbols-outlined text-[16px]">share_windows</span>
+<span>Generate Public Moment Link</span>
+</button>
+</div>
+</div>
+<!-- Segment Q&A / Ask Relay in this selection -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">psychology</span>
+<h3 class="font-body-sm text-body-sm font-semibold">Ask Relay in this segment</h3>
+</div>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-2.5 py-1.5 pr-8 rounded focus:outline-none" type="text" value="Why did we rule out DynamoDB?"/>
+<button class="material-symbols-outlined absolute right-2 text-primary text-[18px]" type="button">arrow_forward</button>
+</div>
+<div class="bg-surface-container-low rounded p-2.5 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+            Quick Answer
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Ruled out because P99 latency climbed to 48ms at 120k connections, and adding DAX clusters would triple baseline costs.
+          </p>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

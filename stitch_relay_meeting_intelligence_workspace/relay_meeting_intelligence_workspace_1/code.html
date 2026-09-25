@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#747687", "on-tertiary-fixed": "#2f1500", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#0037b9", "on-secondary-container": "#00714e", "primary-container": "#2554e8", "surface-tint": "#1c4ee3", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container-high": "#eae7eb", "surface-container-low": "#f6f2f7", "primary-fixed-dim": "#b8c4ff", "on-tertiary-fixed-variant": "#6e3900", "surface-bright": "#fbf8fc", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#005137", "outline-variant": "#c4c5d8", "inverse-primary": "#b8c4ff", "on-primary-fixed": "#001453", "secondary-fixed-dim": "#68dba9", "on-surface": "#1b1b1e", "on-primary-container": "#dadfff", "on-error": "#ffffff", "surface": "#fbf8fc", "on-secondary": "#ffffff", "inverse-on-surface": "#f3f0f4", "surface-variant": "#e4e1e6", "inverse-surface": "#303033", "error-container": "#ffdad6", "secondary-fixed": "#85f8c4", "primary": "#003bc4", "background": "#fbf8fc", "primary-fixed": "#dde1ff", "tertiary-container": "#985100", "on-tertiary-container": "#ffd9bf", "on-surface-variant": "#434655", "tertiary-fixed": "#ffdcc3", "on-secondary-fixed": "#002114", "on-background": "#1b1b1e", "surface-container": "#f0edf1", "surface-container-highest": "#e4e1e6", "error": "#ba1a1a", "secondary": "#006c4a", "secondary-container": "#82f5c1", "tertiary-fixed-dim": "#ffb77d", "surface-dim": "#dcd9dd", "tertiary": "#753d00" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin-desktop": "2rem", "margin": "1rem", "space-lg": "1rem" }, fontFamily: { "headline-xl": ["Geist"], "code-md": ["JetBrains Mono"], "body-md": ["Geist"], "headline-md": ["Geist"], "body-lg": ["Geist"], "label-sm": ["JetBrains Mono"], "label-md": ["JetBrains Mono"], "body-sm": ["Geist"], "headline-lg": ["Geist"] }, fontSize: { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-md": ["12px", { "lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-low border-r border-outline-variant z-50 flex flex-col items-center justify-between py-space-md"><div class="flex flex-col items-center gap-space-lg w-full"><a class="flex items-center justify-center h-10 w-10" href="#"><img alt="Relay Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYc2qVFA3pkLM7hllAteTNQuiEagNafsUXhhTjdezV1cqTFxtxacJ7Vb9Qb83-yuHEVQwMLq4lDrqaDqSBqKia-Bw_Sppn76iLLsFIxa3ZB4Xq_HtviOI0x0xryQu7Aie5O6rO8d9tQjuz2MhzKEXpozczpDEnMDdSRk4PA--eHXBSOS_REhIccu47vtAHXjM1PRH3aCmcw85eNUBsgHQy7fakkhDvjy1tjc8DIS-hkT_yCvOSvraM"/></a><nav class="flex flex-col items-center gap-space-xs w-full px-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary after:rounded-r"><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#" title="Home"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Home</span></a><a aria-current="page" class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg transition-all bg-primary-container text-on-primary font-bold shadow-sm relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary after:rounded-r" data-path="meetings" href="#" title="Meetings"><span class="material-symbols-outlined text-[20px]">videocam</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Meets</span></a><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="intelligence" href="#" title="Intelligence"><span class="material-symbols-outlined text-[20px]">psychology</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Intel</span></a><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="library" href="#" title="Library"><span class="material-symbols-outlined text-[20px]">folder_data</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Library</span></a></nav></div><div class="flex flex-col items-center gap-space-sm w-full px-space-xs"><button class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container hover:text-on-surface transition-colors" title="Acme Corp / Core Platform"><span class="material-symbols-outlined text-[18px]">domain</span></button><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#" title="Settings"><span class="material-symbols-outlined text-[20px]">settings</span></a><div class="relative flex items-center justify-center pt-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe5ftBqWf5BzPBErTNVfz8ip7SQLu0EEvNWdCjd4njdCZbsaxz-5JdCfMjTbj8ELoyGppS9sRhGeTybEEO_xPov0sAMXZTP3m_JspcOjFiAf6yOD_mxlg0b7--KXT3wKrBfBOadFnOkI-k9ZC1jZWOChQrg611aUFyPDVf_T87BC9ZzkGAPZuTa2Eq28aur1j_pTlMg7GEFCGvlkc4K5fPw9UUpbQ7QNVR46KVjultht_ua1PS834"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-low"></span></div></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Acme Corp</span><span class="text-outline-variant">/</span><span class="hover:text-on-surface cursor-pointer">Core Platform</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Workspace</span></div></div><div class="flex-1 max-w-md mx-gutter-desktop"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-on-surface-variant">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Search meetings, decisions, topics..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 bg-surface-container-lowest border border-outline-variant rounded font-code-md text-label-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="h-8 px-space-md bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">radio_button_checked</span><span>Record / Import</span></button><button class="h-8 w-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button class="h-8 w-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-[18px]">help_outline</span></button></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Header Bar -->
+<header class="w-full bg-surface-container-lowest px-gutter-desktop py-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Breadcrumb & Title Area -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer transition-colors">Meetings</span>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Engineering Architecture</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Q3 Review</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Q3 Architecture Review: Event Bus vs Kafka Streams</h1>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            SOC2 Verified
+          </span>
+</div>
+<!-- Metadata Badges Bar -->
+<div class="flex items-center gap-space-xs flex-wrap font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+            Aug 4, 2025 • 11:00 AM EDT
+          </span>
+<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+            48m 12s
+          </span>
+<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px]">group</span>
+            6 Participants
+          </span>
+<span class="px-2 py-1 rounded bg-secondary-container/30 text-on-secondary-container font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+            Compliant Pipeline
+          </span>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-xs self-start lg:self-center">
+<button class="h-8 px-space-md rounded bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all">
+<span class="material-symbols-outlined text-[15px]">share</span>
+<span>Share Moment</span>
+</button>
+<button class="h-8 px-space-md rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+<span>Export Summary</span>
+</button>
+<div class="relative group">
+<button class="h-8 px-2 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center gap-1 transition-colors" title="Regenerate AI Brief">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_mode</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<button class="h-8 w-8 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Interactive Scrubbable Timeline -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low/60 rounded-lg p-space-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1.5">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+            Session Multitrack
+          </span>
+<span class="text-outline">Scrub anywhere to inspect intelligence layers</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-primary"></span> Marcus V. (Lead)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-secondary"></span> Huzaifa A. (Host)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-tertiary"></span> Elena R. (SRE)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-outline"></span> Liam K.</span>
+</div>
+</div>
+<!-- Scrubber container -->
+<div class="relative w-full h-16 bg-surface-container-lowest rounded overflow-hidden cursor-crosshair group shadow-inner">
+<!-- Speaker Lane micro-bars -->
+<div class="absolute inset-x-0 top-0 h-7 flex items-center px-1 gap-[2px]">
+<!-- Synthetic Speaker Activity Segments -->
+<div class="h-4 rounded-sm bg-secondary" style="width: 12%;" title="Huzaifa A. (Intro & agenda)"></div>
+<div class="h-4 rounded-sm bg-primary" style="width: 18%;" title="Marcus V. (Kafka proposals)"></div>
+<div class="h-4 rounded-sm bg-tertiary" style="width: 9%;" title="Elena R. (Memory concerns)"></div>
+<div class="h-4 rounded-sm bg-primary" style="width: 15%;" title="Marcus V. (Partitioning models)"></div>
+<div class="h-4 rounded-sm bg-outline" style="width: 8%;" title="Liam K. (Throughput benchmarks)"></div>
+<div class="h-4 rounded-sm bg-secondary" style="width: 14%;" title="Huzaifa A. (Cost trade-offs)"></div>
+<div class="h-4 rounded-sm bg-primary" style="width: 16%;" title="Marcus V. (Dual-write timeline)"></div>
+<div class="h-4 rounded-sm bg-tertiary" style="width: 8%;" title="Elena R. (Canary deploy)"></div>
+</div>
+<!-- Intelligence Markers Lane -->
+<div class="absolute inset-x-0 bottom-1 h-7 flex items-center px-2">
+<!-- Decisions: 12:40 (26%), 31:15 (65%), 42:00 (87%) -->
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 26.2%;">
+<span class="material-symbols-outlined text-[15px] text-secondary bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">check_circle</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">12:40</span>
+</div>
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 64.8%;">
+<span class="material-symbols-outlined text-[15px] text-secondary bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">check_circle</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">31:15</span>
+</div>
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 87.1%;">
+<span class="material-symbols-outlined text-[15px] text-secondary bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">check_circle</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">42:00</span>
+</div>
+<!-- Actions: 18:20 (38%), 28:45 (59%), 39:10 (81%) -->
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 38.0%;">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">bolt</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">18:20</span>
+</div>
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 59.5%;">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">bolt</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">28:45</span>
+</div>
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 81.2%;">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">bolt</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">39:10</span>
+</div>
+<!-- Highlights: 04:15 (8.8%), 22:30 (46.6%) -->
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 8.8%;">
+<span class="material-symbols-outlined text-[14px] text-primary bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">lightbulb</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">04:15</span>
+</div>
+<div class="absolute flex flex-col items-center group/marker cursor-pointer" style="left: 46.6%;">
+<span class="material-symbols-outlined text-[14px] text-primary bg-surface-container-lowest rounded-full shadow-sm hover:scale-125 transition-transform">lightbulb</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">22:30</span>
+</div>
+</div>
+<!-- Active Scrubber Playhead [24:18] (50.4%) with Interactive Tooltip -->
+<div class="absolute top-0 bottom-0 w-[2px] bg-primary-container z-20" style="left: 50.4%;">
+<div class="absolute -top-1 -translate-x-1/2 w-2.5 h-2.5 bg-primary rounded-full shadow"></div>
+<!-- Tooltip Callout -->
+<div class="absolute -top-9 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded shadow-lg font-code-md text-label-sm whitespace-nowrap flex items-center gap-1.5 pointer-events-none">
+<span class="text-primary-fixed font-bold">[24:18]</span>
+<span>Discussion: Message deduplication guarantees</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Workspace Multi-Pane Area -->
+<div class="w-full grid grid-cols-1 md:grid-cols-12 gap-space-lg p-gutter-desktop">
+<!-- LEFT ZONE: Navigation Rail (Cols 1-2 on desktop ~200px equivalent) -->
+<aside class="md:col-span-3 xl:col-span-2 flex flex-col gap-space-md">
+<nav class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm flex flex-col gap-1">
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded bg-primary-container text-on-primary font-headline-md text-body-sm text-left shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Overview</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">subject</span>
+<span>Transcript</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[10px]">4.8k</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">bolt</span>
+<span>Actions</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">4</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>Decisions</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] font-bold">3</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>
+<span>Highlights</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[10px]">5</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">equalizer</span>
+<span>Analytics</span>
+</div>
+</button>
+</nav>
+<!-- Quick Context Nav Filters -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Filter By Speaker</span>
+<div class="flex flex-col gap-1">
+<button class="flex items-center justify-between text-left p-1 rounded hover:bg-surface-container-low transition-colors text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+<span class="truncate text-on-surface font-medium">Marcus Vance</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">18m</span>
+</button>
+<button class="flex items-center justify-between text-left p-1 rounded hover:bg-surface-container-low transition-colors text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+<span class="truncate text-on-surface font-medium">Huzaifa A.</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">16m</span>
+</button>
+<button class="flex items-center justify-between text-left p-1 rounded hover:bg-surface-container-low transition-colors text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2 h-2 rounded-full bg-tertiary flex-shrink-0"></span>
+<span class="truncate text-on-surface font-medium">Elena Rostova</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">8m</span>
+</button>
+<button class="flex items-center justify-between text-left p-1 rounded hover:bg-surface-container-low transition-colors text-body-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2 h-2 rounded-full bg-outline flex-shrink-0"></span>
+<span class="truncate text-on-surface font-medium">Liam Kelly</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">4m</span>
+</button>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-low/40 rounded p-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">star</span>
+<span>Starred clips</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface bg-surface-container-lowest px-1.5 rounded">2</span>
+</div>
+</div>
+<!-- Quick Metadata Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-space-xs">Meeting Audio Origin</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">cloud_done</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Zoom Cloud Sync</span>
+<span class="font-label-sm text-label-sm text-outline">Raw FLAC • 48kHz lossless</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER MAIN ZONE: Rich Intelligence Stream (Cols 3-8 on desktop) -->
+<main class="md:col-span-9 xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Compact Docked Waveform Player -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-md">
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:bg-primary transition-colors shadow">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Rewind 10s">
+<span class="material-symbols-outlined text-[18px]">replay_10</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Forward 10s">
+<span class="material-symbols-outlined text-[18px]">forward_10</span>
+</button>
+<span class="font-code-md text-label-md text-on-surface">24:18 <span class="text-outline">/ 48:12</span></span>
+</div>
+<!-- Active Speaker indicator & audio rate -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span><strong class="font-medium">Marcus Vance</strong> speaking...</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-1.5 py-0.5 rounded bg-surface-container-low hover:bg-surface-container font-code-md text-label-sm text-on-surface">1.2x</button>
+<button class="text-on-surface-variant hover:text-on-surface p-1"><span class="material-symbols-outlined text-[16px]">volume_up</span></button>
+</div>
+</div>
+</div>
+<!-- Mini waveform visualizer -->
+<div class="h-6 w-full flex items-center gap-[2px] pt-1">
+<!-- Synthetic Wave bars -->
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-4 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-3 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-5 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-2 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-3 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-4 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-2 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-3 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-5 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-2 bg-outline-variant rounded-full"></div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+</div>
+</div>
+<!-- SECTION A: Executive Brief (AI Synthesized) -->
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Executive Brief</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] uppercase font-bold">Relay Synthesis</span>
+</div>
+<button class="font-label-sm text-label-sm text-outline hover:text-on-surface flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+            Copy Brief
+          </button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/40">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-[11px] font-bold mt-0.5 flex-shrink-0">1</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              The team formally approved migrating the core telemetry pipeline to a dedicated <strong class="font-semibold text-primary">Kafka topic cluster</strong> to guarantee strict message ordering and eliminate partition starvation.
+            </p>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/40">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-[11px] font-bold mt-0.5 flex-shrink-0">2</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Evaluated RabbitMQ event bus but identified <strong class="font-semibold text-error">throughput bottlenecks at >50k events/sec</strong> during peak ingest simulations, leaving Kafka as the only path forward.
+            </p>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low/40">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-[11px] font-bold mt-0.5 flex-shrink-0">3</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Agreed to stage rollout in <strong class="font-semibold text-secondary">dual-write mode starting September 1st</strong>, running parallel reconciliation for 30 days to minimize cutover and zero-downtime risk.
+            </p>
+</div>
+</div>
+</section>
+<!-- SECTION B: Key Decisions -->
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">gavel</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Key Decisions Log</h2>
+<span class="font-label-sm text-label-sm text-outline">2 formal sign-offs</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Decision 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low/50 flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                  APPROVED
+                </span>
+<span class="font-code-md text-label-sm text-primary hover:underline cursor-pointer flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">play_circle</span>
+                  [14:22]
+                </span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Arch Board Sign-off</span>
+</div>
+<p class="font-headline-md text-body-lg text-on-surface font-medium">
+              Adopt Kafka for event audit log and ingest pipeline.
+            </p>
+<div class="flex items-center gap-space-md pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>Owner: <strong class="text-on-surface">Marcus Vance</strong></span>
+<span>•</span>
+<span>Sign-off: <strong class="text-on-surface">Architecture Committee</strong></span>
+</div>
+</div>
+<!-- Decision 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low/50 flex flex-col gap-space-xs hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                  APPROVED
+                </span>
+<span class="font-code-md text-label-sm text-primary hover:underline cursor-pointer flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">play_circle</span>
+                  [31:05]
+                </span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">SRE Validation</span>
+</div>
+<p class="font-headline-md text-body-lg text-on-surface font-medium">
+              Implement dual-write pattern for 30 days before deprecating legacy Redis pub/sub.
+            </p>
+<div class="flex items-center gap-space-md pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>Owner: <strong class="text-on-surface">Elena Rostova</strong></span>
+<span>•</span>
+<span>Sign-off: <strong class="text-on-surface">Data Reliability Working Group</strong></span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION C: Discussion Themes & Technical Debate -->
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">forum</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Discussion Themes & Technical Debate</h2>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Accordion Theme 1 -->
+<div class="rounded-lg bg-surface-container-low/40 p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-md text-label-sm text-primary font-bold">[08:30]</span>
+<h3 class="font-headline-md text-body-md text-on-surface font-semibold">Data Consistency vs Latency Trade-offs</h3>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">expand_less</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant pt-1 leading-relaxed">
+              Elena voiced concern regarding end-to-end P99 tail latency when requiring <code class="font-code-md bg-surface-container px-1 py-0.5 rounded text-on-surface">acks=all</code> across multi-region availability zones. Marcus presented benchmark charts demonstrating sub-14ms commit times with asynchronous flush pipelines.
+            </p>
+</div>
+<!-- Accordion Theme 2 -->
+<div class="rounded-lg bg-surface-container-low/40 p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-md text-label-sm text-primary font-bold">[22:15]</span>
+<h3 class="font-headline-md text-body-md text-on-surface font-semibold">Operational Overhead: Self-Hosted vs Confluent Cloud</h3>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">expand_more</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant pt-1 leading-relaxed">
+              Huzaifa requested a 3-year TCO comparison. Liam indicated self-hosting on EKS saves ~$4.2k/month in raw platform fees, but requires at least 0.5 dedicated SRE FTE for partition rebalancing and ZooKeeper-less Kraft quorum upgrades.
+            </p>
+</div>
+</div>
+</section>
+<!-- SECTION D: Identified Risks & Blockers -->
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center gap-space-xs pb-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Identified Risks & Blockers</h2>
+</div>
+<div class="p-space-md rounded-lg bg-error-container/20 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">
+                SEVERITY: MEDIUM
+              </span>
+<span class="font-code-md text-label-sm text-primary">[36:40]</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assigned: Elena Rostova</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">
+            Schema registry version compatibility with legacy Python workers.
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Older v2.1 data pipelines in ingestion-core rely on untyped JSON payloads. Confluent Schema Registry enforcement will reject untyped envelopes without an intermediate translation proxy.
+          </p>
+</div>
+</section>
+<!-- SECTION E: Action Items List -->
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-tertiary">check_box</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Assigned Action Items</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[10px]">3 open</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Deploy 3-broker test cluster on staging VPC</span>
+<span class="font-label-sm text-label-sm text-outline">Due Aug 12 • Linked to <span class="text-primary font-code-md cursor-pointer">[18:20]</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container px-2 py-0.5 rounded">Marcus V.</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Benchmark serialization cost of Avro vs Protobuf</span>
+<span class="font-label-sm text-label-sm text-outline">Due Aug 15 • Linked to <span class="text-primary font-code-md cursor-pointer">[28:45]</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container px-2 py-0.5 rounded">Liam K.</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Publish dual-write verification playbook for on-call SRE</span>
+<span class="font-label-sm text-label-sm text-outline">Due Aug 22 • Linked to <span class="text-primary font-code-md cursor-pointer">[39:10]</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container px-2 py-0.5 rounded">Elena R.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- RIGHT CONTEXT ZONE: Inspector & Co-Pilot (Cols 10-12 on desktop ~320px) -->
+<aside class="md:col-span-12 xl:col-span-3 flex flex-col gap-space-lg">
+<!-- Participant Talk Time Distribution -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Talk-Time Distribution</span>
+<span class="font-label-sm text-label-sm text-primary">Balanced</span>
+</div>
+<div class="flex flex-col gap-space-sm pt-1">
+<!-- Marcus -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="font-medium text-on-surface">Marcus Vance (Lead)</span>
+<span class="font-code-md text-outline">38% (18m 15s)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 38%;"></div>
+</div>
+</div>
+<!-- Huzaifa -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="font-medium text-on-surface">Huzaifa A. (Host)</span>
+<span class="font-code-md text-outline">34% (16m 20s)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 34%;"></div>
+</div>
+</div>
+<!-- Elena -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="font-medium text-on-surface">Elena Rostova (Staff SRE)</span>
+<span class="font-code-md text-outline">18% (8m 40s)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 18%;"></div>
+</div>
+</div>
+<!-- Liam -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="font-medium text-on-surface">Liam Kelly (Platform)</span>
+<span class="font-code-md text-outline">10% (4m 50s)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- "Ask Relay" Co-Pilot Interactive Box -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">psychology</span>
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Ask Relay Intelligence</span>
+</div>
+<div class="relative w-full">
+<input class="w-full h-9 pl-3 pr-8 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="Ask anything about this meeting..." type="text"/>
+<button class="absolute right-2 top-2 text-primary hover:text-primary-container">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Seeded Question Card -->
+<div class="mt-space-xs p-space-sm rounded bg-surface-container-low/60 flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">help</span>
+<span>Q: "What did Elena say about memory limits?"</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm leading-snug">
+            At <span class="font-code-md text-primary font-semibold">[34:12]</span>, Elena warned that worker nodes require at least <strong class="font-medium">16GB RAM</strong> when handling high-concurrency partitions during peak ingest to prevent JVM out-of-memory container crashes.
+          </div>
+</div>
+</div>
+<!-- Shareable Moments / Micro-clips -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">movie</span>
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Shareable Moments</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Ready to clip</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Clip 1 -->
+<div class="p-space-sm rounded bg-surface-container-low/50 flex flex-col gap-1 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-sm font-medium text-on-surface">Architectural consensus on event log</span>
+<span class="font-code-md text-label-sm text-outline">01:24</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline-variant">
+<span class="text-on-surface-variant">[30:50 - 32:14]</span>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors" title="Copy Link"><span class="material-symbols-outlined text-[15px]">link</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors" title="Send to Slack"><span class="material-symbols-outlined text-[15px]">send_to_mobile</span></button>
+</div>
+</div>
+</div>
+<!-- Clip 2 -->
+<div class="p-space-sm rounded bg-surface-container-low/50 flex flex-col gap-1 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-sm font-medium text-on-surface">Schema migration safety plan</span>
+<span class="font-code-md text-label-sm text-outline">00:45</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline-variant">
+<span class="text-on-surface-variant">[41:15 - 42:00]</span>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary transition-colors" title="Copy Link"><span class="material-symbols-outlined text-[15px]">link</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors" title="Send to Slack"><span class="material-symbols-outlined text-[15px]">send_to_mobile</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

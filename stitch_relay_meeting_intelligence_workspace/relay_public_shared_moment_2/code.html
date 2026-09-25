@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed":"#001356","on-primary-fixed-variant":"#0035be","outline-variant":"#c4c5d9","surface-container-low":"#f5f3f6","surface-bright":"#faf9fb","surface-container-highest":"#e3e2e4","error":"#ba1a1a","primary-fixed":"#dde1ff","on-secondary-container":"#00217a","surface-container-high":"#e9e7ea","secondary-container":"#708cfd","on-tertiary-container":"#ffe9e3","primary-container":"#2b59ff","surface-tint":"#1049f1","on-surface":"#1b1c1e","surface-variant":"#e3e2e4","primary-fixed-dim":"#b9c3ff","secondary-fixed":"#dde1ff","on-background":"#1b1c1e","primary":"#003fdd","inverse-on-surface":"#f2f0f3","tertiary":"#982e00","on-error-container":"#93000a","inverse-surface":"#303032","on-tertiary-fixed":"#390c00","error-container":"#ffdad6","inverse-primary":"#b9c3ff","outline":"#747688","on-secondary-fixed-variant":"#173bab","on-secondary":"#ffffff","tertiary-container":"#c23d00","tertiary-fixed-dim":"#ffb59d","on-secondary-fixed":"#001453","on-tertiary-fixed-variant":"#832600","surface-container-lowest":"#ffffff","on-error":"#ffffff","secondary":"#3755c3","on-primary-container":"#ecedff","tertiary-fixed":"#ffdbd0","surface-dim":"#dbd9dc","background":"#faf9fb","on-tertiary":"#ffffff","surface":"#faf9fb","secondary-fixed-dim":"#b8c4ff","on-surface-variant":"#434656","on-primary":"#ffffff","surface-container":"#efedf0"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"2rem","margin":"1rem","space-lg":"1.25rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1rem"},"fontFamily":{"label-sm":["JetBrains Mono"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"label-md":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"code-snippet":["JetBrains Mono"]},"fontSize":{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl-mobile":["1.625rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1rem",{"lineHeight":"1.375rem","letterSpacing":"-0.01em","fontWeight":"600"}],"code-snippet":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex items-center justify-center min-h-screen"><main class="w-full"><div class="flex flex-col w-full">
+<!-- Minimalist Executive Public Top Nav -->
+<header class="w-full bg-surface-container-lowest sticky top-0 z-30 shadow-sm">
+<div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container-high flex items-center justify-center p-1">
+<img alt="Relay Intelligence Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UsO2G3bU9ObLneSOo4-6hU5QY7WQzQccJFXL833M5XF6x8MkREExoRaec9tA7wQD41VLY0ZAUFTgVQxBYsb9U0vmX0CannjbX1HXAw-kl_ujr5VK7gX8F3-_xoNhg7Lv-27Ohg91fqnklljN9hLgjQcOtd9I3oNHFOntZO1boJzG1jjVu7Tatrfcch9F0B_m0uPanK9V5GFAi5qo3zgDphHjcDiC_pvBGJ-q8CqcHNCr3apFxbVRQYuQ"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Relay</span>
+<span class="text-outline-variant font-body-sm text-body-sm">/</span>
+<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">Meeting Moment</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden md:inline-flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Powered by Relay Intelligence
+        </span>
+<button class="bg-primary text-on-primary font-body-sm text-body-sm font-semibold px-3.5 py-1.5 rounded hover:bg-on-primary-fixed transition-colors shadow-sm" type="button">
+          Try Relay for your team
+        </button>
+</div>
+</div>
+</header>
+<!-- Central Document Canvas -->
+<div class="w-full bg-surface py-10 px-4 sm:px-6">
+<div class="max-w-[840px] mx-auto space-y-6">
+<!-- Metadata & Attestation Header Bar -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5">
+<div class="flex items-center gap-3.5">
+<img alt="Huzaifa" class="w-11 h-11 rounded-full object-cover shadow-sm ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEiA5b7wA73EU0_420Pci9EeKNg-8iJwB0SMdRYtLBL1ywTZpMx_UilZToOy3wk0VfETBnjnrn7FrVr5yc_tbRiQc2kroSHVvMFojmdGMf0QfpuD1rPD-9V68VZT4445CC3SN0lQEn5p_puJzn0Z-dDka1FG0s8Q_CfExAAGzrX_EvQoKWNcJuhXc9FUl0UAldB6BzwnV7l4QXw7kCCaHEVyyIpD0tTW6Mgq4Sfm8Po54H42yW7wU"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Huzaifa</span>
+<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">Head of Product</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">October 24, 2024 · Verified Enterprise Transcript</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-center">
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-1 rounded inline-flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+              From: Q4 Core Architecture &amp; Latency Migration
+            </span>
+</div>
+</div>
+<div class="pt-5 space-y-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-emerald-50 text-emerald-800 font-label-sm text-label-sm px-2.5 py-0.5 rounded font-semibold tracking-wide uppercase inline-flex items-center gap-1">
+<svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Key Executive Decision
+            </span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">
+              Clip Duration: 1 min 14 sec · 00:22:10 — 00:23:24
+            </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-snug">
+            Key Decision: Migration of Session Cache to Redis Cluster
+          </h1>
+</div>
+</section>
+<!-- Executive Audio / Waveform Player -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Currently speaking:</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Huzaifa (Head of Product)</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-0.5 rounded">
+<button class="speed-btn px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded transition" onclick="setSpeed(1, this)" type="button">1x</button>
+<button class="speed-btn px-2 py-0.5 font-label-sm text-label-sm bg-surface-container-lowest text-primary font-semibold shadow-xs rounded transition" onclick="setSpeed(1.25, this)" type="button">1.25x</button>
+<button class="speed-btn px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface rounded transition" onclick="setSpeed(1.5, this)" type="button">1.5x</button>
+</div>
+</div>
+<!-- Waveform scrubber visualization -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-3">
+<div class="flex items-center gap-4">
+<button class="w-11 h-11 rounded-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary flex items-center justify-center shrink-0 transition-all shadow-md" id="playBtn" onclick="togglePlay()" type="button">
+<svg class="w-5 h-5 ml-0.5" fill="currentColor" id="playIcon" viewbox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+<svg class="w-5 h-5 hidden" fill="currentColor" id="pauseIcon" viewbox="0 0 24 24"><rect height="16" width="4" x="6" y="4"></rect><rect height="16" width="4" x="14" y="4"></rect></svg>
+</button>
+<!-- Dynamic Interactive Bar Waveform -->
+<div class="flex-1 relative cursor-pointer py-2 group" id="waveformTrack" onclick="seekAudio(event)">
+<div class="flex items-end gap-[3px] h-10 w-full" id="waveContainer">
+<!-- SVG Wave Bars rendered via loop style -->
+<span class="w-[3px] bg-primary h-[40%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[60%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[85%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[50%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[90%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[70%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[95%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[80%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[45%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[65%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[100%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[85%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[55%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[40%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[70%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[90%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[60%] rounded-full"></span>
+<span class="w-[3px] bg-primary h-[75%] rounded-full"></span>
+<!-- Playhead Cutoff -->
+<span class="w-[3px] bg-outline-variant h-[90%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[65%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[45%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[80%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[95%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[70%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[50%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[85%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[60%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[35%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[75%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[90%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[85%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[40%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[65%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[55%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[30%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[50%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[75%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[60%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[45%] rounded-full"></span>
+<span class="w-[3px] bg-outline-variant h-[30%] rounded-full"></span>
+</div>
+<div class="absolute top-1/2 -translate-y-1/2 left-[38%] w-3 h-3 bg-primary rounded-full shadow transition-all pointer-events-none ring-2 ring-white" id="playheadIndicator"></div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="timeCurrent">00:28</span>
+<span class="font-label-sm text-label-sm text-outline"> / 01:14</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Structured Executive Context Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-5">
+<!-- Executive Takeaway Card (7 Cols) -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Executive Takeaway</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              The architecture team reviewed Grafana stress test data showing <span class="text-on-surface font-semibold">48ms latency spikes</span> under peak load. To safeguard P99 SLA targets and avoid 3x cost inflation with DynamoDB DAX, the team approved immediate migration to <span class="text-primary font-semibold">multi-AZ Redis Cluster</span>.
+            </p>
+</div>
+<div class="mt-6 pt-4 bg-surface-container-low rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="font-label-sm text-label-sm text-outline">Telemetry:</span>
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container px-2 py-0.5 rounded font-mono">P99 Spike: 48ms → 1.4ms est.</span>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">66% Cost Avoidance</span>
+</div>
+</div>
+<!-- Key Decisions & Actions (5 Cols) -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-5">
+<!-- Decisions Approved -->
+<div>
+<div class="flex items-center gap-2 mb-2.5">
+<span class="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Key Decisions Approved</h3>
+</div>
+<ul class="space-y-2">
+<li class="flex items-start gap-2.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="mt-0.5 w-4 h-4 rounded bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</span>
+<span>Officially adopt Redis Cluster for session cache &amp; user graph.</span>
+</li>
+<li class="flex items-start gap-2.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="mt-0.5 w-4 h-4 rounded bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</span>
+<span>Enforce <code class="font-mono text-[11px] bg-surface-container px-1 py-0.5 rounded text-on-surface">volatile-lru</code> eviction policy to protect active sessions.</span>
+</li>
+</ul>
+</div>
+<!-- Agreed Action Items -->
+<div class="pt-3">
+<div class="flex items-center gap-2 mb-2.5">
+<span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Agreed Action Items</h3>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2.5">
+<span class="w-3.5 h-3.5 mt-0.5 rounded border border-outline bg-surface-container-lowest shrink-0"></span>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+<span class="font-semibold text-on-surface">Marcus Chen</span> to deploy sandbox Redis cluster in VPC by <span class="text-amber-800 font-medium">Friday, Oct 25</span>.
+                </div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2.5">
+<span class="w-3.5 h-3.5 mt-0.5 rounded border border-outline bg-surface-container-lowest shrink-0"></span>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+<span class="font-semibold text-on-surface">Huzaifa</span> to confirm latency benchmarks with QA team by <span class="text-amber-800 font-medium">Oct 28</span>.
+                </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Verified Transcript Excerpt -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">Verified Transcript Excerpt</span>
+<span class="bg-emerald-50 text-emerald-800 font-label-sm text-label-sm px-2 py-0.5 rounded">High Fidelity Audio Sync</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">3 Speakers · 3 Turns</span>
+</div>
+<div class="space-y-4">
+<!-- Turn 1 (Active Speaking) -->
+<div class="bg-primary/5 rounded-xl p-4 transition-all">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<img alt="Huzaifa" class="w-6 h-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEiA5b7wA73EU0_420Pci9EeKNg-8iJwB0SMdRYtLBL1ywTZpMx_UilZToOy3wk0VfETBnjnrn7FrVr5yc_tbRiQc2kroSHVvMFojmdGMf0QfpuD1rPD-9V68VZT4445CC3SN0lQEn5p_puJzn0Z-dDka1FG0s8Q_CfExAAGzrX_EvQoKWNcJuhXc9FUl0UAldB6BzwnV7l4QXw7kCCaHEVyyIpD0tTW6Mgq4Sfm8Po54H42yW7wU"/>
+<span class="font-headline-sm text-headline-sm text-on-surface">Huzaifa</span>
+<span class="text-primary font-label-sm text-label-sm font-mono font-medium">Head of Product</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-mono bg-primary/10 px-2 py-0.5 rounded">00:22:10</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed pl-8">
+              "That confirms it. DynamoDB isn't keeping up without provisioned DAX clusters, which triples the baseline cost. Let's make the call: <span class="bg-yellow-100 font-medium px-1 rounded">we are officially moving the session cache and user graph to Redis Cluster with multi-AZ replication.</span> Marcus, do you see any blockers on the terraform side?"
+            </p>
+</div>
+<!-- Turn 2 -->
+<div class="bg-surface-container-low rounded-xl p-4 transition-all hover:bg-surface-container-high/60">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center font-bold">MC</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Marcus Chen</span>
+<span class="text-outline font-label-sm text-label-sm font-mono">Infrastructure Lead</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">00:22:45</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pl-8">
+              "No blockers. We already have the VPC peering routes established. I can have a sandbox cluster spun up by Friday morning for the performance team to benchmark."
+            </p>
+</div>
+<!-- Turn 3 -->
+<div class="bg-surface-container-low rounded-xl p-4 transition-all hover:bg-surface-container-high/60">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm flex items-center justify-center font-bold">EV</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Elena Vance</span>
+<span class="text-outline font-label-sm text-label-sm font-mono">Principal Architect</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">00:23:05</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pl-8">
+              "Just make sure we configure the eviction policy to <code class="font-mono text-xs bg-surface-container-highest px-1 py-0.5 rounded text-on-surface">volatile-lru</code> so background batch workers don't purge active user sessions."
+            </p>
+</div>
+</div>
+</section>
+<!-- Footer & Sharing Bar -->
+<footer class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="space-y-1 text-center md:text-left">
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Need more context?</p>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1 justify-center md:justify-start" href="#">
+            Request full meeting access from Huzaifa
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+<button class="w-full sm:w-auto bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm px-4 py-2 rounded flex items-center justify-center gap-2 transition" id="copyBtn" onclick="copyLink()" type="button">
+<svg class="w-4 h-4 text-on-surface-variant" fill="none" id="copyIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+<span id="copyText">Copy Moment Link (relay.workspace/m/x9k2)</span>
+</button>
+</div>
+</footer>
+<!-- Cryptographic Proof Footer Badge -->
+<div class="flex items-center justify-center gap-2 pt-2 pb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="font-label-sm text-label-sm text-outline">
+          Relay Verified Transcript · SHA-256 Validated &amp; Tamper-Evident Ledger
+        </span>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interactions -->
+<script>
+    let isPlaying = false;
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playhead = document.getElementById('playheadIndicator');
+      const timeCurrent = document.getElementById('timeCurrent');
+
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        playhead.style.left = '52%';
+        timeCurrent.innerText = '00:39';
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      }
+    }
+
+    function seekAudio(e) {
+      const track = document.getElementById('waveformTrack');
+      const rect = track.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const percent = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
+      const playhead = document.getElementById('playheadIndicator');
+      playhead.style.left = percent + '%';
+      
+      const totalSec = 74; // 01:14
+      const curSec = Math.floor((percent / 100) * totalSec);
+      const m = String(Math.floor(curSec / 60)).padStart(2, '0');
+      const s = String(curSec % 60).padStart(2, '0');
+      document.getElementById('timeCurrent').innerText = `${m}:${s}`;
+    }
+
+    function setSpeed(speed, btn) {
+      document.querySelectorAll('.speed-btn').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-xs');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-xs');
+      btn.classList.remove('text-on-surface-variant');
+    }
+
+    function copyLink() {
+      navigator.clipboard?.writeText('https://relay.workspace/m/x9k2');
+      const copyText = document.getElementById('copyText');
+      const originalText = copyText.innerText;
+      copyText.innerText = 'Copied to Clipboard!';
+      setTimeout(() => {
+        copyText.innerText = originalText;
+      }, 2000);
+    }
+  </script>
+</div></main></body></html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#f9f9ff","on-primary-container":"#848387","surface-dim":"#d8dae2","primary":"#000000","background":"#f9f9ff","on-tertiary-container":"#2f9563","outline-variant":"#c7c6cb","error":"#ba1a1a","primary-container":"#1b1b1f","tertiary-fixed-dim":"#78daa2","surface-container-low":"#f1f3fb","on-background":"#181c21","secondary-container":"#3d67fa","on-surface":"#181c21","inverse-primary":"#c7c6ca","surface-bright":"#f9f9ff","on-primary":"#ffffff","on-tertiary-fixed":"#002111","tertiary-fixed":"#94f7bc","surface-variant":"#e0e2ea","surface-container-lowest":"#ffffff","on-surface-variant":"#46464b","surface-tint":"#5e5e62","on-error":"#ffffff","surface-container-highest":"#e0e2ea","on-secondary-fixed":"#001453","surface-container":"#eceef6","inverse-surface":"#2d3037","primary-fixed":"#e3e2e6","surface-container-high":"#e6e8f0","on-secondary-fixed-variant":"#0037b8","secondary":"#164be0","tertiary":"#000000","inverse-on-surface":"#eff0f9","error-container":"#ffdad6","secondary-fixed":"#dde1ff","on-primary-fixed":"#1b1b1f","outline":"#76777b","on-tertiary-fixed-variant":"#005231","on-tertiary":"#ffffff","tertiary-container":"#002111","secondary-fixed-dim":"#b7c4ff","on-secondary":"#ffffff","on-primary-fixed-variant":"#46464a","on-secondary-container":"#fffbff","primary-fixed-dim":"#c7c6ca","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-xl":"1.5rem","space-sm":"0.5rem","gutter":"1rem","space-lg":"1rem"},fontFamily:{"label-sm":["JetBrains Mono"],"headline-lg-mobile":["Geist"],"headline-lg":["Geist"],"code-inline":["JetBrains Mono"],"headline-md":["Geist"],"body-md":["Geist"],"body-sm":["Geist"],"label-md":["JetBrains Mono"],"body-lg":["Geist"],"headline-xl-mobile":["Geist"],"headline-xl":["Geist"]},fontSize:{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"500"}],"headline-lg-mobile":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"code-inline":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.3125rem","letterSpacing":"-0.005em","fontWeight":"400"}],"body-sm":["0.8125rem",{"lineHeight":"1.1875rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["0.9375rem",{"lineHeight":"1.4375rem","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-low border-r border-outline-variant/30 z-50 flex flex-col items-center justify-between py-3"><div class="flex flex-col items-center gap-6 w-full"><a class="flex items-center justify-center p-1 rounded-DEFAULT hover:bg-surface-container transition-colors" href="#" title="Relay Cockpit"><img alt="Brand logo. - Primary color: #2554e8
+- Font: geist
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UqIBpAyVWZaG_co4icSXfMCL0irTxFh8ku5IigdRjJrFHU_Spj7OVkX7mU8EoAHDscAnZgzLZBYNIXyqCRMXQ0DoBKbuKeykg4uUVuULYrO90O66sF5n0QGyvyswSmArzsPdqcJzH9Ix6Wc9W1hFa5iZXqajMgqAkTGGVhcN1j3na9IlqbnsmT078XhbHwbvF5Mvpa48QI5FcSPSLjq5rOLCL3oufeWpoqTeuCfmZm6j3pXFVGZjkt6A"/></a><nav class="flex flex-col items-center gap-2 w-full px-2" data-active-classes="bg-primary text-on-primary font-medium rounded-DEFAULT shadow-sm"><a aria-current="page" class="relative flex items-center justify-center w-11 h-11 transition-all group bg-primary text-on-primary font-medium rounded-DEFAULT shadow-sm" data-path="overview" href="#" title="Home Overview"><span class="material-symbols-outlined text-[20px]">grid_view</span></a><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="meetings" href="#" title="Meeting Ledger"><span class="material-symbols-outlined text-[20px]">forum</span></a><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="intel-synthesis" href="#" title="Engineering Intel & Architecture"><span class="material-symbols-outlined text-[20px]">neurology</span></a><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="library" href="#" title="Decisions & Action Library"><span class="material-symbols-outlined text-[20px]">inventory_2</span></a></nav></div><div class="flex flex-col items-center gap-3 w-full px-2"><div class="flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-surface-container border border-outline-variant/30 text-on-tertiary-container hover:bg-surface-container-high cursor-pointer transition-colors" title="System Node Status: Operational"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span></div><div class="relative flex items-center justify-center p-0.5 rounded-full ring-2 ring-secondary/30 hover:ring-secondary cursor-pointer transition-all" title="Active User Profile"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XcKVAlOkoftRjGLvLL_t9JVpqRjv1M4XN7inMvDbXByM5vUrlJy_FPD15X-WlaMMiOHAccaWWdyBDxUNoYJVLAl7UAeQfVdH7ZcxGoJzHo52kS3Kedz_IAtGFYFCCdojK_p-WCgM65DgswumVSneM-PdQ-2rhvdWrfldVizpVV9lyr0GHHp3JcCkBxf1X4G3X6xY5BD5Q7M1T0sOudys9Z72L_AREy7H8IGSM1XidHg4MrPv1cRkJ0dg"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-tertiary-container border-2 border-surface rounded-full"></span></div></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface font-headline-md text-body-sm font-medium"><span class="text-on-surface-variant font-body-sm text-body-sm">Acme Corp</span><span class="text-outline-variant font-code-inline text-label-sm">/</span><span class="text-on-surface font-body-sm text-body-sm font-semibold">Platform Eng</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">unfold_more</span></div><div class="h-4 w-px bg-outline-variant/30 hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-2 py-0.5 rounded-DEFAULT bg-surface-container text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/20"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span><span>SOC2 SIGNED & LIVE INDEXING</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-md mx-space-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 rounded-DEFAULT bg-surface border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:border-secondary transition-all" placeholder="Search meetings, transcripts, decisions..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/40 pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1.5 h-8 px-3 rounded-DEFAULT bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-secondary transition-colors" title="Start or Record Session" type="button"><span class="material-symbols-outlined text-[16px]">radio_button_checked</span><span>New Meeting</span></button><button class="flex items-center justify-center w-8 h-8 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Telemetry Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button></div></header><main class="relative pt-14 min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Telemetry Bar & Top Greeting Strip -->
+<section class="w-full bg-surface-container-lowest px-space-xl py-space-lg flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="text-on-surface font-label-sm font-semibold">CALENDAR SYNCED</span>
+<span>·</span>
+<span>4 meetings today</span>
+<span>·</span>
+<span class="font-code-inline text-label-sm text-outline">SHA-256: 4e7a8c9b (indexed)</span>
+</div>
+<h1 class="text-on-surface font-headline-lg text-headline-lg tracking-tight">Good afternoon, Huzaifa</h1>
+</div>
+<!-- Quick Telemetry Actions -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">memory</span>
+<span>Vector Store: 48,290 embeds</span>
+</div>
+<button class="h-8 px-space-md rounded-DEFAULT bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" onclick="alert('Exporting executive telemetry digest...')">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Digest</span>
+</button>
+<button class="h-8 px-space-md rounded-DEFAULT bg-primary text-on-primary hover:bg-secondary font-body-sm text-body-sm transition-colors flex items-center gap-1.5" onclick="document.getElementById('quick-filter').focus()">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Configure Signals</span>
+</button>
+</div>
+</section>
+<!-- KPI Telemetry Strip (Tonal Stacking, Tabular numbers, zero bulky cards) -->
+<section class="w-full bg-surface-container-low px-space-xl py-space-md">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Metric 1: Weekly Meetings -->
+<div class="flex flex-col justify-between py-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Weekly Load</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container bg-surface-container-lowest px-1.5 py-0.5 rounded-DEFAULT">+2 vs last wk</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">14</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">scheduled syncs (18.4 hrs)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-DEFAULT mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-DEFAULT" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Metric 2: Open Actions -->
+<div class="flex flex-col justify-between py-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Open Actions</span>
+<span class="font-label-sm text-label-sm text-error bg-surface-container-lowest px-1.5 py-0.5 rounded-DEFAULT">2 overdue</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant"><span class="text-error font-medium">3 due today</span> · 4 on track</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-DEFAULT mt-2 overflow-hidden flex">
+<div class="bg-error h-full" style="width: 22%;"></div>
+<div class="bg-secondary-container h-full" style="width: 33%;"></div>
+<div class="bg-outline h-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Metric 3: Decisions Captured -->
+<div class="flex flex-col justify-between py-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Decisions Captured</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container bg-surface-container-lowest px-1.5 py-0.5 rounded-DEFAULT">100% Trace</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">anchored to RFC/ADR</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-DEFAULT mt-2 overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-DEFAULT" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Metric 4: Cadence Equilibrium -->
+<div class="flex flex-col justify-between py-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cadence Equilibrium</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-1.5 py-0.5 rounded-DEFAULT">Optimal</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">78%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">monologue ratio 14%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-DEFAULT mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-DEFAULT" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Section: 2-Column Split Workbench -->
+<div class="w-full grid grid-cols-1 xl:grid-cols-12">
+<!-- Left Column (65% width equivalent: xl:col-span-8): Synthesized Architecture Reviews -->
+<section class="xl:col-span-8 bg-surface-container-lowest p-space-xl flex flex-col gap-space-lg">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm bg-surface-container-low p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">neurology</span>
+<div>
+<h2 class="text-on-surface font-headline-md text-headline-md tracking-tight">Recent Meetings & Architecture Synthesis</h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Traceable commitments, runtime decisions, and transcript extractions</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<input class="h-8 pl-8 pr-3 rounded-DEFAULT bg-surface text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all w-56" id="quick-filter" placeholder="Filter decisions or topics..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-2 text-[16px] text-outline">filter_list</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-2">3 of 14</span>
+</div>
+</div>
+<!-- Meetings Table/List Hybrid (Zero Card Nesting, Crisp Row Separation) -->
+<div class="flex flex-col space-y-4">
+<!-- Meeting Row 1 -->
+<article class="p-space-lg bg-surface-container-low hover:bg-surface-container transition-colors rounded-DEFAULT flex flex-col gap-space-sm group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-sm">
+<span class="mt-0.5 material-symbols-outlined text-[20px] text-secondary">alt_route</span>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<h3 class="text-on-surface font-headline-md text-body-lg font-semibold hover:text-secondary cursor-pointer transition-colors">
+                    Q4 Core Architecture & Latency Migration
+                  </h3>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface text-on-tertiary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Verified Trace
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="text-on-surface font-medium">Recorded 11:00 AM</span>
+<span>·</span>
+<span>42m duration</span>
+<span>·</span>
+<span>4 attendees (Huzaifa, Elena, Marcus, T. Vance)</span>
+</div>
+</div>
+</div>
+<!-- Action buttons visible on hover / active -->
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-primary hover:text-on-primary font-body-sm text-body-sm transition-colors flex items-center gap-1" title="Review Intelligence">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>Review Intel</span>
+</button>
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm transition-colors flex items-center gap-1" title="Open Timestamped Transcript">
+<span class="material-symbols-outlined text-[14px]">subtitles</span>
+<span>Transcript</span>
+</button>
+<button class="h-7 w-7 rounded-DEFAULT bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors" title="Share Key Clip">
+<span class="material-symbols-outlined text-[15px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Key Consensus Banner (Specific Architectural Semantics) -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-highest flex items-start gap-space-sm">
+<span class="text-[#9E5D0A] font-bold text-sm select-none">◆</span>
+<div class="flex-1 text-on-surface font-body-md text-body-md">
+<span class="font-label-sm text-label-sm text-[#9E5D0A] font-semibold uppercase tracking-wider mr-2">Key Consensus:</span>
+              Deprecate DynamoDB DAX in favor of multi-AZ Redis Cluster (v7.2) with strict read-replica failover to shave P99 from 24ms to 6ms.
+            </div>
+</div>
+<!-- Telemetry & Extraction Chips -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[#9E5D0A] font-bold">◆</span> 3 Decisions Anchored
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">check_box</span> 4 Actions Assigned
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-outline">DAX-4019</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary hover:underline cursor-pointer">
+<span>View ADR-084 PR Draft</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Meeting Row 2 -->
+<article class="p-space-lg bg-surface-container-low hover:bg-surface-container transition-colors rounded-DEFAULT flex flex-col gap-space-sm group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-sm">
+<span class="mt-0.5 material-symbols-outlined text-[20px] text-secondary">security</span>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<h3 class="text-on-surface font-headline-md text-body-lg font-semibold hover:text-secondary cursor-pointer transition-colors">
+                    Fintech Tier-1 Pilot: SOC2 & HSM Key Management
+                  </h3>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Signed Ledger
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="text-on-surface font-medium">Recorded 09:30 AM</span>
+<span>·</span>
+<span>35m duration</span>
+<span>·</span>
+<span>5 attendees (DevSecOps, Platform, SecOps External)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-primary hover:text-on-primary font-body-sm text-body-sm transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>Review Intel</span>
+</button>
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">subtitles</span>
+<span>Transcript</span>
+</button>
+<button class="h-7 w-7 rounded-DEFAULT bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[15px]">ios_share</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-highest flex items-start gap-space-sm">
+<span class="text-[#9E5D0A] font-bold text-sm select-none">◆</span>
+<div class="flex-1 text-on-surface font-body-md text-body-md">
+<span class="font-label-sm text-label-sm text-[#9E5D0A] font-semibold uppercase tracking-wider mr-2">Key Consensus:</span>
+              Adopt HashiCorp Vault on AWS EKS with transit encryption engines instead of standalone AWS KMS to maintain multi-cloud portability for EU banking compliance.
+            </div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[#9E5D0A] font-bold">◆</span> 2 Decisions Anchored
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">check_box</span> 1 Action Assigned
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-outline">SEC-992</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary hover:underline cursor-pointer">
+<span>View Audit Hash</span>
+<span class="material-symbols-outlined text-[13px]">verified</span>
+</div>
+</div>
+</article>
+<!-- Meeting Row 3 -->
+<article class="p-space-lg bg-surface-container-low hover:bg-surface-container transition-colors rounded-DEFAULT flex flex-col gap-space-sm group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-sm">
+<span class="mt-0.5 material-symbols-outlined text-[20px] text-secondary">hub</span>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<h3 class="text-on-surface font-headline-md text-body-lg font-semibold hover:text-secondary cursor-pointer transition-colors">
+                    Realtime Event Bus Benchmark: Kafka vs Pulsar
+                  </h3>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-surface text-on-tertiary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Benchmark Logged
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="text-on-surface font-medium">Yesterday 4:15 PM</span>
+<span>·</span>
+<span>50m duration</span>
+<span>·</span>
+<span>6 attendees (Streaming Core, Data Eng)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-primary hover:text-on-primary font-body-sm text-body-sm transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>Review Intel</span>
+</button>
+<button class="h-7 px-2 rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">subtitles</span>
+<span>Transcript</span>
+</button>
+<button class="h-7 w-7 rounded-DEFAULT bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[15px]">ios_share</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-highest flex items-start gap-space-sm">
+<span class="text-[#9E5D0A] font-bold text-sm select-none">◆</span>
+<div class="flex-1 text-on-surface font-body-md text-body-md">
+<span class="font-label-sm text-label-sm text-[#9E5D0A] font-semibold uppercase tracking-wider mr-2">Key Consensus:</span>
+              Deploy managed MSK cluster with 3-broker replica sets and tiered storage to S3, rejecting Pulsar due to operator complexity and existing team tooling.
+            </div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="text-[#9E5D0A] font-bold">◆</span> 4 Decisions Anchored
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">check_box</span> 3 Actions Assigned
+              </span>
+<span class="text-outline-variant font-code-inline text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-outline">STR-118</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary hover:underline cursor-pointer">
+<span>View Grafana Metrics Run</span>
+<span class="material-symbols-outlined text-[13px]">query_stats</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Right Column (35% width equivalent: xl:col-span-4): Intelligence Inspector & Action Rail -->
+<aside class="xl:col-span-4 bg-surface-container-low p-space-xl flex flex-col gap-space-lg">
+<!-- Attention Header -->
+<div class="flex items-center justify-between bg-surface-container p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-error">priority_high</span>
+<h2 class="text-on-surface font-headline-md text-headline-md tracking-tight">Needs Your Attention</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-semibold">3 Critical</span>
+</div>
+<!-- Action Items Ledger (No card wrapping, crisp rows with distinct commit targets) -->
+<div class="flex flex-col space-y-2">
+<!-- Task Item 1 -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container transition-colors rounded-DEFAULT flex items-start gap-space-sm group">
+<button class="mt-0.5 w-4 h-4 rounded-DEFAULT bg-surface border-2 border-outline hover:border-secondary flex items-center justify-center transition-colors" onclick="this.classList.toggle('bg-on-tertiary-container'); this.classList.toggle('border-on-tertiary-container');">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary opacity-0 hover:opacity-100 group-hover:opacity-60 transition-opacity">check</span>
+</button>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Sign off Redis multi-AZ failover runbook</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 bg-error-container text-on-error-container rounded-DEFAULT shrink-0">Today 5pm</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Ensure read replica failover timeout is clamped to ≤ 1500ms in staging load tests.</p>
+<div class="flex items-center justify-between pt-1 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[10px] font-bold">HZ</span>
+<span>Assigned to You</span>
+</div>
+<a class="text-secondary hover:underline flex items-center gap-0.5 font-code-inline text-label-sm" href="#">
+<span>ENG-4102</span>
+<span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Task Item 2 -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container transition-colors rounded-DEFAULT flex items-start gap-space-sm group">
+<button class="mt-0.5 w-4 h-4 rounded-DEFAULT bg-surface border-2 border-outline hover:border-secondary flex items-center justify-center transition-colors" onclick="this.classList.toggle('bg-on-tertiary-container'); this.classList.toggle('border-on-tertiary-container');">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary opacity-0 hover:opacity-100 group-hover:opacity-60 transition-opacity">check</span>
+</button>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Export HSM key wrapping policy draft</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 bg-error-container text-on-error-container rounded-DEFAULT shrink-0">Overdue (2d)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Required by Fintech pilot external security auditor before Friday sandbox lock.</p>
+<div class="flex items-center justify-between pt-1 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center text-[10px] font-bold">EL</span>
+<span>Elena M. (Waiting on you)</span>
+</div>
+<a class="text-secondary hover:underline flex items-center gap-0.5 font-code-inline text-label-sm" href="#">
+<span>SEC-881</span>
+<span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Task Item 3 -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container transition-colors rounded-DEFAULT flex items-start gap-space-sm group">
+<button class="mt-0.5 w-4 h-4 rounded-DEFAULT bg-surface border-2 border-outline hover:border-secondary flex items-center justify-center transition-colors" onclick="this.classList.toggle('bg-on-tertiary-container'); this.classList.toggle('border-on-tertiary-container');">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary opacity-0 hover:opacity-100 group-hover:opacity-60 transition-opacity">check</span>
+</button>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Approve MSK broker sizing cluster budget</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 bg-surface-container text-on-surface-variant rounded-DEFAULT shrink-0">Tomorrow</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Cost model variance analysis: Kafka on MSK vs Self-hosted EC2 nodes.</p>
+<div class="flex items-center justify-between pt-1 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[10px] font-bold">HZ</span>
+<span>Assigned to You</span>
+</div>
+<a class="text-secondary hover:underline flex items-center gap-0.5 font-code-inline text-label-sm" href="#">
+<span>INFRA-209</span>
+<span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Linear / Jira Quick Sync Ledger -->
+<div class="p-space-md bg-surface-container rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sync_alt</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Linear Workspace Sync</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last bi-directional pulse: 3m ago</span>
+</div>
+</div>
+<button class="h-7 px-2.5 rounded-DEFAULT bg-primary text-on-primary hover:bg-secondary text-label-sm font-label-sm transition-colors" onclick="this.innerText='Synced!'">
+          Sync Now
+        </button>
+</div>
+<!-- Quick Audio Playhead Scrubber Preview (Cockpit Spec) -->
+<div class="p-space-md bg-surface-container-lowest rounded-DEFAULT flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[15px] text-secondary">graphic_eq</span>
+            Active Audio Node
+          </span>
+<span class="font-code-inline text-label-sm">04:18 / 42:00</span>
+</div>
+<!-- Hairline Telemetry Audio Track with Scrubber -->
+<div class="relative w-full h-7 bg-surface-container flex items-end gap-[2px] px-1 py-1 rounded-DEFAULT overflow-hidden cursor-pointer" title="Click to scrub recording timeline">
+<!-- Discrete activity bars -->
+<div class="w-[3px] bg-outline h-[30%]"></div>
+<div class="w-[3px] bg-outline h-[50%]"></div>
+<div class="w-[3px] bg-secondary h-[80%]"></div>
+<div class="w-[3px] bg-secondary h-[100%]"></div>
+<div class="w-[3px] bg-secondary h-[65%]"></div>
+<div class="w-[3px] bg-secondary h-[45%]"></div>
+<div class="w-[3px] bg-outline h-[20%]"></div>
+<div class="w-[3px] bg-outline h-[35%]"></div>
+<div class="w-[3px] bg-outline h-[70%]"></div>
+<div class="w-[3px] bg-outline h-[85%]"></div>
+<div class="w-[3px] bg-outline h-[40%]"></div>
+<div class="w-[3px] bg-outline h-[30%]"></div>
+<div class="w-[3px] bg-outline h-[60%]"></div>
+<div class="w-[3px] bg-outline h-[90%]"></div>
+<div class="w-[3px] bg-outline h-[75%]"></div>
+<div class="w-[3px] bg-outline h-[50%]"></div>
+<div class="w-[3px] bg-outline h-[30%]"></div>
+<div class="w-[3px] bg-outline h-[40%]"></div>
+<div class="w-[3px] bg-outline h-[65%]"></div>
+<div class="w-[3px] bg-outline h-[45%]"></div>
+<div class="w-[3px] bg-outline h-[25%]"></div>
+<!-- Crisp Scrubber Handle -->
+<div class="absolute left-[38%] top-0 bottom-0 w-[2px] bg-secondary flex items-center justify-center">
+<div class="w-1.5 h-3 bg-secondary rounded-[1px] -mt-1 shadow-sm"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Speaker: Marcus (Platform Lead)</span>
+<span class="hover:text-secondary cursor-pointer">Jump to quote →</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Lower Section: Meeting Pulse & Cognitive Dynamics (Inline SVGs, Uncarded telemetry) -->
+<section class="w-full bg-surface-container px-space-xl py-space-xl">
+<div class="flex flex-col gap-space-lg">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm bg-surface-container-high p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">bar_chart_4_bars</span>
+<div>
+<h2 class="text-on-surface font-headline-md text-headline-md tracking-tight">Meeting Pulse & Cognitive Dynamics</h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Weekly synchronous meeting load vs deep focus hours and cross-discipline voice distribution</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-secondary"></span>
+<span class="text-on-surface font-medium">Sync Load</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-surface-variant"></span>
+<span class="text-on-surface-variant">Focus Hours</span>
+</div>
+</div>
+</div>
+<!-- Charts Row (Two responsive panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Panel 1: Mon-Fri Synchronous Load vs Deep Focus (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Daily Balance: Sync Load vs. Deep Focus</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Target: > 4.5h focus per engineer daily</p>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-DEFAULT text-on-tertiary-container font-medium">Equilibrium: Healthy</span>
+</div>
+<!-- Inline Bar Visualization (Accessible, high contrast, clean vector) -->
+<div class="w-full">
+<svg class="w-full h-44" fill="none" preserveaspectratio="none" viewbox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid Hairlines -->
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="590" y1="20" y2="20"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="590" y1="60" y2="60"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="590" y1="100" y2="100"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="1" x1="40" x2="590" y1="140" y2="140"></line>
+<!-- Y Axis Labels -->
+<text class="text-[10px] fill-current text-outline font-code-inline" x="10" y="24">8h</text>
+<text class="text-[10px] fill-current text-outline font-code-inline" x="10" y="64">5h</text>
+<text class="text-[10px] fill-current text-outline font-code-inline" x="10" y="104">2h</text>
+<text class="text-[10px] fill-current text-outline font-code-inline" x="10" y="144">0h</text>
+<!-- Monday (Day 1) -->
+<rect class="fill-current text-surface-variant rx-[2]" height="95" width="28" x="70" y="45"></rect>
+<rect class="fill-current text-secondary rx-[2]" height="70" width="28" x="102" y="70"></rect>
+<text class="text-[11px] fill-current text-on-surface font-label-sm" text-anchor="middle" x="96" y="156">MON</text>
+<!-- Tuesday (Day 2) -->
+<rect class="fill-current text-surface-variant rx-[2]" height="110" width="28" x="180" y="30"></rect>
+<rect class="fill-current text-secondary rx-[2]" height="50" width="28" x="212" y="90"></rect>
+<text class="text-[11px] fill-current text-on-surface font-label-sm" text-anchor="middle" x="206" y="156">TUE</text>
+<!-- Wednesday (Day 3 - No Meeting Day) -->
+<rect class="fill-current text-surface-variant rx-[2]" height="122" width="28" x="290" y="18"></rect>
+<rect class="fill-current text-secondary rx-[2]" height="15" width="28" x="322" y="125"></rect>
+<text class="text-[11px] fill-current text-on-tertiary-container font-label-sm font-semibold" text-anchor="middle" x="316" y="156">WED (Focus)</text>
+<!-- Thursday (Day 4) -->
+<rect class="fill-current text-surface-variant rx-[2]" height="92" width="28" x="400" y="48"></rect>
+<rect class="fill-current text-secondary rx-[2]" height="75" width="28" x="432" y="65"></rect>
+<text class="text-[11px] fill-current text-on-surface font-label-sm" text-anchor="middle" x="426" y="156">THU</text>
+<!-- Friday (Day 5 - Architecture Reviews) -->
+<rect class="fill-current text-surface-variant rx-[2]" height="100" width="28" x="510" y="40"></rect>
+<rect class="fill-current text-secondary rx-[2]" height="60" width="28" x="542" y="80"></rect>
+<text class="text-[11px] fill-current text-on-surface font-label-sm" text-anchor="middle" x="536" y="156">FRI</text>
+</svg>
+</div>
+<div class="flex items-center justify-between pt-space-sm text-label-sm font-label-sm text-on-surface-variant">
+<span>Avg Focus: 5.6h / day</span>
+<span class="text-on-surface font-medium">Deep Focus Goal Exceeded (+18%)</span>
+</div>
+</div>
+<!-- Panel 2: Org Talk-Time Balance Donut & Metrics (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Voice & Monologue Distribution</span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Calculated from audio diarization speaker telemetry">info</span>
+</div>
+<!-- Donut Graphic Representation -->
+<div class="flex items-center justify-center py-2">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Ring -->
+<path class="text-surface-container-high stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="4.5"></path>
+<!-- Eng: 42% (Stroke-dasharray: 42 100) -->
+<path class="text-secondary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="42, 100" stroke-linecap="butt" stroke-width="4.5"></path>
+<!-- Product: 31% (Stroke-dasharray: 31 100, offset 42) -->
+<path class="text-on-primary-fixed-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="31, 100" stroke-dashoffset="-42" stroke-linecap="butt" stroke-width="4.5"></path>
+<!-- Infra: 27% (Stroke-dasharray: 27 100, offset 73) -->
+<path class="text-on-tertiary-container stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="27, 100" stroke-dashoffset="-73" stroke-linecap="butt" stroke-width="4.5"></path>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">14%</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider">Monologue</span>
+</div>
+</div>
+</div>
+<!-- Discrete Legend with Proportions -->
+<div class="flex flex-col gap-1.5 pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-secondary"></span>
+<span class="text-on-surface">Engineering</span>
+</div>
+<span class="font-code-inline text-label-sm text-on-surface font-semibold">42%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-on-primary-fixed-variant"></span>
+<span class="text-on-surface">Product & Design</span>
+</div>
+<span class="font-code-inline text-label-sm text-on-surface font-semibold">31%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-DEFAULT bg-on-tertiary-container"></span>
+<span class="text-on-surface">Infra & Security</span>
+</div>
+<span class="font-code-inline text-label-sm text-on-surface font-semibold">27%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Search / Filter Client-side Script -->
+<script>
+    const filterInput = document.getElementById('quick-filter');
+    if (filterInput) {
+      filterInput.addEventListener('input', function(e) {
+        const val = e.target.value.toLowerCase();
+        const articles = document.querySelectorAll('article');
+        articles.forEach(article => {
+          const text = article.innerText.toLowerCase();
+          article.style.display = text.includes(val) ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</div></main></div></body></html>

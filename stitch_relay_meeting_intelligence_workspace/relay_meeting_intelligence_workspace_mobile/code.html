@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f9f9ff", "on-primary-container": "#848387", "surface-dim": "#d8dae2", "primary": "#000000", "background": "#f9f9ff", "on-tertiary-container": "#2f9563", "outline-variant": "#c7c6cb", "error": "#ba1a1a", "primary-container": "#1b1b1f", "tertiary-fixed-dim": "#78daa2", "surface-container-low": "#f1f3fb", "on-background": "#181c21", "secondary-container": "#3d67fa", "on-surface": "#181c21", "inverse-primary": "#c7c6ca", "surface-bright": "#f9f9ff", "on-primary": "#ffffff", "on-tertiary-fixed": "#002111", "tertiary-fixed": "#94f7bc", "surface-variant": "#e0e2ea", "surface-container-lowest": "#ffffff", "on-surface-variant": "#46464b", "surface-tint": "#5e5e62", "on-error": "#ffffff", "surface-container-highest": "#e0e2ea", "on-secondary-fixed": "#001453", "surface-container": "#eceef6", "inverse-surface": "#2d3037", "primary-fixed": "#e3e2e6", "surface-container-high": "#e6e8f0", "on-secondary-fixed-variant": "#0037b8", "secondary": "#164be0", "tertiary": "#000000", "inverse-on-surface": "#eff0f9", "error-container": "#ffdad6", "secondary-fixed": "#dde1ff", "on-primary-fixed": "#1b1b1f", "outline": "#76777b", "on-tertiary-fixed-variant": "#005231", "on-tertiary": "#ffffff", "tertiary-container": "#002111", "secondary-fixed-dim": "#b7c4ff", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#46464a", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#c7c6ca", "on-error-container": "#93000a" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "1.5rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1rem" }, fontFamily: { "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Geist"], "headline-lg": ["Geist"], "code-inline": ["JetBrains Mono"], "headline-md": ["Geist"], "body-md": ["Geist"], "body-sm": ["Geist"], "label-md": ["JetBrains Mono"], "body-lg": ["Geist"], "headline-xl-mobile": ["Geist"], "headline-xl": ["Geist"] }, fontSize: { "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg-mobile": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-inline": ["0.8125rem", { "lineHeight": "1.125rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-md": ["0.875rem", { "lineHeight": "1.3125rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["0.8125rem", { "lineHeight": "1.1875rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["0.9375rem", { "lineHeight": "1.4375rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f9f9ff;}body{overscroll-behavior:none;font-family:'Geist',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Brand logo. - Primary color: #2554e8
+- Font: geist
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UqIBpAyVWZaG_co4icSXfMCL0irTxFh8ku5IigdRjJrFHU_Spj7OVkX7mU8EoAHDscAnZgzLZBYNIXyqCRMXQ0DoBKbuKeykg4uUVuULYrO90O66sF5n0QGyvyswSmArzsPdqcJzH9Ix6Wc9W1hFa5iZXqajMgqAkTGGVhcN1j3na9IlqbnsmT078XhbHwbvF5Mvpa48QI5FcSPSLjq5rOLCL3oufeWpoqTeuCfmZm6j3pXFVGZjkt6A"/><div class="flex items-center gap-space-xs min-w-0"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex-shrink-0">RELAY</span><span class="font-label-sm text-label-sm text-outline-variant">/</span><h1 class="font-headline-md text-headline-md text-on-surface truncate font-semibold">Meetings</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Search workspace" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-secondary transition-colors rounded"><span class="material-symbols-outlined text-[20px]">search</span></button><a class="w-11 h-11 flex items-center justify-center" data-path="settings-profile" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XcKVAlOkoftRjGLvLL_t9JVpqRjv1M4XN7inMvDbXByM5vUrlJy_FPD15X-WlaMMiOHAccaWWdyBDxUNoYJVLAl7UAeQfVdH7ZcxGoJzHo52kS3Kedz_IAtGFYFCCdojK_p-WCgM65DgswumVSneM-PdQ-2rhvdWrfldVizpVV9lyr0GHHp3JcCkBxf1X4G3X6xY5BD5Q7M1T0sOudys9Z72L_AREy7H8IGSM1XidHg4MrPv1cRkJ0dg"/></a></div></div></header><main class="flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Meeting Context Top Block -->
+<section class="flex flex-col px-gutter pt-space-md pb-space-sm bg-surface-container-low border-b-0">
+<div class="flex items-center justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center h-5 px-1.5 bg-surface text-secondary font-label-sm text-label-sm uppercase tracking-wider rounded">ARCH-REV-804</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">42m 18s</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Oct 24, 14:00</span>
+</div>
+<button class="flex items-center gap-1 h-8 px-2.5 bg-surface text-on-surface rounded shadow-sm active:scale-95 transition-all text-label-sm font-label-sm min-h-[44px]" id="shareClipBtn">
+<span class="material-symbols-outlined text-[16px] text-secondary">share</span>
+<span>Share Clip</span>
+</button>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mb-space-xs">
+      Q4 Core Architecture: DynamoDB vs Redis
+    </h2>
+<!-- Lead Participants & Consensus State -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center -space-x-1.5">
+<img class="w-7 h-7 rounded-full object-cover bg-surface-variant ring-1 ring-surface" data-alt="Close up modern engineering lead avatar photo of a woman with glasses, neutral warm studio lighting, minimalist engineering aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCspwrCctoEyrksK6mosg9RcJ5xBFILibag0ddVf_DzTiRDsjG1TXOoAuelMDf1AtWQkRa5Rm0vIMPp2cQ8LXv9yqe8jYITXX6SMa8NaItYcj7XxoHOYsnbF_YZRBBb36Eo96PJkwDyrBiosFkD0I0ZO-g_TG8E_likcwLASzLz7v5rV8bkx_FusTAiGyC9_4jv5dp2sQ0vVYPMtG6rFtBAMGxEucYiL7YLvXOqsRaDZryQBMRGPZQ"/>
+<img class="w-7 h-7 rounded-full object-cover bg-surface-variant ring-1 ring-surface" data-alt="Profile portrait of a senior platform architect man with trimmed beard, high contrast soft tech office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBoN4Jc2a9plXHmVscOF4oMeyIvV6w_6Q6gEy38y_HU5FEowRskNjIVV8GzzVe8TwfzxubFgKEcJdKpsUHD9HO5lA0TySks6XkPiyD42zVtXbT6-JSAHNdTIwBnWRey381joZtp_rQbwNfwRN98CsTtumYctphMXQ-f8UiNBoU5SIuxtG5pHvVshu3TF4S55oVNFOBWn3NcjJtZofFKEG8v2_9pNun62lvWLle0J4mTVMq-1mPvog"/>
+<img class="w-7 h-7 rounded-full object-cover bg-surface-variant ring-1 ring-surface" data-alt="Staff software engineer portrait smiling gently, clean modern software design team atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_FREDQ2KuwqX1zEslXDj6fmRm0J0RrKbjeo96bYw1phYKCbTCvt1KeluPwgzutXG8t1phpTakDrpK0eARYe1-m60u38QKWNMcyaaFpNYuWhlDGEkP6LqD_6VlrbEqXPIG4syC_FLF_FpbZRJSPHeoYQLfIinR5dXS8z1mWaKoMRu2OUepvlntCAyXSXbgNl-L6m60VP2pOeNn0q742CJSbyXTqLimybTvPPK4w--HrobAGIn2oZc"/>
+<span class="flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm ring-1 ring-surface">+4</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface px-2 py-0.5 rounded">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Consensus Reached</span>
+</div>
+</div>
+</section>
+<!-- Meeting Timeline & Scrub Telemetry Cockpit -->
+<section class="flex flex-col px-gutter py-space-sm bg-surface-container">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center active:scale-90 transition-transform min-w-[32px]" id="playPauseBtn">
+<span class="material-symbols-outlined text-[18px]" id="playIcon">play_arrow</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-tight">
+<span class="text-secondary font-semibold" id="timeCurrent">22:10</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface-variant">42:18</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-surface text-on-surface font-label-sm text-label-sm rounded">
+<span class="text-on-tertiary-container font-bold">◆</span> 2 Decisions
+        </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-surface text-on-surface font-label-sm text-label-sm rounded">
+<span class="text-secondary font-bold">⚡</span> 3 Actions
+        </span>
+</div>
+</div>
+<!-- Scrubber Canvas Bar -->
+<div class="relative w-full h-8 bg-surface-container-high rounded flex items-end px-1 select-none overflow-hidden touch-none" id="waveformBar">
+<!-- Waveform Simulation Bars -->
+<div class="flex items-end justify-between w-full h-5 gap-[2px] opacity-80 pointer-events-none">
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-outline-variant h-3"></div>
+<div class="w-1 bg-secondary h-4"></div>
+<div class="w-1 bg-secondary h-5"></div>
+<div class="w-1 bg-secondary h-3"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-secondary h-4"></div>
+<!-- Decision marker node 1 -->
+<div class="w-1 bg-primary h-5 relative"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-secondary h-3"></div>
+<div class="w-1 bg-secondary h-5"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-outline-variant h-4"></div>
+<div class="w-1 bg-secondary h-5"></div>
+<div class="w-1 bg-secondary h-3"></div>
+<!-- Scrubber current point near 52% -->
+<div class="w-1 bg-secondary-container h-5"></div>
+<div class="w-1 bg-secondary-container h-4"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-outline-variant h-3"></div>
+<div class="w-1 bg-outline-variant h-4"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-secondary h-5"></div>
+<div class="w-1 bg-outline-variant h-3"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-secondary h-4"></div>
+<div class="w-1 bg-outline-variant h-2"></div>
+<div class="w-1 bg-outline-variant h-3"></div>
+<div class="w-1 bg-outline-variant h-1"></div>
+</div>
+<!-- Semantic Milestone Markers placed along timeline -->
+<div class="absolute top-1 left-[28%] -translate-x-1/2 flex items-center justify-center pointer-events-none" title="Decision 1">
+<span class="text-[10px] text-primary font-label-sm">◆</span>
+</div>
+<div class="absolute top-1 left-[52%] -translate-x-1/2 flex items-center justify-center pointer-events-none" title="Action 1">
+<span class="text-[10px] text-secondary font-label-sm">⚡</span>
+</div>
+<div class="absolute top-1 left-[76%] -translate-x-1/2 flex items-center justify-center pointer-events-none" title="Decision 2">
+<span class="text-[10px] text-primary font-label-sm">◆</span>
+</div>
+<!-- Playhead Scrub Line -->
+<div class="absolute top-0 bottom-0 left-[52.5%] -translate-x-1/2 w-[2px] bg-secondary flex flex-col items-center pointer-events-none">
+<div class="w-2 h-2.5 bg-secondary rounded-xs -mt-0.5"></div>
+</div>
+</div>
+<!-- Active Speaker Micro-indicator -->
+<div class="flex items-center justify-between mt-1 px-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="truncate">Speaking: <strong class="text-on-surface font-medium">Elena Rostova</strong> (Platform Lead)</span>
+<span class="text-secondary font-label-sm font-semibold">1.2x</span>
+</div>
+</section>
+<!-- Segmented View Controller -->
+<div class="px-gutter pt-space-sm pb-space-xs bg-surface sticky top-14 z-30">
+<div class="flex items-center gap-1.5 p-1 bg-surface-container rounded overflow-x-auto no-scrollbar">
+<button class="tab-btn flex-1 py-1.5 px-2.5 rounded text-center font-label-sm text-label-sm transition-all bg-surface-container-lowest text-primary font-semibold shadow-sm min-h-[36px]" data-tab="synthesis">
+        Synthesis
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-2.5 rounded text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface min-h-[36px]" data-tab="decisions">
+        Decisions (2)
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-2.5 rounded text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface min-h-[36px]" data-tab="transcript">
+        Transcript
+      </button>
+<button class="tab-btn flex-1 py-1.5 px-2.5 rounded text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface min-h-[36px]" data-tab="actions">
+        Actions (3)
+      </button>
+</div>
+</div>
+<!-- Primary Workspace Canvas (High-Density Mobile Sheet) -->
+<div class="flex flex-col px-gutter py-space-sm space-y-space-md">
+<!-- Executive Synthesis Telemetry Block -->
+<div class="bg-surface-container-low p-space-md rounded">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Telemetry & Impact Projections</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container bg-surface-container-lowest px-1.5 py-0.5 rounded">High Confidence</span>
+</div>
+<!-- Stat Badges Pair -->
+<div class="grid grid-cols-2 gap-2 mb-space-sm">
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-0.5">p99 Latency Target</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface"><7.4ms</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">-1.2ms SLA</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-0.5">Infrastructure OpEx</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">-42%</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">~$18k/mo</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+        Evaluated multi-region Redis cluster maintenance overhead against DynamoDB global tables with on-demand provisioned throughput. Engineering consensus prioritizes operational simplicity over sub-millisecond in-memory cache benefits.
+      </p>
+</div>
+<!-- Section: Architectural Decisions -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Key Architectural Decisions</span>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-[10px]">2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">ADR-109</span>
+</div>
+<!-- Decision Node 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded border-l-4 border-l-primary flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-primary text-[13px] font-bold">◆</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Decision Recorded</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14:24 in session</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-tight">
+          Adopt DynamoDB Single-Table Design for Core User Session
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Session keys will be partitioned by <code class="font-code-inline text-code-inline bg-surface-container px-1 rounded text-primary">usr_uuid</code> with inverted GSI for active device scrub. Redis persistence cluster will be deprecated over two sprint intervals.
+        </p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="text-on-surface-variant">Owner:</span>
+<span class="font-medium">Elena Rostova</span>
+</div>
+<span class="px-1.5 py-0.5 bg-surface-container text-on-surface rounded">Status: Locked</span>
+</div>
+</div>
+<!-- Decision Node 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded border-l-4 border-l-primary flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-primary text-[13px] font-bold">◆</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Decision Recorded</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">36:12 in session</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-tight">
+          Enforce Strongly Consistent Reads only on Token Revocation
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          General session reads will remain eventually consistent to sustain read throughput and preserve the 50% read provision cost reduction.
+        </p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="text-on-surface-variant">Owner:</span>
+<span class="font-medium">Marcus Vance</span>
+</div>
+<span class="px-1.5 py-0.5 bg-surface-container text-on-surface rounded">Status: Locked</span>
+</div>
+</div>
+</div>
+<!-- Section: Commitments & Action Items -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Commitments & Actions</span>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-[10px]">3</span>
+</div>
+<button class="font-label-sm text-label-sm text-secondary min-h-[32px] px-1 flex items-center" id="markAllBtn">Resolve All</button>
+</div>
+<!-- Action Items Minimalist List -->
+<div class="bg-surface-container-lowest rounded divide-y divide-surface-container">
+<!-- Item 1 -->
+<label class="flex items-start gap-space-sm p-space-md cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 w-4 h-4 accent-secondary rounded-xs cursor-pointer min-w-[16px]" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md text-body-md font-medium text-on-surface line-through text-outline">
+                Benchmark p99 writes across DynamoDB Local vs AWS Staging
+              </span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm flex-wrap text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span> ENG-4421
+              </span>
+<span>•</span>
+<span>Elena R.</span>
+<span>•</span>
+<span class="text-on-tertiary-container font-medium">Done (Yesterday)</span>
+</div>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="flex items-start gap-space-sm p-space-md cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="mt-1 w-4 h-4 accent-secondary rounded-xs cursor-pointer min-w-[16px]" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md text-body-md font-medium text-on-surface">
+                Author Terraform module for secondary Global Index partition
+              </span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm flex-wrap text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span> ENG-4428
+              </span>
+<span>•</span>
+<span>Kiran Patel</span>
+<span>•</span>
+<span class="text-error font-medium">Due Friday</span>
+</div>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="flex items-start gap-space-sm p-space-md cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="mt-1 w-4 h-4 accent-secondary rounded-xs cursor-pointer min-w-[16px]" type="checkbox"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md text-body-md font-medium text-on-surface">
+                Verify failover recovery SLA under simulated VPC partition
+              </span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm flex-wrap text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span> ENG-4435
+              </span>
+<span>•</span>
+<span>Dave S.</span>
+<span>•</span>
+<span>Due Oct 31</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Live Transcript Excerpt Accordion Trigger -->
+<div class="bg-surface-container-low p-space-md rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-on-surface">record_voice_over</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Timestamp Anchor 22:10</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">"If we cap the session payload at 4KB, on-demand Dynamo is a no-brainer."</p>
+</div>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface hover:text-secondary min-w-[32px]">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Intelligent Ask Relay Bottom Command Field -->
+<div class="pt-space-xs pb-space-sm">
+<div class="flex items-center bg-surface-container-lowest px-space-md py-2 rounded shadow-sm gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">psychology</span>
+<input class="bg-transparent flex-1 font-body-md text-body-md text-on-surface placeholder:text-outline outline-none min-h-[36px]" placeholder="Ask Relay about this meeting (e.g. latency risks)..." type="text"/>
+<button aria-label="Send Query" class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 active:scale-95 transition-transform min-w-[32px]">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple Micro-interactions for Mobile Cockpit
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Play/Pause Scrub Telemetry Toggle
+    const playBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    let isPlaying = false;
+
+    if (playBtn && playIcon) {
+      playBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      });
+    }
+
+    // 2. Tab switcher interaction
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+        tab.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // 3. Share Clip feedback micro-state
+    const shareBtn = document.getElementById('shareClipBtn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        const originalText = shareBtn.innerHTML;
+        shareBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">done</span><span>Copied!</span>';
+        setTimeout(() => {
+          shareBtn.innerHTML = originalText;
+        }, 1800);
+      });
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-secondary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs max-w-[390px] mx-auto"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="cockpit" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-sm text-label-sm tracking-normal mt-0.5">Cockpit</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs py-space-xs transition-colors text-secondary font-semibold" data-path="meetings" href="#"><span class="material-symbols-outlined text-[20px]">videocam</span><span class="font-label-sm text-label-sm tracking-normal mt-0.5">Meetings</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="transcript-intel" href="#"><span class="material-symbols-outlined text-[20px]">psychology</span><span class="font-label-sm text-label-sm tracking-normal mt-0.5">Intel</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="library" href="#"><span class="material-symbols-outlined text-[20px]">folder_data</span><span class="font-label-sm text-label-sm tracking-normal mt-0.5">Library</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-sm text-label-sm tracking-normal mt-0.5">Profile</span></a></div></nav></body></html>

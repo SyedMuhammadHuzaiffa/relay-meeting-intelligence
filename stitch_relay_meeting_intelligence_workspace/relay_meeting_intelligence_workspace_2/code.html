@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed":"#001356","on-primary-fixed-variant":"#0035be","outline-variant":"#c4c5d9","surface-container-low":"#f5f3f6","surface-bright":"#faf9fb","surface-container-highest":"#e3e2e4","error":"#ba1a1a","primary-fixed":"#dde1ff","on-secondary-container":"#00217a","surface-container-high":"#e9e7ea","secondary-container":"#708cfd","on-tertiary-container":"#ffe9e3","primary-container":"#2b59ff","surface-tint":"#1049f1","on-surface":"#1b1c1e","surface-variant":"#e3e2e4","primary-fixed-dim":"#b9c3ff","secondary-fixed":"#dde1ff","on-background":"#1b1c1e","primary":"#003fdd","inverse-on-surface":"#f2f0f3","tertiary":"#982e00","on-error-container":"#93000a","inverse-surface":"#303032","on-tertiary-fixed":"#390c00","error-container":"#ffdad6","inverse-primary":"#b9c3ff","outline":"#747688","on-secondary-fixed-variant":"#173bab","on-secondary":"#ffffff","tertiary-container":"#c23d00","tertiary-fixed-dim":"#ffb59d","on-secondary-fixed":"#001453","on-tertiary-fixed-variant":"#832600","surface-container-lowest":"#ffffff","on-error":"#ffffff","secondary":"#3755c3","on-primary-container":"#ecedff","tertiary-fixed":"#ffdbd0","surface-dim":"#dbd9dc","background":"#faf9fb","on-tertiary":"#ffffff","surface":"#faf9fb","secondary-fixed-dim":"#b8c4ff","on-surface-variant":"#434656","on-primary":"#ffffff","surface-container":"#efedf0"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"2rem","margin":"1rem","space-lg":"1.25rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1rem"},"fontFamily":{"label-sm":["JetBrains Mono"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"label-md":["JetBrains Mono"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"code-snippet":["JetBrains Mono"]},"fontSize":{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl-mobile":["1.625rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1rem",{"lineHeight":"1.375rem","letterSpacing":"-0.01em","fontWeight":"600"}],"code-snippet":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-lowest z-50 flex flex-col justify-between items-center py-3 border-r border-outline-variant/30 select-none"><div class="flex flex-col items-center gap-4 w-full"><div class="relative flex items-center justify-center p-1.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group" title="Acme Corp · Eng"><img alt="Relay Logo" class="h-8 w-8 object-contain rounded" src="https://lh3.googleusercontent.com/aida/AEtjO1UsO2G3bU9ObLneSOo4-6hU5QY7WQzQccJFXL833M5XF6x8MkREExoRaec9tA7wQD41VLY0ZAUFTgVQxBYsb9U0vmX0CannjbX1HXAw-kl_ujr5VK7gX8F3-_xoNhg7Lv-27Ohg91fqnklljN9hLgjQcOtd9I3oNHFOntZO1boJzG1jjVu7Tatrfcch9F0B_m0uPanK9V5GFAi5qo3zgDphHjcDiC_pvBGJ-q8CqcHNCr3apFxbVRQYuQ"/><span class="absolute -bottom-1 -right-1 flex h-2.5 w-2.5 items-center justify-center"><span class="material-symbols-outlined text-[10px] text-on-surface-variant">domain</span></span></div><div class="w-8 h-[1px] bg-outline-variant/30"></div><nav class="flex flex-col items-center gap-2 w-full px-2" data-active-classes="bg-primary-container text-on-primary font-semibold relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary-container after:rounded-r"><a aria-current="page" class="group flex items-center justify-center w-11 h-11 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary-container after:rounded-r" data-path="cockpit" href="#" title="Home (Operational meeting cockpit)"><span class="material-symbols-outlined text-[20px]">grid_view</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="meetings" href="#" title="Meetings (Catalog of all syncs &amp; transcripts)"><span class="material-symbols-outlined text-[20px]">chat_bubble</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="intelligence" href="#" title="Intelligence (Cross-meeting synthesis &amp; trends)"><span class="material-symbols-outlined text-[20px]">insights</span></a><a class="group relative flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" data-path="library" href="#" title="Library (Clips, templates, shared moments)"><span class="material-symbols-outlined text-[20px]">video_library</span></a></nav></div><div class="flex flex-col items-center gap-3 w-full px-2"><button class="group relative flex items-center justify-center w-10 h-10 rounded-full bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors" title="Quick Capture / Record" type="button"><span class="material-symbols-outlined text-[18px]">radio_button_checked</span><span class="absolute top-1 right-1 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span></span></button><button class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Command Palette (⌘K)" type="button"><span class="font-label-sm text-label-sm font-semibold tracking-tighter">⌘K</span></button><button class="relative flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="relative pt-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEiA5b7wA73EU0_420Pci9EeKNg-8iJwB0SMdRYtLBL1ywTZpMx_UilZToOy3wk0VfETBnjnrn7FrVr5yc_tbRiQc2kroSHVvMFojmdGMf0QfpuD1rPD-9V68VZT4445CC3SN0lQEn5p_puJzn0Z-dDka1FG0s8Q_CfExAAGzrX_EvQoKWNcJuhXc9FUl0UAldB6BzwnV7l4QXw7kCCaHEVyyIpD0tTW6Mgq4Sfm8Po54H42yW7wU"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-surface-container-lowest" title="Active Now"></span></div></div></aside><div class="pl-16 min-h-screen flex flex-col"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md z-40 border-b border-outline-variant/30 px-6 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant whitespace-nowrap"><span class="hover:text-on-surface cursor-pointer">Acme Core</span><span class="text-outline-variant">/</span><button class="flex items-center gap-1 font-body-sm text-body-sm font-medium text-on-surface hover:text-primary transition-colors" type="button"><span>Product Syncs</span><span class="material-symbols-outlined text-[16px]">keyboard_arrow_down</span></button></div></div><div class="flex-1 max-w-xl mx-6 hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span><input class="w-full h-8 pl-9 pr-14 bg-surface-container-low border border-outline-variant/40 rounded text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest transition-all" placeholder="Jump to meetings, decisions, speaker quotes..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-highest border border-outline-variant/50 rounded pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-3 shrink-0"><button class="hidden lg:flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface px-2 py-1 rounded text-label-md font-label-md border border-outline-variant/30 hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">add</span><span>Connect Calendar</span></button><div class="hidden sm:flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30 text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[14px]">calendar_today</span><span>This Week</span></div><button class="flex items-center gap-1.5 h-8 px-3 rounded bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-medium shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">auto_awesome</span><span>Ask Relay</span></button></div></header><main class="relative pt-14 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Meeting Sub-Header & Metadata -->
+<section class="bg-surface-container-lowest px-8 py-5 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+<div class="space-y-1.5 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary-container/10 text-primary font-label-sm text-label-sm font-semibold tracking-wider uppercase">
+            Architecture Review
+          </span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            SYNC-REC-8924
+          </span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confidential (Tier 1)</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight truncate">
+          Q4 Core Architecture &amp; Latency Migration
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 flex-wrap">
+<span class="font-medium text-on-surface">October 24, 2024</span>
+<span>11:00 AM – 11:45 AM (45 min)</span>
+<span class="text-outline-variant">•</span>
+<span>Hosted by <strong class="text-on-surface font-medium">Huzaifa</strong></span>
+</p>
+</div>
+<!-- Action Strip & Key Attendants -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0">
+<!-- Participant Stack -->
+<div class="flex items-center -space-x-2 overflow-hidden py-1">
+<div class="relative group" title="Huzaifa (Host)">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Close up professional portrait of engineering host Huzaifa wearing glasses and dark tech crewneck with soft studio backlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtYYrFYdfJZ3-xbgerYyQXBJ4YT-c9boN-0p3Q3OhsJ5Wxxv4oNY7X8gEnoeiQKTdgk4RXVWCCxW5ggDlrrFdjmPFgzqwy29BPmRbbuaLxt9MIDKZ-2BICdNHtZaUKzv9JTsSm0_A3IRDG41UU5aN5C5GpzkmcMCqK8cgeDNlpwrlCnkd1rIotCuu7woodnCTP-3WIFyUk6PAA2_mA20G0aq2lD7b7cIV8A8QGZ2-3jwLoACELEqY"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-primary-container ring-1 ring-surface-container-lowest"></span>
+</div>
+<div class="relative group" title="Sarah Lin (Staff Arch)">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait headshot of Sarah Lin Staff Software Architect with minimalist sleek modern background in muted slate lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5pYdw1O3mbzMy80wWSztbW8R_J1h-8XZ8pqTwPHYomYOO7L63Fi5LVKFAzVC7qz5uf_Xbb2DzO0FkABbgr6Uu-yoPVBRL3N85vPA_zMmvXtKQlPrVGxA56ZdmkUTwTAAyvEZk805FLf4p_imVPTj7PN2tnCFemnZ_Uk4pOMdHtFRSMDoUqdnYFgqMJT2VP4tJSt-pwZMpJKVpY9lTeOLnrEcpbwqPzgKsasu-MzAsKsTiRW6lLSo"/>
+</div>
+<div class="relative group" title="Marcus Chen (Infra Lead)">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Portrait headshot of Marcus Chen Infrastructure Engineering Lead against architectural workspace office interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvAgyPWxyI0wzqv7OXxNtEx_FYabewROIQ-OHk3BzC8JBTInrkpYyret1XEKInqYNdZqjnsoGuDjodMem-5p1ugjswosRNI6EUgQ-72l-oofFk52XSSontHIjZ2cEetpU0U1bDVcc5rpZ1Co_7dZYteyACZ4cK3P7USAR0LhY3eCYbzOCT8NkE63lwMoD9DpP8S3I6ED0Otl0s3amzfEvtUCaEFyvzca8iBBbwfyLo5SV9ocoq01s"/>
+</div>
+<div class="relative group" title="Elena Vance (Principal Eng)">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Professional studio photo of Elena Vance Principal Engineer in sharp tailored jacket with crisp natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP4l2daPXqWS8YO-F-BcC7bdG8EAhofqQ3hxBIeq4e6WOyErApeMCFVemar0UmO7_TgmHZ-HyuNQxm2-aUGhpVTy9hh2AdslAB0BbBG4rEGLTuRRWwO2nUwKbgULCkgtVBq13UQGHufVUEn3h2n6nSkh010zEiX6OnGf8HaLVH50N0VlbtFE6lpNHMNE4Sfo9RKd8qdoKms__C8M0ri2i7XKlA5BtrP8CgJgFRIqZ2kdpg8Lx4O7g"/>
+</div>
+<div class="relative group" title="Maya Patel (Data Eng)">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container-lowest object-cover" data-alt="Editorial headshot of Maya Patel Data Infrastructure Engineer smiling with warm ambient tech workspace atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLefI6eF8fSMne1Aw2a_7lv7myuO_RtMze1YUSm60PuE8M4DwDlHPtrV-eQRyoSIYyY0Azj0IityTLFYgxvcwJ9wO6ZIe1_hlFdYi_-OX9oYnDWlS-NJXRzIVUYGJ5yLJuEuM-_nuQw1i2v96eAzaaJzBpBkStzlL0gQGJEnUzZOz3SFPqrIFWhXUu16GdfuL_Qse6KLQtYDFCQpoI-Ce0s_F-8m5C5IGn2oiT-mee2uqzMaYVqaU"/>
+</div>
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold ring-2 ring-surface-container-lowest">
+            +1
+          </span>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/30 hidden sm:block"></div>
+<!-- Utility Buttons -->
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-medium shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+<span>Share Moment</span>
+<kbd class="ml-1 px-1 py-0.2 rounded bg-on-primary-fixed/20 text-on-primary font-label-sm text-label-sm">⌘S</kbd>
+</button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">ios_share</span>
+<span>Export Summary</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Participants Pills -->
+<div class="mt-4 pt-3 flex items-center gap-2 overflow-x-auto text-nowrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Present:</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Huzaifa <span class="text-on-surface-variant">(Host)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Sarah Lin <span class="text-on-surface-variant">(Staff Arch)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Marcus Chen <span class="text-on-surface-variant">(Infra Lead)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Elena Vance <span class="text-on-surface-variant">(Principal)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span> Maya Patel <span class="text-on-surface-variant">(Data)</span>
+</span>
+</div>
+</section>
+<!-- Interactive Full-Width Telemetry & Timeline Rail -->
+<section class="bg-surface-container-low px-8 py-4 shadow-sm select-none">
+<div class="max-w-7xl mx-auto space-y-2.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-4">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">view_timeline</span>
+            TELEMETRY TIMELINE
+          </span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2 h-2 rounded bg-primary-container inline-block"></span> Huzaifa (32%)</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2 h-2 rounded bg-secondary inline-block"></span> Sarah (28%)</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2 h-2 rounded bg-tertiary-container inline-block"></span> Marcus (24%)</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-2 h-2 rounded bg-outline inline-block"></span> Elena (16%)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono text-primary font-semibold">00:22:10</span>
+<span class="text-outline-variant">/</span>
+<span class="font-mono text-on-surface-variant">00:45:00</span>
+</div>
+</div>
+<!-- Speaker Activity Multi-Segment Lane -->
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-primary-container" style="width: 9%;" title="00:00 - 04:00 Huzaifa"></div>
+<div class="h-full bg-secondary" style="width: 14%;" title="04:00 - 10:20 Sarah"></div>
+<div class="h-full bg-primary-container" style="width: 10%;" title="10:20 - 15:00 Huzaifa"></div>
+<div class="h-full bg-tertiary-container" style="width: 18%;" title="15:00 - 23:00 Marcus"></div>
+<div class="h-full bg-outline" style="width: 11%;" title="23:00 - 28:00 Elena"></div>
+<div class="h-full bg-secondary" style="width: 14%;" title="28:00 - 34:20 Sarah"></div>
+<div class="h-full bg-primary-container" style="width: 13%;" title="34:20 - 40:00 Huzaifa"></div>
+<div class="h-full bg-tertiary-container" style="width: 11%;" title="40:00 - 45:00 Marcus"></div>
+</div>
+<!-- Timeline Track with Key Event Markers & Scrubbing Head -->
+<div class="relative w-full h-11 bg-surface-container-lowest rounded-md px-3 flex items-center">
+<!-- Background Minute Grid Markers -->
+<div class="absolute inset-x-3 inset-y-0 flex justify-between pointer-events-none opacity-40">
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">00:00</span>
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">09:00</span>
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">18:00</span>
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">27:00</span>
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">36:00</span>
+<span class="text-[9px] font-label-sm text-outline-variant self-end pb-0.5">45:00</span>
+</div>
+<!-- Baseline Wire -->
+<div class="w-full h-0.5 bg-surface-container-highest rounded-full"></div>
+<!-- Event Tag: 04:12 [Topic] -->
+<div class="absolute group cursor-pointer" style="left: 9.3%;">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest ring-2 ring-on-surface-variant group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-7 -left-10 hidden group-hover:flex items-center px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-md z-30">
+            04:12 Topic: Memory pressure
+          </div>
+</div>
+<!-- Event Tag: 14:35 [Highlight] -->
+<div class="absolute group cursor-pointer" style="left: 32.4%;">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest ring-2 ring-primary group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-7 -left-12 hidden group-hover:flex items-center px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-md z-30">
+            14:35 Highlight: Redis vs Dynamo
+          </div>
+</div>
+<!-- Event Tag: 22:10 [Decision] Active Scrub Position -->
+<div class="absolute z-20 group cursor-pointer" style="left: 49.2%;">
+<!-- Scrub Pin & Indicator -->
+<div class="w-4 h-4 -ml-2 rounded-full bg-primary shadow flex items-center justify-center ring-4 ring-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</div>
+<!-- Permanent Tooltip Preview for Playhead -->
+<div class="absolute -top-9 -left-20 flex items-center gap-1.5 px-2 py-0.5 rounded bg-on-surface text-surface-container-lowest font-label-sm text-label-sm whitespace-nowrap shadow-lg">
+<span class="font-bold text-primary-fixed">22:10</span>
+<span>Decision: Redis Cluster</span>
+</div>
+</div>
+<!-- Event Tag: 31:45 [Action] -->
+<div class="absolute group cursor-pointer" style="left: 70.5%;">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest ring-2 ring-tertiary-container group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-7 -left-12 hidden group-hover:flex items-center px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-md z-30">
+            31:45 Action: Memory validation
+          </div>
+</div>
+<!-- Event Tag: 39:20 [Risk] -->
+<div class="absolute group cursor-pointer" style="left: 87.4%;">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest ring-2 ring-error group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-7 -left-16 hidden group-hover:flex items-center px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-md z-30">
+            39:20 Risk: Cross-region egress
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Three-Zone High-Density Master Content Layout -->
+<div class="max-w-[1600px] w-full mx-auto px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ZONE 1: LEFT NARROW COLUMN (Meeting Intelligence Navigator & Audio Sub-Widget) -->
+<aside class="lg:col-span-3 space-y-4">
+<!-- Navigation Index Module -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm space-y-1">
+<div class="px-3 py-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant uppercase">
+            Intelligence Index
+          </span>
+<span class="material-symbols-outlined text-[14px] text-outline">tune</span>
+</div>
+<nav class="space-y-0.5">
+<!-- Active Overview item -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-all shadow-sm" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">auto_read_pause</span>
+<span>Overview &amp; Brief</span>
+</span>
+<span class="px-1.5 py-0.2 rounded bg-on-primary-fixed/20 text-on-primary font-label-sm text-label-sm">Active</span>
+</a>
+<!-- Transcript Tab -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-colors group" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">notes</span>
+<span>Full Transcript</span>
+</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">384</span>
+</a>
+<!-- Actions Tab -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-colors group" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">task_alt</span>
+<span>Actions &amp; Tasks</span>
+</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">4 open</span>
+</a>
+<!-- Decisions Tab -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-colors group" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">verified</span>
+<span>Decisions &amp; Rationale</span>
+</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-medium">3</span>
+</a>
+<!-- Discussion Themes -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-colors group" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">bubble_chart</span>
+<span>Discussion Themes</span>
+</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">4</span>
+</a>
+<!-- Analytics & Talk Time -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm transition-colors group" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">monitoring</span>
+<span>Speaker Analytics</span>
+</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+</a>
+</nav>
+<div class="pt-3 mt-2">
+<div class="px-2 py-1.5 space-y-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Scope Filter</span>
+<button class="w-full flex items-center justify-between px-2.5 py-1.5 rounded bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-colors" type="button">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-primary">filter_list</span>
+<span>Jump to speaker</span>
+</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<label class="flex items-center gap-2 px-1 py-1 cursor-pointer select-none">
+<input checked="" class="rounded border-outline-variant text-primary-container focus:ring-0 w-3.5 h-3.5" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High-confidence AI items</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Compact Audio Waveform Player Widget (Anchored to Left Rail, NOT occupying Center) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase text-on-surface-variant">Master Audio Track</span>
+</div>
+<span class="font-mono text-label-sm font-semibold text-primary">00:22:10</span>
+</div>
+<!-- Waveform Simulation SVG -->
+<div class="h-10 w-full flex items-end justify-between gap-[2px] px-1 py-1 bg-surface-container-low rounded-lg">
+<div class="w-1 bg-primary/40 rounded-full h-3"></div>
+<div class="w-1 bg-primary/40 rounded-full h-5"></div>
+<div class="w-1 bg-primary/40 rounded-full h-7"></div>
+<div class="w-1 bg-primary/40 rounded-full h-4"></div>
+<div class="w-1 bg-primary/40 rounded-full h-8"></div>
+<div class="w-1 bg-primary/50 rounded-full h-6"></div>
+<div class="w-1 bg-primary/60 rounded-full h-9"></div>
+<div class="w-1 bg-primary/70 rounded-full h-4"></div>
+<div class="w-1 bg-primary/80 rounded-full h-7"></div>
+<div class="w-1 bg-primary rounded-full h-10 animate-pulse"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-5"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-8"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-3"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-6"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-4"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-7"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-3"></div>
+<div class="w-1 bg-outline-variant/60 rounded-full h-2"></div>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="-10s" type="button">
+<span class="material-symbols-outlined text-[18px]">replay_10</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-on-primary-fixed-variant transition-colors shadow" type="button">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="+10s" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_10</span>
+</button>
+</div>
+<!-- Speed Pill Selector -->
+<div class="flex items-center bg-surface-container-high rounded p-0.5 text-label-sm font-label-sm">
+<button class="px-1.5 py-0.5 text-on-surface-variant hover:text-on-surface rounded" type="button">1x</button>
+<button class="px-1.5 py-0.5 bg-surface-container-lowest text-primary font-semibold rounded shadow-xs" type="button">1.5x</button>
+<button class="px-1.5 py-0.5 text-on-surface-variant hover:text-on-surface rounded" type="button">2x</button>
+</div>
+</div>
+</div>
+<!-- Quick Session Context Info -->
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface font-medium">
+<span>Calendar Event</span>
+<span class="material-symbols-outlined text-[16px] text-outline">link</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+          Linked to sprint task <span class="font-mono text-primary font-medium">ENG-4102</span> in Linear. Next standup integration scheduled for Monday.
+        </p>
+</div>
+</aside>
+<!-- ZONE 2: CENTER MAIN COLUMN (Dynamic Intelligence Content - Default Overview mode) -->
+<main class="lg:col-span-6 space-y-6 min-w-0">
+<!-- Executive Brief Module -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">summarize</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Executive Brief</h2>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="text-xs font-label-sm px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px]">content_copy</span> Copy Markdown
+            </button>
+</div>
+</div>
+<!-- 3-sentence high density summary -->
+<div class="p-4 bg-surface-container-low rounded-lg leading-relaxed font-body-md text-body-md text-on-surface space-y-2">
+<p>
+            The team reviewed memory consumption spikes under peak Q3 loads and resolved to transition the caching tier to a clustered Redis configuration with local read replicas. Target latency is sub-8ms P99 across all tier-1 microservices. Huzaifa and Marcus will finalize infra terraform configs by Friday before code freeze.
+          </p>
+</div>
+<!-- High-level outcome telemetry chips -->
+<div class="grid grid-cols-3 gap-3 pt-1">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Target P99 Latency</span>
+<span class="font-mono font-headline-sm text-headline-sm text-primary">&lt; 8.0ms</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Throughput Scale</span>
+<span class="font-mono font-headline-sm text-headline-sm text-on-surface">50k RPS</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Est. Savings / Mo</span>
+<span class="font-mono font-headline-sm text-headline-sm text-emerald-600">-18.4%</span>
+</div>
+</div>
+</section>
+<!-- Key Decisions Section -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-emerald-100 text-emerald-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Key Decisions Recorded</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Unanimously agreed by 5 architects</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold uppercase">2 Confirmed</span>
+</div>
+<div class="space-y-3">
+<!-- Decision 1 -->
+<div class="p-4 rounded-lg bg-surface-container-low space-y-2.5 hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                  DECISION #1 · ARCHITECTURAL
+                </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Adopt Redis Cluster with read replicas over DynamoDB Accelerator (DAX).
+                </h3>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded bg-primary-container text-on-primary font-mono text-label-sm hover:bg-primary transition-colors" title="Jump to timestamp in transcript" type="button">
+<span>▶ 22:10</span>
+</button>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
+<p><strong class="text-on-surface font-medium">Rationale:</strong> Yields 3.8x lower latency and capitalizes on existing team mastery of eviction policies under volatile memory states.</p>
+<div class="flex items-center gap-2 pt-1 flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Impacted Services:</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono text-label-sm">auth-v2</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono text-label-sm">session-cache</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono text-label-sm">user-graph</span>
+</div>
+</div>
+</div>
+<!-- Decision 2 -->
+<div class="p-4 rounded-lg bg-surface-container-low space-y-2 hover:bg-surface-container-high/60 transition-colors">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                  DECISION #2 · MIGRATION STRATEGY
+                </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Retain dual-write strategy during 2-week canary phase.
+                </h3>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-highest hover:bg-primary-container hover:text-on-primary text-on-surface font-mono text-label-sm transition-colors" title="Jump to timestamp" type="button">
+<span>▶ 28:40</span>
+</button>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Guarantees zero downtime rollbacks if memory fragmentation exceeds 15% threshold during peak APAC traffic bursts.
+            </p>
+</div>
+</div>
+</section>
+<!-- Discussion Themes & Deep Dives -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Discussion Themes &amp; Deep Dives</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 core topics surfaced</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<!-- Theme 1 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Theme 01</span>
+<span class="font-mono text-label-sm text-on-surface-variant">8 min spent</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium">Memory Leak in Ingestion Pipeline</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Analyzed GC log anomalies under streaming Go routines during batch payload flushes.
+            </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Spearheaded by Marcus</span>
+<button class="text-primary font-mono text-label-sm hover:underline flex items-center gap-1" type="button">
+<span>▶ 06:15</span>
+</button>
+</div>
+</div>
+<!-- Theme 2 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Theme 02</span>
+<span class="font-mono text-label-sm text-on-surface-variant">14 min spent</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium">Cross-Region Latency Benchmarks</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Benchmarked round-trip replication latency between us-east-1 and eu-central-1 clusters.
+            </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Spearheaded by Sarah</span>
+<button class="text-primary font-mono text-label-sm hover:underline flex items-center gap-1" type="button">
+<span>▶ 15:40</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Identified Risks & Blockers -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Identified Risks &amp; Blockers</h2>
+</div>
+<!-- Amber Alert Card -->
+<div class="p-4 rounded-lg bg-amber-50/80 space-y-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 text-[18px]">report_problem</span>
+<span class="font-label-sm text-label-sm font-bold text-amber-900 uppercase tracking-wider">Critical Cost Vector</span>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-amber-900 font-mono text-label-sm hover:bg-amber-100 transition-colors" type="button">
+<span>▶ 39:20</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-amber-950 font-medium">
+            AWS eu-west-1 cross-AZ data transfer costs could spike by 12% if replicas fall out of sync during high network saturation.
+          </p>
+<div class="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-body-sm text-amber-900">
+<div class="flex items-center gap-1.5">
+<span class="font-medium text-amber-950">Mitigation:</span>
+<span>Enable direct VPC peering endpoints with keep-alive limits.</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold">
+<span>Owner:</span>
+<span class="underline">Marcus Chen</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Generated Follow-ups & Action Items -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">assignment_turned_in</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Generated Follow-ups &amp; Actions</h2>
+</div>
+<button class="text-xs font-label-sm text-primary hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">sync_alt</span> Sync to Linear
+          </button>
+</div>
+<div class="space-y-2.5">
+<!-- Action Item 1 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-3 group hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-3">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" type="checkbox"/>
+<div class="space-y-1">
+<span class="font-body-md text-body-md text-on-surface font-medium block">
+                  Benchmark 50k RPS memory saturation on c6g.xlarge instances.
+                </span>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-medium">Assignee: Huzaifa</span>
+<span>•</span>
+<span class="text-error font-medium">Due: Oct 27, 2024</span>
+<span>•</span>
+<span class="font-mono">LIN-1802</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 font-mono text-label-sm text-primary hover:underline px-2 py-1 rounded bg-surface-container-lowest" type="button">
+              ▶ 31:45
+            </button>
+</div>
+<!-- Action Item 2 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-3 group hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-3">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" type="checkbox"/>
+<div class="space-y-1">
+<span class="font-body-md text-body-md text-on-surface font-medium block">
+                  Draft terraform module for multi-AZ Redis cluster with automated failover.
+                </span>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-medium">Assignee: Marcus Chen</span>
+<span>•</span>
+<span>Due: Oct 29, 2024</span>
+<span>•</span>
+<span class="font-mono">LIN-1805</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 font-mono text-label-sm text-primary hover:underline px-2 py-1 rounded bg-surface-container-lowest" type="button">
+              ▶ 34:10
+            </button>
+</div>
+</div>
+</section>
+</main>
+<!-- ZONE 3: RIGHT CONTEXT COLUMN (Meeting Context, Talk Time & Copilot) -->
+<aside class="lg:col-span-3 space-y-6">
+<!-- Talk-Time Distribution Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">pie_chart</span>
+            Talk Distribution
+          </h3>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium">Balanced</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Max uninterrupted monologue: <strong class="text-on-surface font-medium">2m 14s</strong> (Sarah at 14:20).
+        </p>
+<!-- Speaker Breakdown Bars -->
+<div class="space-y-2.5 pt-1">
+<!-- Huzaifa -->
+<div class="space-y-1">
+<div class="flex justify-between text-body-sm text-on-surface">
+<span class="font-medium">Huzaifa</span>
+<span class="font-mono text-label-sm font-semibold">14m 24s (32%)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<!-- Sarah -->
+<div class="space-y-1">
+<div class="flex justify-between text-body-sm text-on-surface">
+<span class="font-medium">Sarah Lin</span>
+<span class="font-mono text-label-sm font-semibold">12m 36s (28%)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<!-- Marcus -->
+<div class="space-y-1">
+<div class="flex justify-between text-body-sm text-on-surface">
+<span class="font-medium">Marcus Chen</span>
+<span class="font-mono text-label-sm font-semibold">10m 48s (24%)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 24%"></div>
+</div>
+</div>
+<!-- Elena -->
+<div class="space-y-1">
+<div class="flex justify-between text-body-sm text-on-surface">
+<span class="font-medium">Elena Vance</span>
+<span class="font-mono text-label-sm font-semibold">7m 12s (16%)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 16%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ask Relay AI Copilot Module -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-secondary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">neurology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ask Relay Copilot</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant font-mono">GPT-4o Eng</span>
+</div>
+<!-- Suggested Prompt Chips -->
+<div class="flex flex-col gap-1.5">
+<button class="w-full text-left px-2.5 py-1.5 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-body-sm text-body-sm transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">What was Sarah's objection at 18:20?</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary">arrow_forward</span>
+</button>
+<button class="w-full text-left px-2.5 py-1.5 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-body-sm text-body-sm transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">Summarize the cost estimate</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary">arrow_forward</span>
+</button>
+<button class="w-full text-left px-2.5 py-1.5 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-body-sm text-body-sm transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">Draft follow-up email to stakeholders</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary">arrow_forward</span>
+</button>
+</div>
+<!-- Live Sample Response Container -->
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px]">spark</span>
+              Relay Answer
+            </span>
+<span>Just now</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            "Sarah objected that AWS managed ElastiCache would double our monthly bill unless reserved instances are locked for a 1-year contract duration."
+          </p>
+<div class="pt-1 flex items-center justify-between text-xs font-label-sm text-label-sm">
+<a class="text-primary hover:underline font-mono" href="#">Source turn: 18:22 (Sarah Lin)</a>
+<div class="flex items-center gap-1 text-outline">
+<button class="hover:text-on-surface" title="Helpful" type="button"><span class="material-symbols-outlined text-[14px]">thumb_up</span></button>
+<button class="hover:text-on-surface" title="Unhelpful" type="button"><span class="material-symbols-outlined text-[14px]">thumb_down</span></button>
+</div>
+</div>
+</div>
+<!-- Copilot Input Field -->
+<div class="relative flex items-center">
+<input class="w-full h-9 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" placeholder="Ask anything about this sync..." type="text"/>
+<button class="absolute right-2 text-primary hover:text-on-primary-fixed-variant" title="Submit question" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</section>
+<!-- Shareable Highlights / Clips (3 Ready) -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">movie</span>
+            Ready Clips
+          </h3>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">3 ready</span>
+</div>
+<div class="space-y-2.5">
+<!-- Clip 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low space-y-2 hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-sm">Decision Moment: Why Redis Won</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">01:14 duration • 1080p</p>
+</div>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface-variant transition-colors" title="Share clip snippet" type="button">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-full py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span> Preview Clip
+              </button>
+</div>
+</div>
+<!-- Clip 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low space-y-2 hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-sm">Memory Benchmarks Walkthrough</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">00:48 duration • 1080p</p>
+</div>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface-variant transition-colors" title="Share clip snippet" type="button">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-full py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span> Preview Clip
+              </button>
+</div>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for jumping and toggling active tabs if clicked
+  document.querySelectorAll('a[data-path], nav a').forEach(el => {
+    el.addEventListener('click', (e) => {
+      // lightweight visual affordance
+      if (!el.getAttribute('href') || el.getAttribute('href') === '#') {
+        e.preventDefault();
+      }
+    });
+  });
+</script></main></div></body></html>

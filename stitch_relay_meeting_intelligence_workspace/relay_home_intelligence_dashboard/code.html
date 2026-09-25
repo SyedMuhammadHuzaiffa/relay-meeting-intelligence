@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#747687", "on-tertiary-fixed": "#2f1500", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#0037b9", "on-secondary-container": "#00714e", "primary-container": "#2554e8", "surface-tint": "#1c4ee3", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container-high": "#eae7eb", "surface-container-low": "#f6f2f7", "primary-fixed-dim": "#b8c4ff", "on-tertiary-fixed-variant": "#6e3900", "surface-bright": "#fbf8fc", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#005137", "outline-variant": "#c4c5d8", "inverse-primary": "#b8c4ff", "on-primary-fixed": "#001453", "secondary-fixed-dim": "#68dba9", "on-surface": "#1b1b1e", "on-primary-container": "#dadfff", "on-error": "#ffffff", "surface": "#fbf8fc", "on-secondary": "#ffffff", "inverse-on-surface": "#f3f0f4", "surface-variant": "#e4e1e6", "inverse-surface": "#303033", "error-container": "#ffdad6", "secondary-fixed": "#85f8c4", "primary": "#003bc4", "background": "#fbf8fc", "primary-fixed": "#dde1ff", "tertiary-container": "#985100", "on-tertiary-container": "#ffd9bf", "on-surface-variant": "#434655", "tertiary-fixed": "#ffdcc3", "on-secondary-fixed": "#002114", "on-background": "#1b1b1e", "surface-container": "#f0edf1", "surface-container-highest": "#e4e1e6", "error": "#ba1a1a", "secondary": "#006c4a", "secondary-container": "#82f5c1", "tertiary-fixed-dim": "#ffb77d", "surface-dim": "#dcd9dd", "tertiary": "#753d00" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin-desktop": "2rem", "margin": "1rem", "space-lg": "1rem" }, fontFamily: { "headline-xl": ["Geist"], "code-md": ["JetBrains Mono"], "body-md": ["Geist"], "headline-md": ["Geist"], "body-lg": ["Geist"], "label-sm": ["JetBrains Mono"], "label-md": ["JetBrains Mono"], "body-sm": ["Geist"], "headline-lg": ["Geist"] }, fontSize: { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-md": ["12px", { "lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-low border-r border-outline-variant z-50 flex flex-col items-center justify-between py-space-md"><div class="flex flex-col items-center gap-space-lg w-full"><a class="flex items-center justify-center h-10 w-10" href="#"><img alt="Relay Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYc2qVFA3pkLM7hllAteTNQuiEagNafsUXhhTjdezV1cqTFxtxacJ7Vb9Qb83-yuHEVQwMLq4lDrqaDqSBqKia-Bw_Sppn76iLLsFIxa3ZB4Xq_HtviOI0x0xryQu7Aie5O6rO8d9tQjuz2MhzKEXpozczpDEnMDdSRk4PA--eHXBSOS_REhIccu47vtAHXjM1PRH3aCmcw85eNUBsgHQy7fakkhDvjy1tjc8DIS-hkT_yCvOSvraM"/></a><nav class="flex flex-col items-center gap-space-xs w-full px-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary after:rounded-r"><a aria-current="page" class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg transition-all bg-primary-container text-on-primary font-bold shadow-sm relative after:content-[''] after:absolute after:left-0 after:top-1.5 after:bottom-1.5 after:w-1 after:bg-primary after:rounded-r" data-path="overview" href="#" title="Home"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Home</span></a><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="meetings" href="#" title="Meetings"><span class="material-symbols-outlined text-[20px]">videocam</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Meets</span></a><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="intelligence" href="#" title="Intelligence"><span class="material-symbols-outlined text-[20px]">psychology</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Intel</span></a><a class="group flex flex-col items-center justify-center w-12 h-12 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="library" href="#" title="Library"><span class="material-symbols-outlined text-[20px]">folder_data</span><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface tracking-tight mt-0.5">Library</span></a></nav></div><div class="flex flex-col items-center gap-space-sm w-full px-space-xs"><button class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container hover:text-on-surface transition-colors" title="Acme Corp / Core Platform"><span class="material-symbols-outlined text-[18px]">domain</span></button><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#" title="Settings"><span class="material-symbols-outlined text-[20px]">settings</span></a><div class="relative flex items-center justify-center pt-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe5ftBqWf5BzPBErTNVfz8ip7SQLu0EEvNWdCjd4njdCZbsaxz-5JdCfMjTbj8ELoyGppS9sRhGeTybEEO_xPov0sAMXZTP3m_JspcOjFiAf6yOD_mxlg0b7--KXT3wKrBfBOadFnOkI-k9ZC1jZWOChQrg611aUFyPDVf_T87BC9ZzkGAPZuTa2Eq28aur1j_pTlMg7GEFCGvlkc4K5fPw9UUpbQ7QNVR46KVjultht_ua1PS834"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-low"></span></div></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Acme Corp</span><span class="text-outline-variant">/</span><span class="hover:text-on-surface cursor-pointer">Core Platform</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Workspace</span></div></div><div class="flex-1 max-w-md mx-gutter-desktop"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-on-surface-variant">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Search meetings, decisions, topics..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 bg-surface-container-lowest border border-outline-variant rounded font-code-md text-label-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="h-8 px-space-md bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">radio_button_checked</span><span>Record / Import</span></button><button class="h-8 w-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button class="h-8 w-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined text-[18px]">help_outline</span></button></div></header><main class="relative pt-14 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1520px] mx-auto px-gutter py-space-lg flex flex-col gap-space-lg">
+<!-- WELCOME / OPERATIONAL HEADER -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-primary-fixed/40 px-2 py-0.5 rounded">Console Active</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Session #8824-A</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-semibold">
+          Good afternoon, Huzaifa
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Here's what moved across your meetings and executive streams today.
+        </p>
+</div>
+<!-- Right Utility Cluster -->
+<div class="flex items-center flex-wrap gap-space-xs sm:gap-space-sm">
+<div class="inline-flex items-center bg-surface-container-low p-0.5 rounded-lg shadow-sm">
+<button class="px-2.5 py-1 text-on-surface bg-surface-container-lowest rounded font-label-md text-label-md shadow-sm transition-all">All Workspaces</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface rounded font-label-md text-label-md transition-all">Core Platform</button>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-surface-container-lowest rounded-lg shadow-sm font-label-md text-label-md text-on-surface cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+<span>Past 7 Days</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-lg shadow-sm font-label-md text-label-md text-on-surface">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-medium text-on-surface">Calendar Synced</span>
+<span class="text-on-surface-variant font-code-md text-label-sm text-outline">12:04 PM</span>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface shadow-sm transition-colors" title="Reload Streams">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</header>
+<!-- METRICS STRIP (4 METRIC TILES) -->
+<section aria-label="Key Intelligence Metrics" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Meetings this week</span>
+<span class="material-symbols-outlined text-[18px] text-primary">videocam</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">14</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-container/40 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>+2 vs last wk
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+<span>11.4 hrs total duration</span>
+<span class="font-code-md text-label-sm text-on-surface font-medium">81.4% recorded</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Open action items</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">task_alt</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">9</span>
+<span class="font-label-sm text-label-sm text-error font-semibold bg-error-container/40 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">warning</span>3 due today
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+<span>4 high priority</span>
+<span class="font-code-md text-label-sm text-on-surface font-medium">5 pending review</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Decisions captured</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">18</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-container/40 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">arrow_upward</span>+4 velocity
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+<span>Logged across 6 streams</span>
+<span class="font-code-md text-label-sm text-on-surface font-medium">100% trace link</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Avg. participation</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">78%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-container/40 px-1.5 py-0.5 rounded">
+            Balanced
+          </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+<span>Low monologue bias</span>
+<span class="font-code-md text-label-sm text-secondary font-medium">Optimal Index</span>
+</div>
+</div>
+</section>
+<!-- MAIN COCKPIT OPERATIONAL GRID (68% / 32%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: RECENT MEETINGS CANVAS (approx 68% = 8 cols) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<!-- Control Header & Tabs -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Recent meetings</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container px-2 py-0.5 rounded-full">14 synced</span>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center overflow-x-auto gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 font-label-md text-label-md rounded font-semibold bg-surface-container-lowest text-on-surface shadow-sm">All (14)</button>
+<button class="px-3 py-1 font-label-md text-label-md rounded font-medium text-on-surface-variant hover:text-on-surface transition-colors">My Teams</button>
+<button class="px-3 py-1 font-label-md text-label-md rounded font-medium text-on-surface-variant hover:text-on-surface transition-colors">Recorded Today</button>
+<button class="px-3 py-1 font-label-md text-label-md rounded font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
+<span>Action Required</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</button>
+</div>
+</div>
+<!-- High-Density Operational Meeting Table -->
+<div class="overflow-x-auto">
+<div class="min-w-[700px] flex flex-col gap-2">
+<!-- Table Header Pill -->
+<div class="grid grid-cols-12 gap-3 px-3 py-2 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">
+<div class="col-span-4">Meeting Session & Topic</div>
+<div class="col-span-2">Time / Duration</div>
+<div class="col-span-4">AI Executive Insight & Synthesis</div>
+<div class="col-span-2 text-right">Actions / Status</div>
+</div>
+<!-- ROW 1 -->
+<div class="grid grid-cols-12 gap-3 items-center p-3 bg-surface-container-lowest hover:bg-surface-container-low/60 rounded-xl transition-all group">
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+                    Q3 Architecture Review: Event Bus vs Kafka Streams
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-1.5 items-center">
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Corporate headshot of senior software architect with neutral studio lighting and subtle navy blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0S7KrGJT5XLQ1UezBoLgbv7awoYF8tzaBQJizPf2Ni5p6-Yab6Dphpb2rXeu6FIupCV4NovpNeLr10ce5PX-ZukBhFJfaHDug7rBp71TugjxLDZybQVv9UHJM9GHJKGUio7o5X-NC0XCkZqK_ut4wuM-uqXt6KK-yBfmjiiLhvCS0VWrmccyI2M5ZBtaVQ2evGWdii3y_PjLUv3kcpib4I0uoWLCeiRAG2bOq4F3v0azZM6cBRMA"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Portrait of an engineering director in white collared shirt with soft diffused corporate office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXC7n2K2MggcFsv1hnBQEDqb7z4EcOblj6eUF64eIxBgnUCqT8FJBwVgVlMl7YVRpwGmbxtCrBWj-PAN7vdHnvcQI96ZoyFvO68TB3xvIh1_fjF3OqzyCpldPByb_nlbW89SE8bx0fTfNrVXQR94Vs9i2owotjGRZBOJKta0dJ1kV6p8fSkQSPwV1e9Gzh3K5arRIKfcOkkkY6ym7tEQSBdu7K8YMZe2XYmXdb5cjinKCppMYUu04"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Portrait of backend infrastructure lead smiling gently with warm ambient lamp glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaEfoGed_xtbDpa8gPpI2JlGuCNRitDrU8-8KDtyzfBsaR0RRZY2MbtQrGi2JngYXsMGMdwBp_qg0CkkcieeLaHML1xQRrWnMtxpeNNWetInVnljlNbCzx-HFSvLTKi10usVwKMZLp-odd99a-QfB0sgCVpGzxAMCvP7VBaJ2cttmG-mNz1Sy3SyYg4NtmX2hciX47CLgNIXEFcIHQxu0080JBMoha9KCk_Gid6FoCIO0ZI2aH_CY"/>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-code-md text-[9px] flex items-center justify-center font-bold">+3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Core Infra</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Today, 11:00 AM</span>
+<span class="font-code-md text-label-sm text-outline">48 min • Video</span>
+</div>
+<div class="col-span-4 bg-surface-container-low/50 group-hover:bg-surface-container-lowest p-2 rounded-lg transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-clamp-2">
+                  Consensus reached to adopt <span class="font-semibold text-primary">Kafka event log</span> for audit trails; delayed streaming ingest to Q4 due to telemetry overhead.
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Decision locked by Marcus V.</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end justify-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-primary-fixed/50 text-on-primary-fixed font-bold px-2 py-0.5 rounded">
+                  4 Actions
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Completed</span>
+</span>
+</div>
+</div>
+<!-- ROW 2 -->
+<div class="grid grid-cols-12 gap-3 items-center p-3 bg-surface-container-lowest hover:bg-surface-container-low/60 rounded-xl transition-all group">
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+                    Customer Sync: Stripe Enterprise Integration & SLA Terms
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-1.5 items-center">
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Portrait of Enterprise Solutions director in dark blazer with minimal modern architectural backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIk5rRB5YfTmTDYjkJKJpEaIlXE83AftM36e_cUt7i1FWn7ATBcyf82EWApQ2pP55u7wolloCL5MRe8lajXLjKx3oznWEu8lGgrim5Z_JBMaPaTD9GOt5x0eN1PPn2QcwvKiXprvug-S_XfJVumK3XVP92V8q-R0DFXnPookgrP59-5W-DX5PegSb23t95pKjlG9us2SvWf6XXLGHUY7W1RNhpHF2JjZP9bkgZtJn4XJR7xu4hmI4"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Product manager woman with glasses in brightly lit creative studio portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdYI2yNuK8Ct-Mb5su1Z2ltJdBpt0dbUpaAhrUzDrC97apGxcmObQZwPPmnY8WNq7580BH25mIVygt-A4LGZlPRPySHZxL-r-giXXl8ePD_XP1KADI_TUGVbOHnfq9Gama30uhKobJ1cSj9SFk2seRYWYyMl-LYNbZtDMzSp4eSvbQIodPU-MQy0oWlLas2AaJkDjUUyRYPEbfciF9MPdtyo5es6jBVJAio7j7dnPHyrgXJ7YB-oQ"/>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-code-md text-[9px] flex items-center justify-center font-bold">+2</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Stripe Strategic</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Today, 9:30 AM</span>
+<span class="font-code-md text-label-sm text-outline">35 min • Video</span>
+</div>
+<div class="col-span-4 bg-surface-container-low/50 group-hover:bg-surface-container-lowest p-2 rounded-lg transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-clamp-2">
+                  Agreed to <span class="font-semibold text-on-surface">99.99% uptime SLA</span> with custom webhook failover policy; billing reconciliation docs required by Friday.
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-sm text-label-sm text-tertiary font-medium">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>Legal approval outstanding</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end justify-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold px-2 py-0.5 rounded">
+                  3 Actions
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Completed</span>
+</span>
+</div>
+</div>
+<!-- ROW 3 -->
+<div class="grid grid-cols-12 gap-3 items-center p-3 bg-surface-container-lowest hover:bg-surface-container-low/60 rounded-xl transition-all group">
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+                    Weekly Executive Product & GTM Sync
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-1.5 items-center">
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Head of product executive female portrait with sleek professional background and rim light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALS2cQHPXChMi4K74bwMKekOGgE9kabev_qhqv8VuxMVReidO1-ksvsVvppY3G848WKuzFTPpR0_eAjnIt_0VTQ1MxX09J9nFoXIDOAJzKZmn3yghwXaE8kn5fuqjgFXh37IRT99alHjxqSex5mLtvZLAPz6IImLhkhmvGT_lGlH5ZaIB9hr8sNjhibZ_HWj6TOmctvrclP-T0Ixmn3_5cTi8nRoVA8jNwJQ42d7ShNo6pg7IfRw0"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Male VP of Marketing portrait in slate gray shirt with warm studio fill light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6V5gW4DvdWdlj_QmhNbqn298cABjVIQdYxJO6Ny8joLPwdHIHpqRGHEY8N_PX7WljANDbCPDm2d2q-rpguhwIbgOA6UuTMjbkYvsyPrCIh2670scfVbRgq_RhPYBdN55dvRNUH5sX0pWvQJlRhlVsAuSgau3KbmNdkTCTCYWshHZx0rYJn8s5uHXdwvgZ7PYzmJkFaISf-mDmP9aqSQ5-BcV60CHXTdeJEOF86PQOM1U1CTwCRZs"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Director of sales portrait with clean modern daylight studio setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7OCZ-k7yZ2JhCCNI7U5D087k9GtY6cuBtPy5nrJcdNUzHFRZdnn9TTOQvt2g6d8Wg23R7gwl3n0yv5UlHuTw5-bAURureZsnNVdF1PuvvfLBTlvjxLMj97fUNRQjD38zpUAIK2xEVlVON9oA1lpPFeXtFdGeew541QAaL-X4pTDbc11AvHvgB80rXMkiWkuT2Na51s3AIySViRtrvzFpA-QpeyGhEK4Ciyz8-TO_mE2ZE7gUnyQ0"/>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-code-md text-[9px] flex items-center justify-center font-bold">+5</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exec Staff</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Yesterday, 4:00 PM</span>
+<span class="font-code-md text-label-sm text-outline">52 min • Video</span>
+</div>
+<div class="col-span-4 bg-surface-container-low/50 group-hover:bg-surface-container-lowest p-2 rounded-lg transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-clamp-2">
+                  Pushed mobile beta rollout to Aug 14 to finalize <span class="font-semibold text-primary">SOC2 compliance audit</span>. Marketing launch sequence uncoupled.
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">timeline</span>
+<span>Timeline shifted by +6 days</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end justify-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed/60 text-on-tertiary-fixed-variant font-bold px-2 py-0.5 rounded">
+                  5 Actions
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span>In Review</span>
+</span>
+</div>
+</div>
+<!-- ROW 4 -->
+<div class="grid grid-cols-12 gap-3 items-center p-3 bg-surface-container-lowest hover:bg-surface-container-low/60 rounded-xl transition-all group">
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+                    Design System & Frontend Architecture Alignment
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-1.5 items-center">
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Staff product designer portrait looking contemplative against soft warm neutral wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2nuvex9_OtOE3owefCLZA4sxDlkzoGZtrkWmy5LwpvsK7OeLCmtfu-LYjqzuyBoUl8lz1dtp1Q84ewOX881Q9pNMBtmJIwkWW3CswGkI1p0MbmNduj9-blFdX7tOugWiy1Hz4ceJhggJ1xENeDYm2N-pIq_Myqs_A7Cp0SpxVZ5XcJybzd11XQCqsShggV41srvUfJOOu44ASXC0MF2iTo0Ci-iH-AGeLCY3i90yn2LhHcMCDqx0"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Frontend engineering lead portrait with glasses in modern Scandinavian open tech office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIZhLw5y8VOAna6YmuL9EtaZ6bA66w278cHiPOKywQs1phXCJL_8Vb2yHIeN4ARyXiF5A0kjfrjf3IxtXeBT_EqwoE_LUDGjylEZ8PTwrhMiCmgDa7PjcFmH7MAcPpWxO7m3ZBiu77uIq6WTElC3OBNY5bKWA708DDWCsDRTYGuUVVs16cNVrwIpo90Y_Gm0mz3bVSQwv1cKUn6ZijRvo4aHwV0Zuhbw2kII67BnAXm-f8VlsWGPk"/>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-code-md text-[9px] flex items-center justify-center font-bold">+3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Product Platform</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Yesterday, 2:15 PM</span>
+<span class="font-code-md text-label-sm text-outline">40 min • Video</span>
+</div>
+<div class="col-span-4 bg-surface-container-low/50 group-hover:bg-surface-container-lowest p-2 rounded-lg transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-clamp-2">
+                  Approved migration to <span class="font-semibold text-on-surface">Tailwind token schema</span>; design tokens unified across web & mobile repository.
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+<span>Spec merged into repo v2.1</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end justify-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold px-2 py-0.5 rounded">
+                  2 Actions
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Completed</span>
+</span>
+</div>
+</div>
+<!-- ROW 5 -->
+<div class="grid grid-cols-12 gap-3 items-center p-3 bg-surface-container-lowest hover:bg-surface-container-low/60 rounded-xl transition-all group">
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors truncate">
+                    Security & Compliance Checkpoint #4
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-1.5 items-center">
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Head of information security in black turtleneck with clean minimalist lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlJzHETZuaLXiKgMtWhugdYDhMIa0bbz4F0bSUeyveShYAzVDkELRi3o6iUbZRpo8K9_UT1-ugS8B22Sy7MJjl5qHxNcjTL_xZUcxSOKUICsmM3wElTU04IkZ7dIUuZaXC79nYP26GB9RDNparTe3kGlm_AoXX2NeVl1SJni4R4YZFT0Ylb2QvETpGbFVB1AXGVB3u2uT3EuR2kx7wiYt7fGDN4k9vMPtjVsJioaw3dwTYpExdzpw"/>
+<img class="w-5 h-5 rounded-full object-cover" data-alt="Compliance officer professional corporate studio portrait with cool gray backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA21lJ8jQ41RNcnjV9QVasxwK4zVMPRoFeTVWQQN-0rXhNQ2i-_xx7-iIMReTgaei89vEZihW8Joy6MLse0NUhLiQJiAKDrW_Jbx3RC-GUqCkzSrHS0C7hhhJpmMLdSFLVLoALHkg_DYhqV9e7PJk5r0nKIF3P3BWUxnaW4bejqNUvgq-zNmqpcJ7zbHfKKdlfigq9CYDWL5WGo8zwRrUvWPSv9YL7r0YTWBeCFhY_ri_p4DX9NlFY"/>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-code-md text-[9px] flex items-center justify-center font-bold">+1</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Security Org</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Aug 3, 10:00 AM</span>
+<span class="font-code-md text-label-sm text-outline">28 min • Audio</span>
+</div>
+<div class="col-span-4 bg-surface-container-low/50 group-hover:bg-surface-container-lowest p-2 rounded-lg transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug line-clamp-2">
+                  Penetration testing vendor selected; vendor contracts under final legal sign-off with remediation planned for late August.
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Compliance score maintained</span>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end justify-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold px-2 py-0.5 rounded">
+                  1 Action
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Completed</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Footer / Micro-Pagination -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span>Showing 5 of 14 meetings recorded this cycle</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant font-semibold transition-colors">
+<span>Open All Meeting Transcripts</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- RIGHT COLUMN: NEEDS YOUR ATTENTION & ASK RELAY (approx 32% = 4 cols) -->
+<section class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- ATTENTION MODULE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Needs your attention</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-error-container/30 text-on-error-container font-bold px-2 py-0.5 rounded">4 Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant -mt-1">
+            Action items & unresolved follow-ups extracted from your meetings.
+          </p>
+<!-- List of Action Items -->
+<div class="flex flex-col gap-space-sm mt-1">
+<!-- Item 1 (Huzaifa - Urgent) -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col gap-2 relative group hover:bg-surface-container transition-colors">
+<div class="flex items-start justify-between gap-2">
+<span class="font-label-sm text-label-sm bg-error text-on-error font-semibold px-1.5 py-0.5 rounded">Due Today 5:00 PM</span>
+<span class="font-code-md text-label-sm text-outline">Customer Sync [14:22]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+                Review updated SLA draft from Stripe legal sync & clarify uptime liability.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-semibold text-primary">Assigned to you</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container-lowest hover:bg-primary hover:text-on-primary rounded text-on-surface font-label-sm text-label-sm transition-all shadow-sm">
+                    View Moment
+                  </button>
+<button class="px-2 py-1 bg-primary text-on-primary hover:bg-primary/90 rounded font-label-sm text-label-sm transition-all shadow-sm">
+                    Mark Done
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 2 (Marcus V. - Overdue Nudge) -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-2 relative group hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-2">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold px-1.5 py-0.5 rounded">Overdue 1d</span>
+<span class="font-code-md text-label-sm text-outline">Arch Review [38:10]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+                Deliver revised Kafka schema validation spec and protocol buffers definition.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Marcus V. (Data Platform)</span>
+</div>
+<button class="px-2.5 py-1 bg-surface-container-low hover:bg-surface-container-high rounded text-on-surface font-label-sm text-label-sm font-semibold transition-all">
+                  Nudge on Slack
+                </button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-2 relative group hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-2">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold px-1.5 py-0.5 rounded">Due Tomorrow</span>
+<span class="font-code-md text-label-sm text-outline">Product & GTM [41:05]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+                Sign off on SOC2 audit scope checklist with external assessor.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Huzaifa & Elena R.</span>
+</div>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container-high rounded text-on-surface font-label-sm text-label-sm transition-all">
+                  Inspect Item
+                </button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-2 relative group hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-2">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold px-1.5 py-0.5 rounded">Due Aug 8</span>
+<span class="font-code-md text-label-sm text-outline">Design Align [24:19]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+                Publish design token schema v2.1 to Figma workspace and notify team.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Sarah C. (Design Lead)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- QUICK "ASK RELAY" OMNI-BAR MODULE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Ask Relay Intelligence</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant -mt-1">
+            Query transcripts, consensus points, and unrecorded commitments.
+          </p>
+<div class="relative flex items-center w-full mt-1">
+<input class="w-full h-9 pl-3 pr-10 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Ask anything about recent meetings..." type="text"/>
+<button class="absolute right-1.5 w-6 h-6 flex items-center justify-center bg-primary text-on-primary rounded hover:bg-primary-container transition-colors shadow-sm" title="Submit Query">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+</button>
+</div>
+<!-- Suggested Prompt Chips -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors text-left truncate max-w-full">
+              ⚡ Summarize Q3 roadmap changes
+            </button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors text-left truncate max-w-full">
+              👤 Who owns security sign-off?
+            </button>
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors text-left truncate max-w-full">
+              📄 What SLA did we guarantee Stripe?
+            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- LOWER SECTION: MEETING PULSE & CROSS-TEAM DYNAMICS -->
+<section aria-label="Meeting Pulse and Dynamics" class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Meeting pulse & cross-team dynamics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Aggregated temporal patterns and conversational equilibrium across the engineering org.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Meeting Time
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Deep Focus
+          </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg pt-space-xs">
+<!-- ANALYTIC 1: WEEKLY WORKLOAD & FOCUS HOURS (Inline Bar Chart) -->
+<div class="flex flex-col justify-between bg-surface-container-low/40 p-space-md rounded-xl">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Weekly Load vs Focus (Hours)</span>
+<span class="font-code-md text-label-sm text-on-surface font-medium">38.4 Total Tracked</span>
+</div>
+<!-- SVG Multi-Bar Visualization -->
+<div class="w-full h-36 flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 120">
+<!-- Grid hairlines -->
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="60" y2="60"></line>
+<line class="text-surface-container-high" stroke="currentColor" stroke-width="1" x1="0" x2="320" y1="100" y2="100"></line>
+<!-- MONDAY -->
+<rect class="fill-primary" height="55" rx="2" width="12" x="25" y="45"></rect>
+<rect class="fill-secondary" height="70" rx="2" width="12" x="39" y="30"></rect>
+<!-- TUESDAY -->
+<rect class="fill-primary" height="65" rx="2" width="12" x="85" y="35"></rect>
+<rect class="fill-secondary" height="60" rx="2" width="12" x="99" y="40"></rect>
+<!-- WEDNESDAY (Heavy meeting day) -->
+<rect class="fill-primary" height="80" rx="2" width="12" x="145" y="20"></rect>
+<rect class="fill-secondary" height="35" rx="2" width="12" x="159" y="65"></rect>
+<!-- THURSDAY -->
+<rect class="fill-primary" height="50" rx="2" width="12" x="205" y="50"></rect>
+<rect class="fill-secondary" height="75" rx="2" width="12" x="219" y="25"></rect>
+<!-- FRIDAY (Deep focus) -->
+<rect class="fill-primary" height="30" rx="2" width="12" x="265" y="70"></rect>
+<rect class="fill-secondary" height="85" rx="2" width="12" x="279" y="15"></rect>
+<!-- X-Axis Labels -->
+<text class="fill-on-surface-variant font-code-md" font-size="10" text-anchor="middle" x="35" y="116">Mon</text>
+<text class="fill-on-surface-variant font-code-md" font-size="10" text-anchor="middle" x="95" y="116">Tue</text>
+<text class="fill-on-surface-variant font-code-md" font-size="10" text-anchor="middle" x="155" y="116">Wed</text>
+<text class="fill-on-surface-variant font-code-md" font-size="10" text-anchor="middle" x="215" y="116">Thu</text>
+<text class="fill-on-surface-variant font-code-md" font-size="10" text-anchor="middle" x="275" y="116">Fri</text>
+</svg>
+</div>
+<div class="flex items-center justify-between pt-3 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Peak synchronous: Wednesday</span>
+<span class="font-code-md text-label-sm text-secondary font-semibold">27.0 hrs Focus Saved</span>
+</div>
+</div>
+<!-- ANALYTIC 2: TALK-TIME BALANCE BREAKDOWN (Segmented Bar) -->
+<div class="flex flex-col justify-between bg-surface-container-low/40 p-space-md rounded-xl">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Talk-time balance by Org</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container/40 px-2 py-0.5 rounded font-bold">Healthy Distribution</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Relative share of speaking duration across cross-functional reviews.</p>
+</div>
+<div class="my-4 flex flex-col gap-2">
+<!-- Proportion Bar -->
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-primary" style="width: 42%" title="Engineering 42%"></div>
+<div class="bg-secondary" style="width: 31%" title="Product 31%"></div>
+<div class="bg-tertiary" style="width: 18%" title="GTM 18%"></div>
+<div class="bg-outline-variant" style="width: 9%" title="Operations 9%"></div>
+</div>
+<!-- Legend Grid -->
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Engineering: <strong class="font-semibold font-code-md">42%</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Product: <strong class="font-semibold font-code-md">31%</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">GTM: <strong class="font-semibold font-code-md">18%</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Operations: <strong class="font-semibold font-code-md">9%</strong></span>
+</div>
+</div>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm pt-1">
+            Engineers led technical consensus in 85% of architecture checks.
+          </div>
+</div>
+<!-- ANALYTIC 3: DECISIONS VELOCITY (Inline Sparkline Trend) -->
+<div class="flex flex-col justify-between bg-surface-container-low/40 p-space-md rounded-xl">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Decisions Velocity</span>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-fixed/60 px-2 py-0.5 rounded">+28% this cycle</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">18 Decisions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">vs 14/wk baseline</span>
+</div>
+</div>
+<!-- Inline SVG Sparkline -->
+<div class="w-full h-24 my-2">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 240 60">
+<defs>
+<lineargradient id="velocityGrad" x1="0" x2="0" y1="0" y2="1">
+<stop class="text-primary/25" offset="0%" stop-color="currentColor"></stop>
+<stop class="text-primary/0" offset="100%" stop-color="currentColor"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,48 Q 40,42 80,45 T 160,22 T 240,8 L 240,60 L 0,60 Z" fill="url(#velocityGrad)"></path>
+<path class="text-primary" d="M 0,48 Q 40,42 80,45 T 160,22 T 240,8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Points -->
+<circle class="fill-primary" cx="0" cy="48" r="3"></circle>
+<circle class="fill-primary" cx="80" cy="45" r="3"></circle>
+<circle class="fill-primary" cx="160" cy="22" r="3"></circle>
+<circle class="fill-primary ring-2 ring-surface-container-lowest" cx="240" cy="8" r="4"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span>Avg. confirmation time</span>
+<span class="font-code-md text-label-sm text-on-surface font-bold">14.2 min</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></main></div></body></html>

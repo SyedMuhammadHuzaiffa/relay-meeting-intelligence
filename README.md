@@ -1,47 +1,47 @@
-# Meeting intelligence assignment — backend foundation
+# Relay — meeting intelligence workspace
 
-This slice connects the existing meeting review interface to Supabase PostgreSQL. The visual design remains unchanged pending the separate Google Stitch design work. Recording and playback are still simulated; meetings, transcripts, summaries, actions, highlights, and clips now come from the database.
+Relay is an original meeting-intelligence interface built for this assignment. Google Stitch supplied visual and information-architecture ideas; the implemented product uses its own responsive layouts and only the capabilities backed by this repository. The Stitch exploration files are in `stitch_relay_meeting_intelligence_workspace/`.
 
-## Supabase setup
+The Next.js App Router frontend reads meetings through server-side repository code. Next.js Route Handlers handle requests and mutations; the server connects to Supabase PostgreSQL. Seeded demo records live in PostgreSQL, not in a browser mock or runtime fallback. The original `src/data/meetings.ts` remains solely as historical seed-generation input.
 
-1. Create a Supabase project. In its SQL Editor, run `supabase/migrations/20260925000000_meeting_foundation.sql`, then `supabase/seed.sql`. The seed is generated from the original realistic dataset and can be reproduced with `npm run seed:generate` after `npm install`.
-2. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL` to the project URL and `SUPABASE_SECRET_KEY` to the project's `sb_secret_...` server key. Both are server only. Do not use a `NEXT_PUBLIC_` prefix or commit `.env.local`.
-3. Run `npm install`, `npm run dev`, then visit `http://localhost:3000`.
-4. For Vercel, add the same two environment variables in project settings and deploy after applying the SQL. The previous live deployment is not evidence that this new backend slice is configured.
+## Local setup
 
-The migration enables row level security on every table with no browser policies. All reads and writes run through server code. There is no user authentication in this assignment slice; the existing public meeting and share routes, and mutation APIs, should gain per-user authorization before using real private customer data.
+1. Run `npm install`.
+2. In a Supabase project, apply `supabase/migrations/20260925000000_meeting_foundation.sql` in the SQL Editor, then apply `supabase/seed.sql`. The seed inserts missing demo records and preserves later action or summary changes. `npm run seed:generate` regenerates the seed from the historical dataset if needed; do not rerun the migration or seed on a populated database without reviewing the SQL first.
+3. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` locally. The secret key stays server-side; never prefix it with `NEXT_PUBLIC_` or commit `.env.local`.
+4. Run `npm run dev` and open `http://localhost:3000`.
 
-## Data and API
+The migration enables row level security without browser policies. Server routes use the configured server key. This demo has no production authentication or per-user authorization, so it must not hold private customer meetings as-is.
 
-The seed preserves six meetings, including a 2:14 test call and a 58:47 eight-participant Q4 call. It preserves the original meeting slugs, transcript order, summaries, actions, highlights, and two existing clips. The seed inserts missing rows and does not overwrite later action completion or summary changes.
+## Product areas
 
-Server components query the same repository used by the API. The client calls API routes for writes and Ask. Routes:
+- **Home:** database-derived meeting metrics, recent conversations, open actions, and highlight signals.
+- **Meetings:** searchable archive and detailed workspace with an indexed, simulated playback timeline, stored transcript, structured brief, actions, highlights, and speaker distribution.
+- **Intelligence:** meeting length and completion charts computed from stored records.
+- **Library:** stored clips and highlights with public share views.
+- **Ask Relay:** a rule-based demo endpoint that uses the meeting's stored notes, actions, and transcript. It is not an external AI service.
+
+Action completion, generated summary formats, and clips are persisted in PostgreSQL. Clip links use stored IDs. Earlier timestamp-based clip links and highlight links still resolve. Playback is a timeline simulation; audio/video files are not supplied.
+
+## API routes
 
 | Route | Purpose |
 | --- | --- |
-| `GET /api/meetings` | Meeting library |
-| `GET /api/meetings/[id]` | Full meeting |
+| `GET /api/meetings` | All hydrated meetings |
+| `GET /api/meetings/[id]` | Full meeting record |
 | `GET /api/meetings/[id]/transcript` | Ordered transcript |
 | `GET /api/meetings/[id]/summary?template=enhanced` | Stored summary |
-| `GET /api/meetings/[id]/analytics` | Talk time from stored transcript intervals |
-| `PATCH /api/action-items/[id]` | Persist `{ "completed": true/false }` |
-| `POST /api/clips` | Persist `{ "meetingId", "startSeconds", "endSeconds", "title"? }` |
-| `GET /api/clips/[id]` | Load a stored clip |
-| `POST /api/meetings/[id]/ask` | Answer `{ "question" }` from stored meeting data |
-| `POST /api/meetings/[id]/summaries/regenerate` | Persist `{ "template": "enhanced"/"demo" }` |
-
-Ask and regeneration use deterministic formatting for now. They load their source records from PostgreSQL. New clip share links use the persisted clip ID; existing timestamp-based links continue to resolve.
+| `GET /api/meetings/[id]/analytics` | Speaker time from transcript intervals |
+| `PATCH /api/action-items/[id]` | Persist action completion |
+| `POST /api/clips` | Persist a transcript range |
+| `GET /api/clips/[id]` | Load a saved clip |
+| `POST /api/meetings/[id]/ask` | Deterministic answer using meeting data |
+| `POST /api/meetings/[id]/summaries/regenerate` | Persist a structured or demo brief |
 
 ## Validation
 
-```bash
-npm run seed:generate
-npm run lint
-npm run build
-```
+Run `npm run lint` and `npm run build`. Local runtime verification requires the environment variables and migrated/seeded database. Without them, the UI shows a load error and the API returns a database error; it does not switch to in-memory data.
 
-Database integration needs the two environment variables and an applied migration/seed. Until then, the UI shows a load error and the API returns a 500 database error; it never falls back to an in-memory meeting store.
+## Capture history
 
-## Agent capture
-
-The existing `.codex` hooks continue to capture Codex prompts and final responses in `.agent-logs/`. Historical logs and the capture mechanism are unchanged. `CAPTURE-TEST.md` documents their original verification.
+The `.codex` capture hooks and historical `.agent-logs/` remain in place. `CAPTURE-TEST.md` documents their original verification.

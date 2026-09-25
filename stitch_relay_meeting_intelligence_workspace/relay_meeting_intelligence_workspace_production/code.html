@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#f9f9ff","on-primary-container":"#848387","surface-dim":"#d8dae2","primary":"#000000","background":"#f9f9ff","on-tertiary-container":"#2f9563","outline-variant":"#c7c6cb","error":"#ba1a1a","primary-container":"#1b1b1f","tertiary-fixed-dim":"#78daa2","surface-container-low":"#f1f3fb","on-background":"#181c21","secondary-container":"#3d67fa","on-surface":"#181c21","inverse-primary":"#c7c6ca","surface-bright":"#f9f9ff","on-primary":"#ffffff","on-tertiary-fixed":"#002111","tertiary-fixed":"#94f7bc","surface-variant":"#e0e2ea","surface-container-lowest":"#ffffff","on-surface-variant":"#46464b","surface-tint":"#5e5e62","on-error":"#ffffff","surface-container-highest":"#e0e2ea","on-secondary-fixed":"#001453","surface-container":"#eceef6","inverse-surface":"#2d3037","primary-fixed":"#e3e2e6","surface-container-high":"#e6e8f0","on-secondary-fixed-variant":"#0037b8","secondary":"#164be0","tertiary":"#000000","inverse-on-surface":"#eff0f9","error-container":"#ffdad6","secondary-fixed":"#dde1ff","on-primary-fixed":"#1b1b1f","outline":"#76777b","on-tertiary-fixed-variant":"#005231","on-tertiary":"#ffffff","tertiary-container":"#002111","secondary-fixed-dim":"#b7c4ff","on-secondary":"#ffffff","on-primary-fixed-variant":"#46464a","on-secondary-container":"#fffbff","primary-fixed-dim":"#c7c6ca","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-xl":"1.5rem","space-sm":"0.5rem","gutter":"1rem","space-lg":"1rem"},fontFamily:{"label-sm":["JetBrains Mono"],"headline-lg-mobile":["Geist"],"headline-lg":["Geist"],"code-inline":["JetBrains Mono"],"headline-md":["Geist"],"body-md":["Geist"],"body-sm":["Geist"],"label-md":["JetBrains Mono"],"body-lg":["Geist"],"headline-xl-mobile":["Geist"],"headline-xl":["Geist"]},fontSize:{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"500"}],"headline-lg-mobile":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"code-inline":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.3125rem","letterSpacing":"-0.005em","fontWeight":"400"}],"body-sm":["0.8125rem",{"lineHeight":"1.1875rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["0.9375rem",{"lineHeight":"1.4375rem","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container-low border-r border-outline-variant/30 z-50 flex flex-col items-center justify-between py-3"><div class="flex flex-col items-center gap-6 w-full"><a class="flex items-center justify-center p-1 rounded-DEFAULT hover:bg-surface-container transition-colors" href="#" title="Relay Cockpit"><img alt="Brand logo. - Primary color: #2554e8
+- Font: geist
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UqIBpAyVWZaG_co4icSXfMCL0irTxFh8ku5IigdRjJrFHU_Spj7OVkX7mU8EoAHDscAnZgzLZBYNIXyqCRMXQ0DoBKbuKeykg4uUVuULYrO90O66sF5n0QGyvyswSmArzsPdqcJzH9Ix6Wc9W1hFa5iZXqajMgqAkTGGVhcN1j3na9IlqbnsmT078XhbHwbvF5Mvpa48QI5FcSPSLjq5rOLCL3oufeWpoqTeuCfmZm6j3pXFVGZjkt6A"/></a><nav class="flex flex-col items-center gap-2 w-full px-2" data-active-classes="bg-primary text-on-primary font-medium rounded-DEFAULT shadow-sm"><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="overview" href="#" title="Home Overview"><span class="material-symbols-outlined text-[20px]">grid_view</span></a><a aria-current="page" class="relative flex items-center justify-center w-11 h-11 transition-all group bg-primary text-on-primary font-medium rounded-DEFAULT shadow-sm" data-path="meetings" href="#" title="Meeting Ledger"><span class="material-symbols-outlined text-[20px]">forum</span></a><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="intel-synthesis" href="#" title="Engineering Intel & Architecture"><span class="material-symbols-outlined text-[20px]">neurology</span></a><a class="relative flex items-center justify-center w-11 h-11 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all group" data-path="library" href="#" title="Decisions & Action Library"><span class="material-symbols-outlined text-[20px]">inventory_2</span></a></nav></div><div class="flex flex-col items-center gap-3 w-full px-2"><div class="flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-surface-container border border-outline-variant/30 text-on-tertiary-container hover:bg-surface-container-high cursor-pointer transition-colors" title="System Node Status: Operational"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span></div><div class="relative flex items-center justify-center p-0.5 rounded-full ring-2 ring-secondary/30 hover:ring-secondary cursor-pointer transition-all" title="Active User Profile"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XcKVAlOkoftRjGLvLL_t9JVpqRjv1M4XN7inMvDbXByM5vUrlJy_FPD15X-WlaMMiOHAccaWWdyBDxUNoYJVLAl7UAeQfVdH7ZcxGoJzHo52kS3Kedz_IAtGFYFCCdojK_p-WCgM65DgswumVSneM-PdQ-2rhvdWrfldVizpVV9lyr0GHHp3JcCkBxf1X4G3X6xY5BD5Q7M1T0sOudys9Z72L_AREy7H8IGSM1XidHg4MrPv1cRkJ0dg"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-tertiary-container border-2 border-surface rounded-full"></span></div></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface font-headline-md text-body-sm font-medium"><span class="text-on-surface-variant font-body-sm text-body-sm">Acme Corp</span><span class="text-outline-variant font-code-inline text-label-sm">/</span><span class="text-on-surface font-body-sm text-body-sm font-semibold">Platform Eng</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">unfold_more</span></div><div class="h-4 w-px bg-outline-variant/30 hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-2 py-0.5 rounded-DEFAULT bg-surface-container text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/20"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span><span>SOC2 SIGNED & LIVE INDEXING</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-md mx-space-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 rounded-DEFAULT bg-surface border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:border-secondary transition-all" placeholder="Search meetings, transcripts, decisions..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 rounded-DEFAULT bg-surface-container text-label-sm font-label-sm text-on-surface-variant border border-outline-variant/40 pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1.5 h-8 px-3 rounded-DEFAULT bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-secondary transition-colors" title="Start or Record Session" type="button"><span class="material-symbols-outlined text-[16px]">radio_button_checked</span><span>New Meeting</span></button><button class="flex items-center justify-center w-8 h-8 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Telemetry Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button></div></header><main class="relative pt-14 min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Top Meeting Sub-Header & Telemetry Strip -->
+<section class="w-full bg-surface-container-low px-space-lg py-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-primary text-on-primary font-label-sm text-label-sm tracking-wider uppercase">ARCH-RFC #412</span>
+<span class="text-outline-variant font-code-inline text-label-sm">/</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Oct 24, 11:00 AM PST</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-semibold">42m 18s duration</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          Processed · Vector Index Synced
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight truncate">
+        Q4 Core Architecture: DynamoDB vs Multi-AZ Redis Cluster
+      </h1>
+</div>
+<!-- Right Controls & Quick Actions -->
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<div class="flex items-center -space-x-1.5 mr-2">
+<div class="relative group cursor-pointer" title="Huzaifa (Staff Eng, 38%)">
+<img class="w-7 h-7 rounded-full ring-2 ring-surface object-cover" data-alt="Close-up portrait of Huzaifa, a male engineering director with glasses looking intently at code screens in soft warm studio lighting, modern minimalist setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUhw8O4RiPptVubcKlgiE9K8KOeuzZjHdhDZQ2QkbhZbz0aCPn2i8cOTwFBX9ls7arGpKoKGvOusARbzRlmrYmWDTwpFTEwZxPiXbhJ0I76gxf-MZn0ibfS97YPv8Fsj9jscCAkTJNxnUNfir6ODA7Jd7yfybNovZwcsDKo2_W3sWbNDSZL_InmTEB5TJzQScW8bfVv-5OqLR7WgVSfrNlMnn8fUGsuxAHo8-1fmE9hOZ66YnGUQc"/>
+<span class="absolute -bottom-1 -right-1 px-1 rounded-DEFAULT bg-primary text-on-primary font-label-sm text-[9px] scale-90">38%</span>
+</div>
+<div class="relative group cursor-pointer" title="Sarah Lin (VP Eng, 29%)">
+<img class="w-7 h-7 rounded-full ring-2 ring-surface object-cover" data-alt="Portrait of Sarah Lin, a female VP of Engineering with sharp blazer, ambient architectural light in modern clean office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHuLgDy72cXlk_0Ys5Y2PiCLopX8fMpbN3fIhW1BXP-S3ctUJaL8_XKiqCOPQ3Vm68uuIsWcT3tCy18v7eanUea7eNIiuorS8s6hWknHWNZJJkIiyWPkj-8xDqXp7jHK1GZ6CHMFz40cdmE8Fo00JrZvHDD79mXM5X58V5oC6Jo7jAZxtOCsSEJ1LB2RWk7U9DtuXp9bOpJ3cAu0esNHvepGdeeyW3gZgZtNYpm-8n7OEWeaxNnGg"/>
+<span class="absolute -bottom-1 -right-1 px-1 rounded-DEFAULT bg-secondary text-on-secondary font-label-sm text-[9px] scale-90">29%</span>
+</div>
+<div class="relative group cursor-pointer" title="Marcus Chen (Principal Architect, 21%)">
+<img class="w-7 h-7 rounded-full ring-2 ring-surface object-cover" data-alt="Portrait of Marcus Chen, principal software architect with focused demeanor, tech workstation background with monitor glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7vBYaAXmvsintMX8V7PONsGZ0WdU0-loiE0LjWt-8h-RqeR70g72MQ2Ep-YloYSrObnN0MvEZbuOy7NO7WZg0XkPXu4P9IfBRPyin-Nm3NXwGArm3c-O_0POBue88hJ8xtozowa13YE-u1oM19IGwjrjGngz6aOHl5nlJkQkKIo_0DHEwgTWJLDHK9kISPWtiQ9S6Se2WjWrUxyy3wTvKzrF49qbT9aWfnJ2I4TrzY41D2jOnu0k"/>
+<span class="absolute -bottom-1 -right-1 px-1 rounded-DEFAULT bg-surface-container-highest text-on-surface font-label-sm text-[9px] scale-90">21%</span>
+</div>
+<div class="relative group cursor-pointer" title="Elena Vance (Platform Lead, 12%)">
+<img class="w-7 h-7 rounded-full ring-2 ring-surface object-cover" data-alt="Portrait of Elena Vance, platform team lead smiling confidently in minimal grey tones workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRatlvXGrLQg9Pq0h4m9x1ENcE6KOeGqA0a2t3tDfnOWscxiOXoShXJoVg0YjmNp3Xmv3szYEY2IBqIs3_XPh0ipmC8chNcxJDUv_rKusmrOhZoYQtz38S5LPq4Y9vmmtkEgegJn6A4bgBZGAkx2M5bLhjacAU2iZ5YFWwiY3YToZ9ONqRhDtU_Y7NDj7besxbM6FqV5ecpmM28NKQTnDn1TBX9_rZLZ_vPck_D-9pudCJK675kdU"/>
+<span class="absolute -bottom-1 -right-1 px-1 rounded-DEFAULT bg-outline-variant text-on-surface font-label-sm text-[9px] scale-90">12%</span>
+</div>
+</div>
+<button class="h-8 px-2.5 rounded-DEFAULT bg-surface-container-high hover:bg-surface-dim text-on-surface font-body-sm text-body-sm flex items-center gap-1.5 transition-colors" title="Generate 30s Snippet Reel" type="button">
+<span class="material-symbols-outlined text-[16px]">ios_share</span>
+<span>Share Moment</span>
+</button>
+<button class="h-8 px-3 rounded-DEFAULT bg-primary hover:bg-secondary text-on-primary font-body-sm text-body-sm flex items-center gap-1.5 transition-colors shadow-sm" title="Export synthesis to Linear issues & Markdown PR RFC" type="button">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Export to Linear / MD</span>
+</button>
+</div>
+</section>
+<!-- Signature Multi-Tier Meeting Timeline & Scrubber -->
+<section class="w-full bg-surface-container-lowest px-space-lg py-2.5 shadow-sm relative select-none">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wider">ARCHITECTURAL TIMELINE</span>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Huzaifa</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Sarah L.</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-surface-tint"></span> Marcus C.</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> Elena V.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-code-inline text-on-surface font-medium" id="scrubber-time">14:20</span>
+<span>/</span>
+<span class="font-code-inline text-outline">42:18</span>
+</div>
+</div>
+<!-- Scrubber Container with Tooltip Positioning -->
+<div class="relative w-full group py-1 cursor-pointer" id="timeline-rail">
+<!-- Hover Tooltip Flyout -->
+<div class="absolute -top-16 left-[34%] -translate-x-1/2 hidden group-hover:flex flex-col items-center pointer-events-none z-30 transition-all" id="scrub-tooltip">
+<div class="bg-primary text-on-primary rounded-DEFAULT px-2.5 py-1.5 shadow-xl max-w-xs text-left">
+<div class="flex items-center justify-between gap-3 text-label-sm font-label-sm text-surface-variant border-b border-outline-variant/20 pb-0.5 mb-1">
+<span class="text-tertiary-fixed font-semibold">Huzaifa · Staff Eng</span>
+<span class="font-code-inline">14:20</span>
+</div>
+<p class="font-body-sm text-label-sm text-surface-bright leading-tight line-clamp-2">
+            "Multi-AZ Redis cluster creates severe replication lag across us-east-1a and 1b when P99 writes surge."
+          </p>
+</div>
+<div class="w-2 h-2 bg-primary rotate-45 -mt-1"></div>
+</div>
+<!-- Tier A: Voice Activity Density Bands -->
+<div class="w-full h-4 bg-surface-container rounded-DEFAULT overflow-hidden flex items-center relative gap-[1px]">
+<!-- Segment 00:00 - 06:15 Huzaifa Context Setting -->
+<div class="h-full bg-primary/90 flex-1 hover:brightness-125 transition-all" style="flex-grow: 15;" title="Huzaifa: Intro & SLA definitions (00:00 - 06:15)"></div>
+<!-- Segment 06:15 - 11:30 Marcus Tech Audit -->
+<div class="h-full bg-surface-tint flex-1 hover:brightness-125 transition-all" style="flex-grow: 12;" title="Marcus: Benchmarking Redis cache clusters (06:15 - 11:30)"></div>
+<!-- Segment 11:30 - 13:45 Sarah Key Interjection -->
+<div class="h-full bg-secondary flex-1 hover:brightness-125 transition-all" style="flex-grow: 6;" title="Sarah: Operational cost baseline constraint (11:30 - 13:45)"></div>
+<!-- Segment 13:45 - 22:30 Huzaifa Dynamo Deep-dive -->
+<div class="h-full bg-primary flex-1 hover:brightness-125 transition-all" style="flex-grow: 21;" title="Huzaifa: DynamoDB Single-Table pattern trade-offs (13:45 - 22:30)"></div>
+<!-- Segment 22:30 - 29:00 Elena Platform Infra Specs -->
+<div class="h-full bg-outline-variant flex-1 hover:brightness-125 transition-all" style="flex-grow: 16;" title="Elena: Terraform migration & provision overhead (22:30 - 29:00)"></div>
+<!-- Segment 29:00 - 36:10 Marcus vs Sarah Consensuses -->
+<div class="h-full bg-secondary flex-1 hover:brightness-125 transition-all" style="flex-grow: 17;" title="Sarah & Marcus: Egress cost vs operational burden (29:00 - 36:10)"></div>
+<!-- Segment 36:10 - 42:18 Huzaifa Action Alignment -->
+<div class="h-full bg-primary/80 flex-1 hover:brightness-125 transition-all" style="flex-grow: 15;" title="Huzaifa: Quorum consensus & ENG ticket assignments (36:10 - 42:18)"></div>
+</div>
+<!-- Tier B: Interactive Semantic Glyphs Rail -->
+<div class="w-full h-6 relative mt-1 flex items-center">
+<!-- Tick guide lines -->
+<div class="absolute inset-0 flex justify-between items-center opacity-30 pointer-events-none text-[9px] font-label-sm text-outline">
+<span>00:00</span>
+<span>10:00</span>
+<span>20:00</span>
+<span>30:00</span>
+<span>40:00</span>
+</div>
+<!-- Semantic Marker: Decision 1 (12:40 -> ~30%) -->
+<div class="absolute left-[30%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="DECISION: Reject Self-Hosted Redis due to maintenance overhead">
+<div class="w-4 h-4 rounded-DEFAULT bg-primary flex items-center justify-center text-tertiary-fixed shadow-md hover:scale-125 transition-transform">
+<span class="text-[10px] leading-none">◆</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-primary mt-0.5 hidden group-hover/marker:inline">12:40</span>
+</div>
+<!-- Semantic Marker: Action 1 (18:20 -> ~43.5%) -->
+<div class="absolute left-[43.5%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="ACTION: Run load benchmark on DynamoDB Global Secondary Index">
+<div class="w-4 h-4 rounded-DEFAULT bg-secondary flex items-center justify-center text-on-secondary shadow-md hover:scale-125 transition-transform">
+<span class="text-[10px] leading-none">⚡</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-secondary mt-0.5 hidden group-hover/marker:inline">18:20</span>
+</div>
+<!-- Semantic Marker: Decision 2 (22:10 -> ~52.5%) -->
+<div class="absolute left-[52.5%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="DECISION: Commit to DynamoDB with On-Demand Provisioning for Q4">
+<div class="w-4 h-4 rounded-DEFAULT bg-primary flex items-center justify-center text-tertiary-fixed shadow-md hover:scale-125 transition-transform">
+<span class="text-[10px] leading-none">◆</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-primary mt-0.5 hidden group-hover/marker:inline">22:10</span>
+</div>
+<!-- Semantic Marker: Action 2 (28:45 -> ~68%) -->
+<div class="absolute left-[68%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="ACTION: Model single-table schema for User Session & Token states">
+<div class="w-4 h-4 rounded-DEFAULT bg-secondary flex items-center justify-center text-on-secondary shadow-md hover:scale-125 transition-transform">
+<span class="text-[10px] leading-none">⚡</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-secondary mt-0.5 hidden group-hover/marker:inline">28:45</span>
+</div>
+<!-- Semantic Marker: Action 3 (34:10 -> ~81%) -->
+<div class="absolute left-[81%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="ACTION: Calculate Cross-AZ egress cost with FinOps lead">
+<div class="w-4 h-4 rounded-DEFAULT bg-secondary flex items-center justify-center text-on-secondary shadow-md hover:scale-125 transition-transform">
+<span class="text-[10px] leading-none">⚡</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-secondary mt-0.5 hidden group-hover/marker:inline">34:10</span>
+</div>
+<!-- Semantic Marker: Risk/Blocker (39:20 -> ~93%) -->
+<div class="absolute left-[93%] -translate-x-1/2 flex flex-col items-center group/marker cursor-pointer z-10" title="RISK: Cross-AZ AWS data transfer burst charges could exceed budget by $8.2k/mo">
+<div class="w-4 h-4 rounded-DEFAULT bg-error flex items-center justify-center text-on-error shadow-md hover:scale-125 transition-transform animate-pulse">
+<span class="text-[10px] leading-none">⚑</span>
+</div>
+<span class="font-label-sm text-[9px] font-semibold text-error mt-0.5 hidden group-hover/marker:inline">39:20</span>
+</div>
+<!-- Playhead Indicator -->
+<div class="absolute left-[34%] top-0 bottom-0 w-[2px] bg-secondary pointer-events-none z-20">
+<div class="w-2.5 h-2 bg-secondary rounded-[1px] -translate-x-1 -mt-0.5 shadow-sm"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Zone Architecture Workbench -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-14rem)] bg-surface">
+<!-- Zone 1: Left Navigation Ledger (Col span 2, 220px baseline) -->
+<aside class="lg:col-span-2 bg-surface-container-low p-space-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-2">Navigation Matrix</span>
+<nav class="flex flex-col gap-1 w-full font-body-sm text-body-sm">
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT bg-surface text-on-surface font-semibold shadow-sm transition-colors" href="#overview">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">analytics</span>
+<span>Overview & Synthesis</span>
+</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface hover:text-on-surface transition-colors" href="#transcript">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">notes</span>
+<span>Full Transcript</span>
+</span>
+<span class="font-label-sm text-label-sm px-1 rounded bg-surface-container text-on-surface-variant">384 turns</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface hover:text-on-surface transition-colors" href="#decisions">
+<span class="flex items-center gap-2">
+<span class="text-primary text-[14px]">◆</span>
+<span>Decisions</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold">2</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface hover:text-on-surface transition-colors" href="#actions">
+<span class="flex items-center gap-2">
+<span class="text-secondary text-[14px]">⚡</span>
+<span>Action Items</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">3</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface hover:text-on-surface transition-colors" href="#risks">
+<span class="flex items-center gap-2">
+<span class="text-error text-[14px]">⚑</span>
+<span>Risks & Blockers</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-bold">1</span>
+</a>
+<a class="flex items-center justify-between px-2.5 py-1.5 rounded-DEFAULT text-on-surface-variant hover:bg-surface hover:text-on-surface transition-colors" href="#dynamics">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">equalizer</span>
+<span>Speaker Dynamics</span>
+</span>
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+</a>
+</nav>
+<!-- Technical RFC Context Meta -->
+<div class="mt-6 pt-4 bg-surface-container/60 p-2.5 rounded-DEFAULT flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Indexed RFC Repository</span>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] text-secondary">source</span>
+<span class="truncate">core-infra-specs.git</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-snug">
+            Branch: <code class="font-code-inline text-on-surface">feat/dynamo-eval</code><br/>
+            Parent Commit: <code class="font-code-inline text-on-surface">8c11bf4</code>
+</p>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-tertiary-container pt-1">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>PR Linked (#882)</span>
+</div>
+</div>
+</div>
+<!-- Quick Session Audio Dock -->
+<div class="bg-surface p-2.5 rounded-DEFAULT shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>AUDIO CAPTURE</span>
+<span class="font-code-inline text-on-surface">FLAC 48kHz</span>
+</div>
+<div class="flex items-center justify-between gap-1">
+<button class="w-7 h-7 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" title="Rewind 10s" type="button">
+<span class="material-symbols-outlined text-[16px]">replay_10</span>
+</button>
+<button class="w-8 h-8 rounded-DEFAULT bg-primary hover:bg-secondary flex items-center justify-center text-on-primary shadow-sm" title="Play / Pause" type="button">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+</button>
+<button class="w-7 h-7 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" title="Forward 10s" type="button">
+<span class="material-symbols-outlined text-[16px]">forward_10</span>
+</button>
+<button class="px-1.5 py-1 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface font-semibold" title="Playback Speed" type="button">
+            1.25x
+          </button>
+</div>
+</div>
+</aside>
+<!-- Zone 2: Primary Reading & Synthesis Workbench (Col span 7, expansive & legible) -->
+<main class="lg:col-span-7 bg-surface p-space-lg flex flex-col gap-space-lg overflow-y-auto">
+<!-- Executive Summary Box -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wider uppercase">Executive Architecture Synthesis</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Generated 11:44 AM · Relay Model v4.8</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-4">
+          The engineering leadership evaluated running high-throughput distributed sessions across a managed Multi-AZ Redis cluster versus an AWS DynamoDB single-table paradigm. While Redis yields nominal single-digit sub-millisecond latencies, maintenance overhead during node failovers and unmitigated cross-AZ data egress expenses make it non-viable for Q4 SLA commitments. The committee converged on DynamoDB on-demand partitioning with localized DAX caching layer.
+        </p>
+<!-- Technical Trade-off Matrix Bar -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-3 bg-surface-container-low p-3 rounded-DEFAULT">
+<div>
+<span class="font-label-sm text-label-sm text-outline block">TARGET P99 LATENCY</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">14.2ms</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block mt-0.5">Acceptable under 20ms SLA</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">PROJECTED OPEX</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-tertiary-container">$4,120 /mo</span>
+<span class="font-body-sm text-[11px] text-on-tertiary-container block mt-0.5">▼ 42% vs Redis multi-replica</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block">RELIABILITY POSTURE</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">99.995%</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block mt-0.5">Multi-Region active failover</span>
+</div>
+</div>
+</div>
+<!-- Section: Key Architectural Decisions -->
+<section class="flex flex-col gap-3" id="decisions">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-primary text-[16px]">◆</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Key Architectural Decisions</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant font-code-inline">2 COMMITTED</span>
+</div>
+<!-- Decision Item 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm pl-4 relative overflow-hidden" style="border-left: 4px solid #000000;">
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-DEFAULT bg-primary text-on-primary font-semibold">DECISION · 22:10</span>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">UNANIMOUS QUORUM</span>
+</div>
+<a class="font-code-inline text-label-sm text-secondary hover:underline flex items-center gap-1" href="#t-2210">
+<span>Jump to audio</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface mb-1">
+            Adopt DynamoDB Single-Table Design for Core Session & Ingestion Engine
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 leading-relaxed">
+            Eliminates multi-node maintenance overhead and unplanned failover risk present in Redis sentinel topologies. All session authentication, ephemeral tokens, and device mapping entities will be consolidated into a unified schema using composite partition/sort keys.
+          </p>
+<div class="flex flex-wrap items-center gap-2 pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-DEFAULT text-label-sm font-label-sm">
+<span class="text-outline">AFFECTED SERVICES:</span>
+<span class="px-1.5 py-0.5 bg-surface text-on-surface rounded font-code-inline">auth-gateway</span>
+<span class="px-1.5 py-0.5 bg-surface text-on-surface rounded font-code-inline">telemetry-router</span>
+<span class="px-1.5 py-0.5 bg-surface text-on-surface rounded font-code-inline">session-store</span>
+<span class="text-outline ml-auto">OWNER: @huzaifa</span>
+</div>
+</div>
+<!-- Decision Item 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm pl-4 relative overflow-hidden" style="border-left: 4px solid #164be0;">
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-DEFAULT bg-secondary text-on-secondary font-semibold">DECISION · 12:40</span>
+<span class="px-2 py-0.5 rounded-DEFAULT bg-surface-container text-on-surface font-label-sm text-label-sm">CONSENSUS WITH CONCERNS</span>
+</div>
+<a class="font-code-inline text-label-sm text-secondary hover:underline flex items-center gap-1" href="#t-1240">
+<span>Jump to audio</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface mb-1">
+            Reject Self-Hosted Redis Cluster on AWS EKS
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 leading-relaxed">
+            Self-hosted stateful Redis sets introduce excessive on-call toil for platform engineering. Team capacity cannot support 24/7 paging for split-brain recoveries and cross-AZ replica rebalancing.
+          </p>
+<div class="flex flex-wrap items-center gap-2 pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-DEFAULT text-label-sm font-label-sm">
+<span class="text-outline">RATIONALE:</span>
+<span class="text-on-surface">Platform team on-call fatigue; estimated 18 hours/month operational firefighting.</span>
+</div>
+</div>
+</section>
+<!-- Section: Action Items (Linear ENG Ticket Sync) -->
+<section class="flex flex-col gap-3" id="actions">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-secondary text-[16px]">⚡</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Assigned Action Items & Engineering Sync</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant font-code-inline">3 OF 3 PUSHED TO LINEAR</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Action Item 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-DEFAULT shadow-sm flex items-start justify-between gap-3 hover:bg-surface-bright transition-colors group">
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 rounded-DEFAULT text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">
+                  Run Locust benchmark simulating 85k write RPS on DynamoDB GSI indices
+                </span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+                  Establish cold-start write throttle limits and auto-scale ramp rates before Nov 10.
+                </span>
+<div class="flex items-center gap-3 mt-2 font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">label</span> ENG-3419
+                  </span>
+<span class="text-outline">Due: Oct 30</span>
+<span class="text-outline-variant font-code-inline">[▶ 18:20]</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of Marcus Chen, software engineer focused on technical benchmark tasks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDrdyv_lhvh1Ej-X_aKulvWjKGlCn8V-iFdwXuuomrWjgSPlGUvcnOI71mASBJN1vUAHFv25cHNkJBAgyf1I8wpb9QylcmES2zCP0O5z9RamN506upvSOU5MGPOUO04naAWRgcOpCjDX9Mg_Cs69n8zd4FivHU3ePCgnMxuqJi8LNIL1NrLu6vmV3BMgtrP461LKr0IMwAzajf2YI36hrXsAcfBiA7ZJw3SjK8xWa4w8Mqj2aLde4"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Marcus C.</span>
+</div>
+</div>
+<!-- Action Item 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-DEFAULT shadow-sm flex items-start justify-between gap-3 hover:bg-surface-bright transition-colors group">
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 rounded-DEFAULT text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">
+                  Publish RFC draft for Single-Table Access Patterns in Notion
+                </span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+                  Define entity type prefixes (USER#, SESS#, ORG#) and query cardinality restrictions.
+                </span>
+<div class="flex items-center gap-3 mt-2 font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">label</span> ENG-3420
+                  </span>
+<span class="text-outline">Due: Nov 2</span>
+<span class="text-outline-variant font-code-inline">[▶ 28:45]</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of Huzaifa, staff engineer drafting high-fidelity architectural specifications" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXIreo1ZQbxjGNycRhgs_xe4hGIlKaFG9W3xyHBucPFlIQxyhNgTGpGbatq3DXk5wHumOxY8RJaEui7IcUcl7fniwM2QQJKfRgNqj2pmHqhGPsU7Y__58UDmPUvSTSOlrnzENHYDXDTh2phg9BgEO9y02FCvNWsKsby4fRlF3AH417HpQBtBidFNIXTOAS5Tpoyb1oJTKMmjbqGd5nQhm3qfsoty4f08rxPT-Czff3_l13FrcQLDs"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Huzaifa</span>
+</div>
+</div>
+<!-- Action Item 3 -->
+<div class="bg-surface-container-lowest p-3 rounded-DEFAULT shadow-sm flex items-start justify-between gap-3 hover:bg-surface-bright transition-colors group">
+<div class="flex items-start gap-3">
+<input class="mt-1 w-4 h-4 rounded-DEFAULT text-secondary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">
+                  Review Terraform DynamoDB modules with Platform FinOps
+                </span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+                  Validate IAM Least-Privilege table policies and point-in-time recovery (PITR) parameters.
+                </span>
+<div class="flex items-center gap-3 mt-2 font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">label</span> ENG-3421
+                  </span>
+<span class="text-outline">Due: Nov 4</span>
+<span class="text-outline-variant font-code-inline">[▶ 34:10]</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of Elena Vance, platform engineer reviewing cloud infrastructure policies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuuOFu5g0S1ks3Z4P8NMfEvy3DM1eghvT8sarAz_HgBsVN_I1AzulHxEsWwLsPVyvtX6DUDHUHGcqCz6RGpbShOD1ArC7Flwrp403jpdBRpL0dDc0oGjAbUYP-jSg6dJZfiRvpjmuomLzohsRs6sP7x49Er2PXEpJ5p8xvXI7BbfrQSh1Utg862CqjEV8cVlIKsGY8GtebMMfGHdLty7CYJ9A9oWuBYcmpAUT_gd4h1292Q7r3xNs"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Elena V.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: High-Visibility Risk & Blocker Callout -->
+<section class="flex flex-col gap-2" id="risks">
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm pl-4 relative" style="border-left: 4px solid #ba1a1a;">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-DEFAULT bg-error text-on-error font-semibold flex items-center gap-1">
+<span>⚑</span> CRITICAL RISK DETECTED
+              </span>
+<span class="font-code-inline text-label-sm text-error font-semibold">[▶ 39:20]</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Severity: P1 Operational Cost</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-1">
+            AWS Cross-AZ Egress Surcharge Spike
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Sarah raised an alert that high-frequency batch sync between compute workers in <code class="font-code-inline text-on-surface">us-east-1a</code> and DynamoDB regional endpoints routed via different availability zones can trigger unexpected <strong class="text-on-surface font-semibold">$0.01/GB cross-AZ transit costs</strong>. Under peak synthetic loads (12TB/day), this introduces an unaccounted budget variance of ~$8,200 monthly.
+          </p>
+<div class="mt-3 p-2 bg-surface-container-low rounded-DEFAULT flex items-center justify-between text-body-sm text-on-surface">
+<span class="font-medium text-[12px] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">shield_with_heart</span>
+              Mitigation: Deploy AWS Gateway VPC Endpoints for DynamoDB in each VPC subnet immediately.
+            </span>
+<button class="h-6 px-2 rounded-DEFAULT bg-surface-container hover:bg-surface-dim font-label-sm text-label-sm font-semibold transition-colors" type="button">
+              Assign Mitigator
+            </button>
+</div>
+</div>
+</section>
+<!-- Section: Discussion Themes with Monospace Anchors -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Structured Technical Discussion Themes</h2>
+<span class="font-label-sm text-label-sm text-outline-variant font-code-inline">3 THEMES EXTRACTED</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Theme 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-semibold text-on-surface">
+                1. Latency Envelope vs. Maintenance Overhead
+              </span>
+<span class="font-code-inline text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">
+                [▶ 04:12 - 14:35]
+              </span>
+</div>
+<ul class="flex flex-col gap-1.5 text-body-md text-body-md text-on-surface-variant list-disc pl-5">
+<li>
+<strong class="text-on-surface">Redis:</strong> Sub-millisecond reads under synthetic benchmark (0.42ms P50, 1.8ms P99), but required 3 master + 3 replica shards to satisfy high-availability failover.
+              </li>
+<li>
+<strong class="text-on-surface">DynamoDB:</strong> 6.8ms P50, 14.2ms P99 without DAX. Adding an in-memory DAX cluster matches Redis reads with zero operational node maintenance.
+              </li>
+<li>
+                Huzaifa noted: <em>"We are optimizing for engineering cognitive load over the next 18 months, not shaving 3 milliseconds off session validations."</em>
+</li>
+</ul>
+</div>
+<!-- Theme 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-semibold text-on-surface">
+                2. Partition Key Design & Hot Key Mitigations
+              </span>
+<span class="font-code-inline text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">
+                [▶ 19:40 - 27:15]
+              </span>
+</div>
+<ul class="flex flex-col gap-1.5 text-body-md text-body-md text-on-surface-variant list-disc pl-5">
+<li>
+                Marcus evaluated risks of write throttling when enterprise tenants burst telemetry simultaneously.
+              </li>
+<li>
+                Agreed solution: Implement salted deterministic partition keys (<code class="font-code-inline text-on-surface">TENANT#<id>#<bucket_id_0_9></code>) for the primary event log partition.
+              </li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Zone 3: Right Intelligence Inspector & Copilot Console (Col span 3, 320px baseline) -->
+<aside class="lg:col-span-3 bg-surface-container-low p-space-md flex flex-col gap-space-lg overflow-y-auto">
+<!-- Section: Realtime Talk-Time Dynamics -->
+<div class="bg-surface p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Voice Share Distribution</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">HEALTHY BALANCE</span>
+</div>
+<!-- Speaker bars -->
+<div class="flex flex-col gap-2">
+<!-- Huzaifa -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Huzaifa (Staff)</span>
+<span class="font-code-inline text-on-surface font-semibold">38% · 16m 04s</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 38%;"></div>
+</div>
+</div>
+<!-- Sarah Lin -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Sarah Lin (VP Eng)</span>
+<span class="font-code-inline text-on-surface font-semibold">29% · 12m 16s</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 29%;"></div>
+</div>
+</div>
+<!-- Marcus Chen -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Marcus Chen (Arch)</span>
+<span class="font-code-inline text-on-surface font-semibold">21% · 8m 52s</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 21%;"></div>
+</div>
+</div>
+<!-- Elena Vance -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Elena Vance (Platform)</span>
+<span class="font-code-inline text-on-surface font-semibold">12% · 5m 06s</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+</div>
+<!-- Monologue Analysis Pill -->
+<div class="pt-2 bg-surface-container-low px-2 py-1.5 rounded-DEFAULT flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">check_circle</span>
+<span>No unmitigated monologues > 4m detected</span>
+</div>
+</div>
+<!-- Section: Ask Relay Engineering Copilot -->
+<div class="bg-surface p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">neurology</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Ask Relay Copilot</span>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">RAG v2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Query this technical session, referenced GitHub commits, and historical RFC context.
+        </p>
+<!-- Copilot Input Field -->
+<div class="relative w-full">
+<input class="w-full h-9 pl-3 pr-8 rounded-DEFAULT bg-surface border border-outline-variant/50 text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary transition-all" placeholder="e.g. Why did Marcus reject DAX for auth tokens?" type="text"/>
+<button class="absolute right-1.5 top-1.5 w-6 h-6 rounded-DEFAULT bg-primary hover:bg-secondary text-on-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Preset Technical Quick Queries -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-sm text-[11px] text-outline uppercase tracking-wider">Suggested Inquiries</span>
+<button class="text-left p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container text-body-sm text-body-sm text-on-surface transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">What was the final P99 latency target agreed on?</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-secondary shrink-0">subdirectory_arrow_right</span>
+</button>
+<button class="text-left p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container text-body-sm text-body-sm text-on-surface transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">Summarize Sarah's objection to multi-replica Redis</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-secondary shrink-0">subdirectory_arrow_right</span>
+</button>
+<button class="text-left p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container text-body-sm text-body-sm text-on-surface transition-colors flex items-center justify-between group" type="button">
+<span class="truncate">List all DynamoDB partition key combinations</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-secondary shrink-0">subdirectory_arrow_right</span>
+</button>
+</div>
+</div>
+<!-- Section: Shareable Micro-Moments Ready to Clip -->
+<div class="bg-surface p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Shareable Micro-Moments</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-code-inline">3 CLIPS</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Moment 1 -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container flex flex-col gap-1.5 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-code-inline text-secondary font-semibold">12:40 - 13:50 · 70s clip</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary">content_copy</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface font-medium leading-snug">
+              Sarah on Redis operational burden: "We don't have headcount for stateful node debugging."
+            </p>
+</div>
+<!-- Moment 2 -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container flex flex-col gap-1.5 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-code-inline text-secondary font-semibold">22:10 - 23:25 · 75s clip</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary">content_copy</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface font-medium leading-snug">
+              Huzaifa's consensus summary adopting on-demand DynamoDB single-table schema.
+            </p>
+</div>
+<!-- Moment 3 -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container flex flex-col gap-1.5 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-code-inline text-secondary font-semibold">39:20 - 40:40 · 80s clip</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary">content_copy</span>
+</div>
+<p class="font-body-sm text-[12px] text-error font-medium leading-snug">
+              Cross-AZ data egress egress warning & VPC endpoint mitigation proposal.
+            </p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Micro-interaction for scrubber marker jumping
+  document.querySelectorAll('[data-time]').forEach(el => {
+    el.addEventListener('click', () => {
+      const timeDisplay = document.getElementById('scrubber-time');
+      if (timeDisplay && el.dataset.time) {
+        timeDisplay.innerText = el.dataset.time;
+      }
+    });
+  });
+
+  // Timeline track mouse scrub demo listener
+  const timelineRail = document.getElementById('timeline-rail');
+  const tooltip = document.getElementById('scrub-tooltip');
+  if (timelineRail && tooltip) {
+    timelineRail.addEventListener('mousemove', (e) => {
+      const rect = timelineRail.getBoundingClientRect();
+      const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+      const percentage = (x / rect.width) * 100;
+      tooltip.style.left = percentage + '%';
+    });
+  }
+</script></main></div></body></html>
