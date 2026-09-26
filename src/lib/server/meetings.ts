@@ -6,7 +6,7 @@ import type { AskAnswer, Clip, Meeting, MeetingAnalytics, StoredSummary, Summary
 
 type DbMeeting = { id: string; title: string; occurred_at: string; duration_seconds: number; description: string | null; status: "shared" | "private" };
 type DbParticipant = { id: string; name: string; role: string; color: string; avatar_url: string | null };
-type DbJoin = { meeting_id: string; participant_id: string; sequence_index: number };
+type DbJoin = { meeting_id: string; participant_id: string; sequence_index: number; participants: DbParticipant | null };
 type DbTranscript = { id: string; meeting_id: string; participant_id: string; start_seconds: number; end_seconds: number; text: string; sequence_index: number };
 type DbSummary = { meeting_id: string; template: SummaryTemplate; content: SummarySection[] };
 type DbAction = { id: string; meeting_id: string; owner_name: string; title: string; description: string | null; due_date: string | null; due_label: string | null; completed: boolean; source_timestamp_seconds: number | null; sequence_index: number };
@@ -30,7 +30,11 @@ function dataOrThrow<T>(result: { data: T | null; error: { message: string } | n
 
 function groupByMeeting<T extends { meeting_id: string }>(rows: T[]) {
   const grouped = new Map<string, T[]>();
-  for (const row of rows) grouped.set(row.meeting_id, [...(grouped.get(row.meeting_id) ?? []), row]);
+  for (const row of rows) {
+    const group = grouped.get(row.meeting_id);
+    if (group) group.push(row);
+    else grouped.set(row.meeting_id, [row]);
+  }
   return grouped;
 }
 
@@ -39,7 +43,7 @@ async function hydrateMeetings(meetingRows: DbMeeting[]): Promise<Meeting[]> {
   const db = getSupabase();
   const ids = meetingRows.map((meeting) => meeting.id);
   const [joinsResult, transcriptResult, summaryResult, actionsResult, highlightsResult, clipsResult] = await Promise.all([
-    db.from("meeting_participants").select("meeting_id,participant_id,sequence_index").in("meeting_id", ids),
+    db.from("meeting_participants").select("meeting_id,participant_id,sequence_index,participants(id,name,role,color,avatar_url)").in("meeting_id", ids),
     db.from("transcript_segments").select("id,meeting_id,participant_id,start_seconds,end_seconds,text,sequence_index").in("meeting_id", ids),
     db.from("summaries").select("meeting_id,template,content").in("meeting_id", ids),
     db.from("action_items").select("id,meeting_id,owner_name,title,description,due_date,due_label,completed,source_timestamp_seconds,sequence_index").in("meeting_id", ids),
@@ -47,11 +51,8 @@ async function hydrateMeetings(meetingRows: DbMeeting[]): Promise<Meeting[]> {
     db.from("clips").select("id,meeting_id,start_seconds,end_seconds,title,created_at").in("meeting_id", ids),
   ]);
   const joins = dataOrThrow(joinsResult) as DbJoin[];
-  const participantIds = [...new Set(joins.map((join) => join.participant_id))];
-  const participants = participantIds.length
-    ? dataOrThrow(await db.from("participants").select("id,name,role,color,avatar_url").in("id", participantIds)) as DbParticipant[]
-    : [];
-  const people = new Map(participants.map((person) => [person.id, person]));
+  const people = new Map<string, DbParticipant>();
+  for (const join of joins) if (join.participants) people.set(join.participant_id, join.participants);
   const joinsByMeeting = groupByMeeting(joins);
   const transcriptByMeeting = groupByMeeting(dataOrThrow(transcriptResult) as DbTranscript[]);
   const summariesByMeeting = groupByMeeting(dataOrThrow(summaryResult) as DbSummary[]);
