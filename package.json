@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "test:transcript": "node --experimental-strip-types --test src/lib/transcript.test.mjs",
+    "test:intelligence": "node --experimental-strip-types --test src/lib/intelligence.test.mjs",
     "seed:generate": "node scripts/generate-seed.mjs"
   },
   "dependencies": {

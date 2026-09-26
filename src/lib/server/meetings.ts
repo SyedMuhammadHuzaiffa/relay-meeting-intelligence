@@ -165,20 +165,27 @@ export async function regenerateSummary(meeting: Meeting, template: SummaryTempl
 
 export function answerMeeting(meeting: Meeting, question: string): AskAnswer {
   const normalized = question.toLowerCase();
+  const sourceAt = (timestamp: string, label: string, segmentId?: string) => {
+    const seconds = timestamp.split(":").reduce((value, part) => value * 60 + Number(part), 0);
+    const segment = meeting.transcript.find((line) => line.id === segmentId)
+      ?? meeting.transcript.find((line) => line.startSeconds <= seconds && seconds < line.endSeconds && line.speaker === label)
+      ?? meeting.transcript.find((line) => line.startSeconds <= seconds && seconds < line.endSeconds);
+    return segment ? { timestamp, label, segmentId: segment.id } : null;
+  };
   if (/follow|action|next step|todo|to-do|owner/.test(normalized)) return {
     text: meeting.actionItems.length ? meeting.actionItems.map((action) => `${action.owner}: ${action.task}${action.completed ? " (completed)" : ""}`).join(" ") : "No explicit follow-up items were captured for this meeting.",
-    sources: meeting.actionItems.filter((action) => action.timestamp).slice(0, 3).map((action) => ({ timestamp: action.timestamp!, label: action.owner })),
+    sources: meeting.actionItems.filter((action) => action.timestamp).slice(0, 3).flatMap((action) => sourceAt(action.timestamp!, action.owner) ?? []),
   };
   if (/risk|concern|block|depend|issue|problem/.test(normalized)) {
     const sections = meeting.summary.filter((section) => /risk|depend|issue|block|quality/i.test(`${section.heading} ${section.body}`));
     const lines = meeting.transcript.filter((line) => /risk|approval|security|degrad|latency|depend|regression|gap/i.test(line.text));
     return {
       text: sections.length ? sections.map((section) => `${section.heading}: ${section.body}`).join(" ") : lines.length ? `The discussion flagged: ${lines.slice(0, 2).map((line) => line.text).join(" ")}` : "No explicit risks were captured in the meeting notes or transcript.",
-      sources: lines.slice(0, 3).map((line) => ({ timestamp: line.timestamp, label: line.speaker })),
+      sources: lines.slice(0, 3).map((line) => ({ timestamp: line.timestamp, label: line.speaker, segmentId: line.id })),
     };
   }
   return {
     text: meeting.summary.map((section) => `${section.heading}: ${section.body}`).join(" ") || "No summary is available for this meeting.",
-    sources: meeting.highlights.slice(0, 3).map((highlight) => ({ timestamp: highlight.timestamp, label: highlight.title })),
+    sources: meeting.highlights.slice(0, 3).flatMap((highlight) => sourceAt(highlight.timestamp, highlight.title, highlight.transcriptSegmentId ?? undefined) ?? []),
   };
 }

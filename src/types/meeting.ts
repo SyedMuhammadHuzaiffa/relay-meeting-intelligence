@@ -76,7 +76,7 @@ export type Meeting = {
   status: "shared" | "private";
 };
 
-export type AskAnswer = { text: string; sources: { timestamp: string; label: string }[] };
+export type AskAnswer = { text: string; sources: { timestamp: string; label: string; segmentId: string }[] };
 export type MeetingAnalytics = {
   participantId: string;
   name: string;
