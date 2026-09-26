@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test:transcript": "node --experimental-strip-types --test src/lib/transcript.test.mjs",
     "test:intelligence": "node --experimental-strip-types --test src/lib/intelligence.test.mjs",
-    "test:ask": "node --experimental-strip-types --test src/lib/ask-ai.test.mjs",
+    "test:ask": "node --experimental-strip-types --test src/lib/ask-ai.test.mjs src/lib/server/gemini.test.mjs",
     "seed:generate": "node scripts/generate-seed.mjs"
   },
   "dependencies": {
