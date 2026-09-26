@@ -25,6 +25,7 @@ function waitForRetry(attempt: number, signal: AbortSignal): Promise<void> {
 
 export async function generateGeminiAnswer(question: string, transcript: string, apiKey: string): Promise<unknown> {
   const controller = new AbortController();
+  // One abort timer applies across fetch attempts and retry waits.
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const requestBody = JSON.stringify({
@@ -44,6 +45,7 @@ export async function generateGeminiAnswer(question: string, transcript: string,
         },
       },
     });
+    // Retry network failures and transient HTTP statuses only; response validation does not retry.
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
       let response: Response;
       try {

@@ -1,6 +1,6 @@
 import "server-only";
 import { getSupabase } from "@/lib/server/supabase";
-import { secondsToTimestamp } from "@/lib/time";
+import { secondsToTimestamp, timestampToSeconds } from "@/lib/time";
 import type { ParsedTranscriptLine } from "@/lib/transcript";
 import type { AskAnswer, Clip, Meeting, MeetingAnalytics, StoredSummary, SummarySection, SummaryTemplate } from "@/types/meeting";
 
@@ -166,7 +166,7 @@ export async function regenerateSummary(meeting: Meeting, template: SummaryTempl
 export function answerMeeting(meeting: Meeting, question: string): AskAnswer {
   const normalized = question.toLowerCase();
   const sourceAt = (timestamp: string, label: string, segmentId?: string) => {
-    const seconds = timestamp.split(":").reduce((value, part) => value * 60 + Number(part), 0);
+    const seconds = timestampToSeconds(timestamp);
     const segment = meeting.transcript.find((line) => line.id === segmentId)
       ?? meeting.transcript.find((line) => line.startSeconds <= seconds && seconds < line.endSeconds && line.speaker === label)
       ?? meeting.transcript.find((line) => line.startSeconds <= seconds && seconds < line.endSeconds);

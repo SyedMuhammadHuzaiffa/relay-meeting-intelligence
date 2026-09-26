@@ -22,8 +22,9 @@ export function groundedAnswer(value: unknown, meeting: Meeting): AskAnswer | nu
 
   const text = result.answer.trim();
   const segments = new Map(meeting.transcript.map((line) => [line.id, line]));
+  // Only stored segment IDs can become evidence links; provider-supplied metadata is ignored.
   const ids = [...new Set(result.evidenceSegmentIds)].filter((id) => segments.has(id)).slice(0, MAX_EVIDENCE);
-  // A factual answer without a real transcript citation is not safe to display.
+  // A factual answer needs a stored citation; an insufficient answer must have none.
   if (text !== INSUFFICIENT_ANSWER && !ids.length) return null;
   if (text === INSUFFICIENT_ANSWER && result.evidenceSegmentIds.length) return null;
   return {
